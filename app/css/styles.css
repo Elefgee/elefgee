@@ -1,0 +1,146 @@
+/**************************
+SASS VARIABLES
+**************************/
+/**************************
+SETUP
+**************************/
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+  color: #212121; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif; }
+
+h1, h2, h3, h4, h5, h6, li, ul {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style-type: none; }
+
+img {
+  max-width: 100%; }
+
+html {
+  font-size: 24px;
+  font-family: "Roboto Slab", serif;
+  color: #212121; }
+
+html, body {
+  height: 100%;
+  width: 100%; }
+
+.clearfix {
+  overflow: auto; }
+
+#pageWrapper {
+  max-width: 960px;
+  margin: 0 auto; }
+
+/**************************
+HEADER
+**************************/
+header {
+  position: relative;
+  height: 500px; }
+  header .siteTitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    top: 2.5%;
+    left: 2.5%;
+    position: absolute;
+    z-index: 1;
+    color: white;
+    text-shadow: #7AAF36 0.01em 0.01em 0, #7AAF36 0.02em 0.02em 0, #7AAF36 0.03em 0.03em 0, #7AAF36 0.04em 0.04em 0, #7AAF36 0.05em 0.05em 0, #7AAF36 0.06em 0.06em 0, #7AAF36 0.07em 0.07em 0, #7AAF36 0.08em 0.08em 0, #7AAF36 0.09em 0.09em 0, #7AAF36 0.1em 0.1em 0; }
+  header .video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    width: 1400px;
+    height: 1000px;
+    z-index: -100;
+    transform: translate(-50%, -50%); }
+  header #loginBox {
+    font-family: "Roboto", sans-serif;
+    border: 5px solid #7AAF36;
+    color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    height: 100px;
+    background-color: #242424;
+    width: 300px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: -50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    header #loginBox:hover .loginAbso {
+      opacity: 0; }
+    header #loginBox span {
+      font-size: 0.5rem; }
+    header #loginBox img {
+      height: 40%;
+      width: 75%; }
+    header #loginBox .loginAbso {
+      opacity: 1;
+      transition: all .25s ease;
+      -webkit-transition: all .25s ease;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #7AAF36;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem; }
+
+/**************************
+MAIN
+**************************/
+main {
+  background-image: url("../media/triangles.png");
+  border-top: 5px solid #7AAF36;
+  padding-top: 100px;
+  padding-bottom: 200px; }
+  main .mainWrapper {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around; }
+    main .mainWrapper .infoBlock {
+      /* background-color: #777; */
+      color: rgba(255, 255, 255, 0.75);
+      width: 32%; }
+      main .mainWrapper .infoBlock .infoImage {
+        padding-top: 10px;
+        text-align: center; }
+        main .mainWrapper .infoBlock .infoImage img {
+          border-radius: 50%; }
+      main .mainWrapper .infoBlock .infoContent {
+        padding: 10px 5px;
+        font-size: 0.9rem; }
+
+/**************************
+FOOTER
+**************************/
+footer {
+  background-color: #181818;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.6rem;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/*# sourceMappingURL=styles.css.map */
