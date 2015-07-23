@@ -66,15 +66,17 @@ HEADER
     .feedHeader3 {
       @include flexbox(column, center, center);
 
-      button {
+      a {
         height: 50%;
         width: 95%;
         margin: 0 auto;
         font-size: 4rem;
         font-family: $sans;
         background-color: $green;
+        color: $wt2;
         border: none;
         @include transition;
+        @include flexbox(column, center, center);
 
         &:hover {
           background-color: $lightgreen;
@@ -132,7 +134,7 @@ MAIN
       @include flexbox(row, center, center);
 
       .feedFilterMain {
-        width: 90%;
+        width: 100%;
         padding: 25px 10%;
         align-self: flex-start;
         text-align: center;
@@ -149,13 +151,6 @@ MAIN
             @include flexbox(row, space-around, center);
           }
         }
-      }
-
-      .feedFilterCollapse {
-        width: 10%;
-        height: 100%;
-        background-color: $darkgray;
-        @include flexbox(row, center, center);
       }
     }
 

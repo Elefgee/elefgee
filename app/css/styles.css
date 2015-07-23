@@ -308,17 +308,35 @@ HEADER
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center; }
-      .feedHeader .feedHeaderBlock .feedHeader3 button {
+      .feedHeader .feedHeaderBlock .feedHeader3 a {
         height: 50%;
         width: 95%;
         margin: 0 auto;
         font-size: 4rem;
         font-family: "Roboto", sans-serif;
         background-color: #7AAF36;
+        color: whitesmoke;
         border: none;
         -webkit-transition: all .25s ease;
-        transition: all .25s ease; }
-        .feedHeader .feedHeaderBlock .feedHeader3 button:hover {
+        transition: all .25s ease;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        .feedHeader .feedHeaderBlock .feedHeader3 a:hover {
           background-color: #96d642; }
 
 /**************************
@@ -421,7 +439,7 @@ MAIN
       -ms-flex-align: center;
       align-items: center; }
       .feedMain .feedContent aside .feedFilterMain {
-        width: 90%;
+        width: 100%;
         padding: 25px 10%;
         align-self: flex-start;
         text-align: center; }
@@ -447,27 +465,6 @@ MAIN
           -webkit-align-items: center;
           -ms-flex-align: center;
           align-items: center; }
-      .feedMain .feedContent aside .feedFilterCollapse {
-        width: 10%;
-        height: 100%;
-        background-color: #4D4D4D;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center; }
     .feedMain .feedContent section {
       width: 75%;
       background-image: url("../media/triangles.png");
