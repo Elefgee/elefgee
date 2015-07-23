@@ -18,12 +18,19 @@
     font-size: 1.5em;
     color: $green;
     height: 100%;
+    width: 50px;
     right: 25px;
     @include flexbox(column, center, center);
 
     i {
       margin-top: 25px;
       margin-bottom: 25px;
+    }
+
+    i:hover {
+      color: $lightgreen;
+      cursor: pointer;
+      @include transition;
     }
   }
 }
@@ -85,16 +92,38 @@
 }
 
 
-.siteTitle {
+.siteTitleAccount {
   font-family: $sans;
   font-size: 2rem;
   font-weight: bolder;
-  top: 2.5%;
+  top: 3.5%;
   left: 2.5%;
   position: absolute;
   z-index: 1;
   color: white;
+
   text-shadow: $green .01em .01em 0, $green .02em .02em 0, $green .03em .03em 0, $green .04em .04em 0, $green .05em .05em 0, $green .06em .06em 0, $green .07em .07em 0, $green .08em .08em 0, $green .09em .09em 0, $green .1em .1em 0;
+}
+
+.accountLFGBtn {
+    @include flexbox(row,center,center);
+    color:white;
+    height: 50px;
+    width: 200px;
+    position: absolute;
+    top: 3%;
+    right: 2.5%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    font-family: $sans;
+    z-index: 1;
+    background-color: $green;
+    border: none;
+    @include transition;
+
+    &:hover {
+      background-color: $lightgreen;
+    }
 }
 
 // FEED //

@@ -648,6 +648,7 @@ FOOTER
     font-size: 1.5em;
     color: #7AAF36;
     height: 100%;
+    width: 50px;
     right: 25px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -669,6 +670,11 @@ FOOTER
     .accountHeader .accountSideNav i {
       margin-top: 25px;
       margin-bottom: 25px; }
+    .accountHeader .accountSideNav i:hover {
+      color: #96d642;
+      cursor: pointer;
+      -webkit-transition: all .25s ease;
+      transition: all .25s ease; }
 
 .accountNav {
   display: -webkit-box;
@@ -762,16 +768,51 @@ FOOTER
     width: 100%;
     height: 100%; }
 
-.siteTitle {
+.siteTitleAccount {
   font-family: "Roboto", sans-serif;
   font-size: 2rem;
   font-weight: bolder;
-  top: 2.5%;
+  top: 3.5%;
   left: 2.5%;
   position: absolute;
   z-index: 1;
   color: white;
   text-shadow: #7AAF36 0.01em 0.01em 0, #7AAF36 0.02em 0.02em 0, #7AAF36 0.03em 0.03em 0, #7AAF36 0.04em 0.04em 0, #7AAF36 0.05em 0.05em 0, #7AAF36 0.06em 0.06em 0, #7AAF36 0.07em 0.07em 0, #7AAF36 0.08em 0.08em 0, #7AAF36 0.09em 0.09em 0, #7AAF36 0.1em 0.1em 0; }
+
+.accountLFGBtn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: white;
+  height: 50px;
+  width: 200px;
+  position: absolute;
+  top: 3%;
+  right: 2.5%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  z-index: 1;
+  background-color: #7AAF36;
+  border: none;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease; }
+  .accountLFGBtn:hover {
+    background-color: #96d642; }
 
 .feedPostBlock {
   height: 300px;
