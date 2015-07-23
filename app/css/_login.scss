@@ -6,18 +6,6 @@ HEADER
   position: relative;
   height: 500px;
 
-  .siteTitle {
-    font-family: $sans;
-    font-size: 2rem;
-    font-weight: bolder;
-    top: 2.5%;
-    left: 2.5%;
-    position: absolute;
-    z-index: 1;
-    color: white;
-    text-shadow: $shadow .01em .01em 0, $shadow .02em .02em 0, $shadow .03em .03em 0, $shadow .04em .04em 0, $shadow .05em .05em 0, $shadow .06em .06em 0, $shadow .07em .07em 0, $shadow .08em .08em 0, $shadow .09em .09em 0, $shadow .1em .1em 0;
-  }
-
   .video {
    position: fixed;
    top: 50%; left: 50%;
@@ -34,17 +22,14 @@ HEADER
     color: $wt;
     position: absolute;
     height: 100px;
-    background-color: $loginbg;
+    background-color: $lightblack;
     width: 300px;
     left:0;
     right:0;
     margin-left:auto;
     margin-right:auto;
     bottom: -50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    @include flexbox(column, space-around, center);
 
     &:hover .loginAbso {
       opacity: 0;
@@ -69,10 +54,8 @@ HEADER
       bottom: 0;
       left: 0;
       background-color: $green;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-size: 2rem;
+      @include flexbox(row, center, center);
     }
   }
 }
@@ -90,8 +73,7 @@ MAIN
   .mainWrapper {
     width: 85%;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
+    @include flexbox(row, space-around, stretch);
 
     .loginInfoBlock {
 
@@ -120,11 +102,9 @@ FOOTER
 **************************/
 
 .loginFooter {
-  background-color: $footerbg;
+  background-color: $darkblack;
   color: $wt;
   font-size: 0.6rem;
   height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexbox(row, center, center);
 }
