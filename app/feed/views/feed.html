@@ -6,7 +6,7 @@
   <div class="feedHeaderBlock">
     <div class="feedHeader1">
       <div class="feedUserImage">
-        <img src="http://www.placehold.it/300x300">
+        <img src="http://www.placehold.it/250x250">
       </div>
       <div class="feedUserScore">
         85%
@@ -17,7 +17,7 @@
         <h2>Mr. Gameman</h2>
       </div>
       <div class="feedUserDescription">
-        I am a 40 year old father of two. My wife left me 2 years ago and I use video games to fill the ever-growing void within me. I'm so lonely! I am a 40 year old father of two. My wife left me 2 years ago and I use video games to fill the ever-growing void within me. I'm so lonely! I am a 40 year old father of two. My wife left me 2 years ago and I use video games to fill the ever-growing void within me. I'm so lonely!
+        I am a 40 year old father of two. My wife left me 2 years ago and I use video games to fill the ever-growing void within me. I am a competent gamer, but I take frequent sobbing breaks. Please excuse any sad, pathetic noises I may make over chat. I'm so lonely!
       </div>
     </div>
     <div class="feedHeader3">
@@ -37,30 +37,57 @@
   <div class="feedContent">
     <aside>
       <div class="feedFilterMain">
-        Main
+        <h3>Filter</h3>
+        <div class="filterParameters">
+          <div>
+            <input type="checkbox" name="filterParam1">
+            <label for="filterParam1">Parameter 1</label>
+          </div>
+          <div>
+            <input type="checkbox" name="filterParam2">
+            <label for="filterParam2">Parameter 2</label>
+          </div>
+          <div>
+            <input type="checkbox" name="filterParam3">
+            <label for="filterParam3">Parameter 3</label>
+          </div>
+          <div>
+            <input type="checkbox" name="filterParam4">
+            <label for="filterParam4">Parameter 4</label>
+          </div>
+          <div>
+            <input type="checkbox" name="filterParam5">
+            <label for="filterParam5">Parameter 5</label>
+          </div>
+        </div>
       </div>
       <div class="feedFilterCollapse">
         <i class="fa fa-chevron-right"></i>
       </div>
     </aside>
     <section>
-      Section
-      <div class="feedPostBlock">
+      <div class="feedPostBlock" ng-repeat="i in getNumber(number) track by $index">
         <div class="feedPostImage">
-
+          <img src="http://www.placehold.it/200x200">
         </div>
         <div class="feedPostInfo1">
-
+          <div class="feedPostName">
+            <h4>Mr. Gameman</h4>
+          </div>
+          <div class="feedPostDescription">
+            Looking to own some noobs in TF2! Please respond only if you are above the age of 30, have at least 100 hours played, and can withstand constant sobbing.
+          </div>
         </div>
         <div class="feedPostInfo2">
           <div class="feedPostGame">
-
+            Team Fortress 2
           </div>
           <div class="feedPostActions">
-
+            <i class="fa fa-envelope"></i>
+            <i class="fa fa-user-plus"></i>
           </div>
           <div class="feedPostTime">
-
+            2 hours ago
           </div>
         </div>
       </div>
