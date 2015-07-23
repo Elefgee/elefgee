@@ -1,0 +1,44 @@
+<div class="siteTitle">
+  <a href="">ELEFGEE</a>
+</div>
+
+<div class="accountHeader">
+  <div class="accountProfilePicture">
+    <img src="http://www.placecage.com/200/200" alt="">
+  </div>
+  <div class="accountSideNav">
+    <i class="fa fa-home"></i>
+    <i class="fa fa-user-plus"></i>
+    <i class="fa fa-envelope"></i>
+  </div>
+</div>
+
+<div class="accountNav">
+  <div class="navBtn accountAccBtn" ng-class="isTrue('account') ? 'navBtnActive' : 'navBtn'" ng-click="accountNavClick('account')" >
+    Account
+  </div>
+  <div class="navBtn accountLibBtn" ng-class="isTrue('library') ? 'navBtnActive' : 'navBtn'" ng-click="accountNavClick('library')" >
+    Library
+  </div>
+  <div class="navBtn accountPostsBtn" ng-class="isTrue('posts') ? 'navBtnActive' : 'navBtn'" ng-click="accountNavClick('posts')" >
+    Posts
+  </div>
+</div>
+
+<div class="infoWrap">
+<div class="info accountInfo" ng-if='(navs[0].active)'>
+  ALL DE INFO ON JEW
+</div>
+
+<div class="info accountLibrary" ng-if='(navs[1].active)'>
+  DER SHULD BE GAMES HUR
+</div>
+
+<div class="info accountPosts" ng-if='(navs[2].active)'>
+  POSTS SHULD BE HUR
+</div>
+</div>
+
+<footer class="loginFooter">
+  &copy; 2015 Elefgee, All Rights Reserved
+</footer>

@@ -14,6 +14,7 @@
       };
 
       var getPlayerSummary = function(interfaceName, methodName, versionName, steamId) {
+
         var request = {
           method: 'JSONP',
           url: playerUrlOpts.buildUrl(interfaceName, methodName, versionName, steamId),

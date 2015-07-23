@@ -5,7 +5,8 @@
     .module('elefgee', [
       'ngRoute',
       'ngAnimate',
-      'underscore'
+      'underscore',
+      'account'
     ])
     .config(function ($routeProvider) {
       $routeProvider

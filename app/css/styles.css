@@ -638,6 +638,167 @@ FOOTER
   justify-content: center;
   align-items: center; }
 
+.accountHeader {
+  position: relative;
+  height: 500px;
+  background: url("../media/subtle_white_feathers.png");
+  background-position: center;
+  background-attachment: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .accountHeader .accountProfilePicture img {
+    border-radius: 50%;
+    box-shadow: 0px 1px 5px 1px black; }
+  .accountHeader .accountSideNav {
+    position: absolute;
+    font-size: 1.5em;
+    color: #7AAF36;
+    height: 100%;
+    right: 25px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .accountHeader .accountSideNav i {
+      margin-top: 25px;
+      margin-bottom: 25px; }
+
+.accountNav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 75px;
+  width: 100vw;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease; }
+  .accountNav .navBtn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    color: whitesmoke;
+    background-color: #242424;
+    border: 5px solid #7AAF36;
+    height: 100%;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease; }
+  .accountNav .navBtnActive {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    color: whitesmoke;
+    background-color: #7AAF36;
+    border: 5px solid #7AAF36;
+    height: 100%;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease; }
+  .accountNav .navBtn:hover {
+    background-color: #7AAF36; }
+  .accountNav .navBtn:active {
+    background-color: #242424; }
+  .accountNav .navBtnActive:hover {
+    background-color: #7AAF36; }
+  .accountNav .navBtnActive:active {
+    background-color: #242424; }
+
+.infoWrap {
+  min-height: 800px;
+  width: 100vw; }
+  .infoWrap .info {
+    width: 100%;
+    height: 100%; }
+
+.siteTitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: bolder;
+  top: 2.5%;
+  left: 2.5%;
+  position: absolute;
+  z-index: 1;
+  color: white;
+  text-shadow: #7AAF36 0.01em 0.01em 0, #7AAF36 0.02em 0.02em 0, #7AAF36 0.03em 0.03em 0, #7AAF36 0.04em 0.04em 0, #7AAF36 0.05em 0.05em 0, #7AAF36 0.06em 0.06em 0, #7AAF36 0.07em 0.07em 0, #7AAF36 0.08em 0.08em 0, #7AAF36 0.09em 0.09em 0, #7AAF36 0.1em 0.1em 0; }
+
+.loginFooter {
+  background-color: #181818;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.6rem;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 /**************************
 GLOBALS
 **************************/
