@@ -42,12 +42,15 @@ html, body {
   margin: 0 auto; }
 
 /**************************
+PARTIALS
+**************************/
+/**************************
 HEADER
 **************************/
-header {
+.loginHeader {
   position: relative;
   height: 500px; }
-  header .siteTitle {
+  .loginHeader .siteTitle {
     font-family: "Roboto", sans-serif;
     font-size: 2rem;
     font-weight: bolder;
@@ -57,7 +60,7 @@ header {
     z-index: 1;
     color: white;
     text-shadow: #7AAF36 0.01em 0.01em 0, #7AAF36 0.02em 0.02em 0, #7AAF36 0.03em 0.03em 0, #7AAF36 0.04em 0.04em 0, #7AAF36 0.05em 0.05em 0, #7AAF36 0.06em 0.06em 0, #7AAF36 0.07em 0.07em 0, #7AAF36 0.08em 0.08em 0, #7AAF36 0.09em 0.09em 0, #7AAF36 0.1em 0.1em 0; }
-  header .video {
+  .loginHeader .video {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -66,7 +69,7 @@ header {
     height: 1000px;
     z-index: -100;
     transform: translate(-50%, -50%); }
-  header #loginBox {
+  .loginHeader .loginBlock {
     font-family: "Roboto", sans-serif;
     border: 5px solid #7AAF36;
     color: rgba(255, 255, 255, 0.75);
@@ -83,14 +86,14 @@ header {
     flex-direction: column;
     justify-content: space-around;
     align-items: center; }
-    header #loginBox:hover .loginAbso {
+    .loginHeader .loginBlock:hover .loginAbso {
       opacity: 0; }
-    header #loginBox span {
+    .loginHeader .loginBlock span {
       font-size: 0.5rem; }
-    header #loginBox img {
+    .loginHeader .loginBlock img {
       height: 40%;
       width: 75%; }
-    header #loginBox .loginAbso {
+    .loginHeader .loginBlock .loginAbso {
       opacity: 1;
       transition: all .25s ease;
       -webkit-transition: all .25s ease;
@@ -108,33 +111,133 @@ header {
 /**************************
 MAIN
 **************************/
-main {
+.loginMain {
   background-image: url("../media/triangles.png");
   border-top: 5px solid #7AAF36;
   padding-top: 100px;
   padding-bottom: 200px; }
-  main .mainWrapper {
+  .loginMain .mainWrapper {
     width: 85%;
     margin: 0 auto;
     display: flex;
     justify-content: space-around; }
-    main .mainWrapper .infoBlock {
-      /* background-color: #777; */
+    .loginMain .mainWrapper .loginInfoBlock {
       color: rgba(255, 255, 255, 0.75);
       width: 32%; }
-      main .mainWrapper .infoBlock .infoImage {
+      .loginMain .mainWrapper .loginInfoBlock .loginInfoImage {
         padding-top: 10px;
         text-align: center; }
-        main .mainWrapper .infoBlock .infoImage img {
+        .loginMain .mainWrapper .loginInfoBlock .loginInfoImage img {
           border-radius: 50%; }
-      main .mainWrapper .infoBlock .infoContent {
+      .loginMain .mainWrapper .loginInfoBlock .loginInfoContent {
         padding: 10px 5px;
         font-size: 0.9rem; }
 
 /**************************
 FOOTER
 **************************/
-footer {
+.loginFooter {
+  background-color: #181818;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.6rem;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/**************************
+HEADER
+**************************/
+.loginHeader {
+  position: relative;
+  height: 500px; }
+  .loginHeader .siteTitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    top: 2.5%;
+    left: 2.5%;
+    position: absolute;
+    z-index: 1;
+    color: white;
+    text-shadow: #7AAF36 0.01em 0.01em 0, #7AAF36 0.02em 0.02em 0, #7AAF36 0.03em 0.03em 0, #7AAF36 0.04em 0.04em 0, #7AAF36 0.05em 0.05em 0, #7AAF36 0.06em 0.06em 0, #7AAF36 0.07em 0.07em 0, #7AAF36 0.08em 0.08em 0, #7AAF36 0.09em 0.09em 0, #7AAF36 0.1em 0.1em 0; }
+  .loginHeader .video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    width: 1400px;
+    height: 1000px;
+    z-index: -100;
+    transform: translate(-50%, -50%); }
+  .loginHeader .loginBlock {
+    font-family: "Roboto", sans-serif;
+    border: 5px solid #7AAF36;
+    color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    height: 100px;
+    background-color: #242424;
+    width: 300px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: -50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    .loginHeader .loginBlock:hover .loginAbso {
+      opacity: 0; }
+    .loginHeader .loginBlock span {
+      font-size: 0.5rem; }
+    .loginHeader .loginBlock img {
+      height: 40%;
+      width: 75%; }
+    .loginHeader .loginBlock .loginAbso {
+      opacity: 1;
+      transition: all .25s ease;
+      -webkit-transition: all .25s ease;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #7AAF36;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem; }
+
+/**************************
+MAIN
+**************************/
+.loginMain {
+  background-image: url("../media/triangles.png");
+  border-top: 5px solid #7AAF36;
+  padding-top: 100px;
+  padding-bottom: 200px; }
+  .loginMain .mainWrapper {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around; }
+    .loginMain .mainWrapper .loginInfoBlock {
+      color: rgba(255, 255, 255, 0.75);
+      width: 32%; }
+      .loginMain .mainWrapper .loginInfoBlock .loginInfoImage {
+        padding-top: 10px;
+        text-align: center; }
+        .loginMain .mainWrapper .loginInfoBlock .loginInfoImage img {
+          border-radius: 50%; }
+      .loginMain .mainWrapper .loginInfoBlock .loginInfoContent {
+        padding: 10px 5px;
+        font-size: 0.9rem; }
+
+/**************************
+FOOTER
+**************************/
+.loginFooter {
   background-color: #181818;
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.6rem;
