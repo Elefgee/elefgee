@@ -56,9 +56,11 @@
 
   .navBtn:hover {
     background-color: $green;
+    cursor: pointer;
   }
   .navBtn:active {
     background-color: $lightblack;
+    cursor:
   }
 
   .navBtnActive:hover {
@@ -78,4 +80,105 @@
     height: 100%;
   }
 
+}
+
+
+.siteTitle {
+  font-family: $sans;
+  font-size: 2rem;
+  font-weight: bolder;
+  top: 2.5%;
+  left: 2.5%;
+  position: absolute;
+  z-index: 1;
+  color: white;
+  text-shadow: $green .01em .01em 0, $green .02em .02em 0, $green .03em .03em 0, $green .04em .04em 0, $green .05em .05em 0, $green .06em .06em 0, $green .07em .07em 0, $green .08em .08em 0, $green .09em .09em 0, $green .1em .1em 0;
+}
+
+// FEED //
+
+.feedPostBlock {
+  height: 300px;
+  width: 100%;
+  margin: 0 auto 10px;
+  background-color: whitesmoke;
+  @include flexbox(row, center, center);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  > div {
+    width: 25%;
+    height: 100%;
+  }
+
+  > div:nth-of-type(2) {
+    width: 50%;
+  }
+
+  .feedPostImage {
+    @include flexbox(row, center, center);
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .feedPostInfo1 {
+    padding: 25px 0;
+    @include flexbox(column, center, center);
+
+    .feedPostName {
+      height: 25%;
+
+      h4 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .feedPostDescription {
+      height: 75%;
+      overflow: hidden;
+    }
+  }
+
+  .feedPostInfo2 {
+    text-align: right;
+    @include flexbox(column, space-between, center);
+
+    > div {
+      width: 100%;
+      padding-right: 5px;
+      font-size: 0.85rem;
+      color: $ddt;
+
+      &:nth-of-type(2) {
+        padding-right: 0;
+        text-align: center;
+        font-size: 2rem;
+        color: $green;
+        @include flexbox(row, space-around, center);
+
+        > i {
+          @include transition;
+          &:hover {
+            color: $lightgreen;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// FOOTER //
+.loginFooter {
+  background-color: $darkblack;
+  color: $wt;
+  font-size: 0.6rem;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
