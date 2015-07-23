@@ -65,14 +65,25 @@ HEADER
       white-space: nowrap;
 
       .postHeaderGameBlock {
+        position: relative;
         display: inline-block;
         height: 350px;
         width: 350px;
         margin-right: 25px;
         background-color: $darkgray;
+        cursor: pointer;
 
         &:last-of-type {
           margin-right: 0;
+        }
+
+        > i {
+          display: none;
+          position: absolute;
+          font-size: 3rem;
+          right: -18px;
+          top: -36px;
+          color: $green;
         }
 
         > div:first-of-type {
@@ -93,6 +104,14 @@ HEADER
           font-size: 1.25rem;
           font-family: $sans;
           padding: 17.5px 5px;
+        }
+      }
+
+      .postHeaderGameBlock.selectedGame {
+        background-color: $green;
+
+        > i {
+          display: block;
         }
       }
     }
