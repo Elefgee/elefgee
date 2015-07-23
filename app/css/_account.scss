@@ -60,14 +60,16 @@
   }
   .navBtn:active {
     background-color: $lightblack;
-    cursor:
+    cursor: pointer
   }
 
   .navBtnActive:hover {
     background-color: $green;
+    cursor: pointer
   }
   .navBtnActive:active {
     background-color: $lightblack;
+    cursor: pointer
   }
 }
 
