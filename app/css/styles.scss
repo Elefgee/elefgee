@@ -118,23 +118,14 @@ GLOBALS
 **************************/
 
 .siteTitle {
-  font-family: $sans;
-  font-size: 2rem;
-  font-weight: bolder;
   top: -1%;
-  left: 2.5%;
+  left: 1.5%;
   position: absolute;
   z-index: 1;
-  color: white;
-  text-shadow: $green .01em .01em 0, $green .02em .02em 0, $green .03em .03em 0, $green .04em .04em 0, $green .05em .05em 0, $green .06em .06em 0, $green .07em .07em 0, $green .08em .08em 0, $green .09em .09em 0, $green .1em .1em 0;
 
   img {
-    height: 150px;
-    width: 300px;
-  }
-
-  a {
-    color: white;
+    height: 75px;
+    width: 225px;
   }
 }
 

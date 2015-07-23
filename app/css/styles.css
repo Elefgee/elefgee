@@ -168,6 +168,15 @@ MAIN
         padding: 10px 5px;
         font-size: 0.9rem; }
 
+.siteTitleLogin {
+  top: 2%;
+  left: 1.5%;
+  position: absolute;
+  z-index: 1; }
+  .siteTitleLogin img {
+    height: 75px;
+    width: 225px; }
+
 /**************************
 HEADER
 **************************/
@@ -239,9 +248,14 @@ HEADER
       -ms-flex-align: center;
       align-items: center; }
       .feedHeader .feedHeaderBlock .feedHeader1 .feedUserImage {
-        height: 75%; }
+        height: 75%;
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
         .feedHeader .feedHeaderBlock .feedHeader1 .feedUserImage img {
-          border-radius: 50%; }
+          border-radius: 50%;
+          height: 75%; }
       .feedHeader .feedHeaderBlock .feedHeader1 .feedUserScore {
         height: 25%;
         font-size: 2rem; }
@@ -598,6 +612,15 @@ MAIN
                 transition: all .25s ease; }
                 .feedMain .feedContent section .feedPostBlock .feedPostInfo2 > div:nth-of-type(2) > i:hover {
                   color: #96d642; }
+
+.siteTitleFeed {
+  top: 2%;
+  left: 1.5%;
+  position: absolute;
+  z-index: 1; }
+  .siteTitleFeed img {
+    height: 75px;
+    width: 225px; }
 
 /**************************
 FOOTER
@@ -1269,20 +1292,13 @@ MAIN
 GLOBALS
 **************************/
 .siteTitle {
-  font-family: "Roboto", sans-serif;
-  font-size: 2rem;
-  font-weight: bolder;
   top: -1%;
-  left: 2.5%;
+  left: 1.5%;
   position: absolute;
-  z-index: 1;
-  color: white;
-  text-shadow: #7AAF36 0.01em 0.01em 0, #7AAF36 0.02em 0.02em 0, #7AAF36 0.03em 0.03em 0, #7AAF36 0.04em 0.04em 0, #7AAF36 0.05em 0.05em 0, #7AAF36 0.06em 0.06em 0, #7AAF36 0.07em 0.07em 0, #7AAF36 0.08em 0.08em 0, #7AAF36 0.09em 0.09em 0, #7AAF36 0.1em 0.1em 0; }
+  z-index: 1; }
   .siteTitle img {
-    height: 150px;
-    width: 300px; }
-  .siteTitle a {
-    color: white; }
+    height: 75px;
+    width: 225px; }
 
 footer {
   background-color: #181818;

@@ -30,9 +30,14 @@ HEADER
 
       .feedUserImage {
         height: 75%;
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         img {
           border-radius: 50%;
+          height: 75%
         }
       }
 
@@ -238,6 +243,18 @@ MAIN
         }
       }
     }
+  }
+}
+
+.siteTitleFeed {
+  top: 2%;
+  left: 1.5%;
+  position: absolute;
+  z-index: 1;
+
+  img {
+    height: 75px;
+    width: 225px;
   }
 }
 
