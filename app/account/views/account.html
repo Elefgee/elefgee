@@ -14,27 +14,27 @@
 </div>
 
 <div class="accountNav">
-  <div class="navBtn accountAccBtn">
+  <div class="navBtn accountAccBtn" ng-class="isTrue('account') ? 'navBtnActive' : 'navBtn'" ng-click="accountNavClick('account')" >
     Account
   </div>
-  <div class="navBtn accountLibBtn">
+  <div class="navBtn accountLibBtn" ng-class="isTrue('library') ? 'navBtnActive' : 'navBtn'" ng-click="accountNavClick('library')" >
     Library
   </div>
-  <div class="navBtn accountPostsBtn">
+  <div class="navBtn accountPostsBtn" ng-class="isTrue('posts') ? 'navBtnActive' : 'navBtn'" ng-click="accountNavClick('posts')" >
     Posts
   </div>
 </div>
 
 <div class="infoWrap">
-<div class="info accountInfo" >
+<div class="info accountInfo" ng-if='(navs[0].active)'>
   ALL DE INFO ON JEW
 </div>
 
-<div class="info accountLibrary">
+<div class="info accountLibrary" ng-if='(navs[1].active)'>
   DER SHULD BE GAMES HUR
 </div>
 
-<div class="info accountPosts">
+<div class="info accountPosts" ng-if='(navs[2].active)'>
   POSTS SHULD BE HUR
 </div>
 </div>

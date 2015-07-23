@@ -80,25 +80,6 @@ MIXINS
 **************************/
 
 @mixin flexbox($direction, $justify, $align) {
-<<<<<<< HEAD
- display: -webkit-box;
- display: -webkit-flex;
- display: -ms-flexbox;
- display: flex;
- -webkit-box-orient: vertical;
- -webkit-box-direction: normal;
- -webkit-flex-direction: $direction;
- -ms-flex-direction: $direction;
-         flex-direction: $direction;
- -webkit-box-pack: $justify;
- -webkit-justify-content: $justify;
- -ms-flex-pack: $justify;
-         justify-content: $justify;
- -webkit-box-align: $align;
- -webkit-align-items: $align;
- -ms-flex-align: $align;
-         align-items: $align;
-=======
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -121,7 +102,6 @@ MIXINS
 @mixin transition {
   -webkit-transition: all .25s ease;
   transition: all .25s ease;
->>>>>>> 4ef176279299cff326ffe28835235b7b12b10b53
 }
 
 /**************************
@@ -130,9 +110,7 @@ PARTIALS
 
 @import 'login';
 @import 'feed';
-<<<<<<< HEAD
 @import 'account';
-=======
 
 /**************************
 GLOBALS
@@ -153,4 +131,3 @@ GLOBALS
     color: white;
   }
 }
->>>>>>> 4ef176279299cff326ffe28835235b7b12b10b53

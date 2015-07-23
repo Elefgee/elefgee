@@ -32,14 +32,40 @@
   @include flexbox(row, center, center);
   height: 75px;
   width: 100vw;
+  @include transition;
 
   .navBtn {
     @include flexbox(row, center, center);
     width: 100%;
     color: $wt2;
-    background-color: $lightgray;
+    background-color: $lightblack;
     border: 5px solid $green;
     height: 100%;
+    @include transition;
+  }
+
+  .navBtnActive {
+    @include flexbox(row, center, center);
+    width: 100%;
+    color: $wt2;
+    background-color: $green;
+    border: 5px solid $green;
+    height: 100%;
+    @include transition;
+  }
+
+  .navBtn:hover {
+    background-color: $green;
+  }
+  .navBtn:active {
+    background-color: $lightblack;
+  }
+
+  .navBtnActive:hover {
+    background-color: $green;
+  }
+  .navBtnActive:active {
+    background-color: $lightblack;
   }
 }
 
@@ -64,13 +90,13 @@
   position: absolute;
   z-index: 1;
   color: white;
-  text-shadow: $shadow .01em .01em 0, $shadow .02em .02em 0, $shadow .03em .03em 0, $shadow .04em .04em 0, $shadow .05em .05em 0, $shadow .06em .06em 0, $shadow .07em .07em 0, $shadow .08em .08em 0, $shadow .09em .09em 0, $shadow .1em .1em 0;
+  text-shadow: $green .01em .01em 0, $green .02em .02em 0, $green .03em .03em 0, $green .04em .04em 0, $green .05em .05em 0, $green .06em .06em 0, $green .07em .07em 0, $green .08em .08em 0, $green .09em .09em 0, $green .1em .1em 0;
 }
 
 
 // FOOTER //
 .loginFooter {
-  background-color: $darkgray;
+  background-color: $darkblack;
   color: $wt;
   font-size: 0.6rem;
   height: 100px;
