@@ -10,14 +10,16 @@ $st: #727272;
 $dt: #B6B6B6;
 $ddt: #878787;
 $wt: rgba(255,255,255,0.75);
+$wt2: whitesmoke;
 
 $green: #7AAF36;
 $headerbg: gray;
-$loginbg: #242424;
-$infobg: #CCCCCC;
-$mainbg: #4D4D4D;
 $shadow: #7AAF36;
-$footerbg: #181818;
+
+$lightblack: #242424 ;
+$darkblack: #181818 ;
+$lightgray: #CCC;
+$darkgray: #4D4D4D ;
 
 $sans: 'Roboto', sans-serif;
 $serif: 'Roboto Slab', serif;
@@ -75,132 +77,33 @@ html, body {
 }
 
 /**************************
-HEADER
+MIXINS
 **************************/
 
-header {
-  position: relative;
-  height: 500px;
-
-  .siteTitle {
-    font-family: $sans;
-    font-size: 2rem;
-    font-weight: bolder;
-    top: 2.5%;
-    left: 2.5%;
-    position: absolute;
-    z-index: 1;
-    color: white;
-    text-shadow: $shadow .01em .01em 0, $shadow .02em .02em 0, $shadow .03em .03em 0, $shadow .04em .04em 0, $shadow .05em .05em 0, $shadow .06em .06em 0, $shadow .07em .07em 0, $shadow .08em .08em 0, $shadow .09em .09em 0, $shadow .1em .1em 0;
-  }
-
-    .video {
-   position: fixed;
-   top: 50%; left: 50%;
-   min-width: 100%;
-   width: 1400px;
-   height: 1000px;
-   z-index: -100;
-   transform: translate(-50%, -50%);
-  }
-
-  #loginBox {
-    font-family: $sans;
-    border: 5px solid $green;
-    color: $wt;
-    position: absolute;
-    height: 100px;
-    background-color: $loginbg;
-    width: 300px;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
-    bottom: -50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-
-    &:hover .loginAbso {
-      opacity: 0;
-    }
-
-    span {
-      font-size: 0.5rem;
-    }
-
-    img {
-      height: 40%;
-      width: 75%;
-    }
-
-    .loginAbso {
-      opacity: 1;
-      transition: all .25s ease;
-      -webkit-transition: all .25s ease;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: $green;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-    }
-  }
+@mixin flexbox($direction, $justify, $align) {
+ display: -webkit-box;
+ display: -webkit-flex;
+ display: -ms-flexbox;
+ display: flex;
+ -webkit-box-orient: vertical;
+ -webkit-box-direction: normal;
+ -webkit-flex-direction: $direction;
+ -ms-flex-direction: $direction;
+         flex-direction: $direction;
+ -webkit-box-pack: $justify;
+ -webkit-justify-content: $justify;
+ -ms-flex-pack: $justify;
+         justify-content: $justify;
+ -webkit-box-align: $align;
+ -webkit-align-items: $align;
+ -ms-flex-align: $align;
+         align-items: $align;
 }
 
 /**************************
-MAIN
+PARTIALS
 **************************/
 
-main {
-  background-image: url('../media/triangles.png');
-  border-top: 5px solid $green;
-  padding-top: 100px;
-  padding-bottom: 200px;
-
-  .mainWrapper {
-    width: 85%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-
-    .infoBlock {
-      /* background-color: #777; */
-      color: $wt;
-      width: 32%;
-
-      .infoImage {
-        padding-top: 10px;
-        text-align: center;
-
-        img {
-          border-radius: 50%;
-        }
-      }
-
-      .infoContent {
-        padding: 10px 5px;
-        font-size: 0.9rem;
-      }
-    }
-  }
-}
-
-/**************************
-FOOTER
-**************************/
-
-footer {
-  background-color: $footerbg;
-  color: $wt;
-  font-size: 0.6rem;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@import 'login';
+@import 'feed';
+@import 'account';

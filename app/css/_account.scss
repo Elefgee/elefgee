@@ -1,0 +1,80 @@
+.accountHeader {
+  position: relative;
+  height: 500px;
+  background: url('../media/subtle_white_feathers.png');
+  background-position: center;
+  background-attachment: fixed;
+  @include flexbox(row, center, center);
+
+  .accountProfilePicture {
+    img {
+      border-radius: 50%;
+      box-shadow: 0px 1px 5px 1px black;
+    }
+  }
+
+  .accountSideNav {
+    position: absolute;
+    font-size: 1.5em;
+    color: $green;
+    height: 100%;
+    right: 25px;
+    @include flexbox(column, center, center);
+
+    i {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.accountNav {
+  @include flexbox(row, center, center);
+  height: 75px;
+  width: 100vw;
+
+  .navBtn {
+    @include flexbox(row, center, center);
+    width: 100%;
+    color: $wt2;
+    background-color: $lightgray;
+    border: 5px solid $green;
+    height: 100%;
+  }
+}
+
+.infoWrap {
+  min-height: 800px;
+  width: 100vw;
+
+  .info {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+
+.siteTitle {
+  font-family: $sans;
+  font-size: 2rem;
+  font-weight: bolder;
+  top: 2.5%;
+  left: 2.5%;
+  position: absolute;
+  z-index: 1;
+  color: white;
+  text-shadow: $shadow .01em .01em 0, $shadow .02em .02em 0, $shadow .03em .03em 0, $shadow .04em .04em 0, $shadow .05em .05em 0, $shadow .06em .06em 0, $shadow .07em .07em 0, $shadow .08em .08em 0, $shadow .09em .09em 0, $shadow .1em .1em 0;
+}
+
+
+// FOOTER //
+.loginFooter {
+  background-color: $darkgray;
+  color: $wt;
+  font-size: 0.6rem;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
