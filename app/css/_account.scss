@@ -56,9 +56,11 @@
 
   .navBtn:hover {
     background-color: $green;
+    cursor: pointer;
   }
   .navBtn:active {
     background-color: $lightblack;
+    cursor:
   }
 
   .navBtnActive:hover {
@@ -97,7 +99,7 @@
 
 .feedPostBlock {
   height: 300px;
-  width: 98%;
+  width: 100%;
   margin: 0 auto 10px;
   background-color: whitesmoke;
   @include flexbox(row, center, center);
