@@ -12,7 +12,8 @@
 
   <div class="postHeaderGamesBlock">
     <div class="postHeaderGamesWrapper">
-      <div class="postHeaderGameBlock" ng-repeat="i in getNumber(number) track by $index">
+      <div class="postHeaderGameBlock" ng-repeat="i in getNumber(number) track by $index" ng-click="selectGame($event)">
+        <i class="fa fa-check"></i>
         <div>
           <img src="http://www.placehold.it/300x300">
         </div>
@@ -28,7 +29,9 @@
   <div class="postMainBlock">
     <div>
       <div class="postBlockImage">
-        <img src="http://www.placehold.it/200x200">
+        <a href="#/account">
+          <img src="http://www.placehold.it/200x200">
+        </a>
       </div>
       <div class="postBlockScore">
         85%
