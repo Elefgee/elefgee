@@ -256,16 +256,21 @@ HEADER
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-      -ms-flex-pack: center;
-      justify-content: center;
+      -webkit-box-pack: space-between;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: space-between;
+      justify-content: space-between;
       -webkit-box-align: center;
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center; }
-      .feedHeader .feedHeaderBlock .feedHeader1 .feedUserImage img {
-        border-radius: 50%; }
+      .feedHeader .feedHeaderBlock .feedHeader1 .feedUserImage {
+        height: 75%; }
+        .feedHeader .feedHeaderBlock .feedHeader1 .feedUserImage img {
+          border-radius: 50%; }
+      .feedHeader .feedHeaderBlock .feedHeader1 .feedUserScore {
+        height: 25%;
+        font-size: 2rem; }
     .feedHeader .feedHeaderBlock .feedHeader2 {
       display: -webkit-box;
       display: -webkit-flex;
@@ -347,6 +352,8 @@ MAIN
 **************************/
 nav {
   height: 75px;
+  border-top: 2px solid #181818;
+  border-bottom: 2px solid #181818;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -421,10 +428,203 @@ MAIN
       height: 100%; }
     .feedMain .feedContent aside {
       width: 25%;
-      background-color: blue; }
+      background-color: #CCC;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .feedMain .feedContent aside .feedFilterMain {
+        width: 90%;
+        padding: 25px 10%;
+        align-self: flex-start;
+        text-align: center; }
+        .feedMain .feedContent aside .feedFilterMain h3 {
+          font-size: 1.65rem;
+          text-decoration: underline;
+          margin-bottom: 25px; }
+        .feedMain .feedContent aside .feedFilterMain > div > div {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          -webkit-box-pack: space-around;
+          -webkit-justify-content: space-around;
+          -ms-flex-pack: space-around;
+          justify-content: space-around;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center; }
+      .feedMain .feedContent aside .feedFilterCollapse {
+        width: 10%;
+        height: 100%;
+        background-color: #4D4D4D;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; }
     .feedMain .feedContent section {
       width: 75%;
-      background-image: url("../media/triangles.png"); }
+      background-image: url("../media/triangles.png");
+      padding: 10px 0;
+      overflow: scroll; }
+      .feedMain .feedContent section .feedPostBlock {
+        height: 300px;
+        width: 98%;
+        margin: 0 auto 10px;
+        background-color: whitesmoke;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        .feedMain .feedContent section .feedPostBlock:last-of-type {
+          margin-bottom: 0; }
+        .feedMain .feedContent section .feedPostBlock > div {
+          width: 25%;
+          height: 100%; }
+        .feedMain .feedContent section .feedPostBlock > div:nth-of-type(2) {
+          width: 50%; }
+        .feedMain .feedContent section .feedPostBlock .feedPostImage {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center; }
+          .feedMain .feedContent section .feedPostBlock .feedPostImage img {
+            border-radius: 50%; }
+        .feedMain .feedContent section .feedPostBlock .feedPostInfo1 {
+          padding: 25px 0;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center; }
+          .feedMain .feedContent section .feedPostBlock .feedPostInfo1 .feedPostName {
+            height: 25%; }
+            .feedMain .feedContent section .feedPostBlock .feedPostInfo1 .feedPostName h4 {
+              font-size: 1.25rem; }
+          .feedMain .feedContent section .feedPostBlock .feedPostInfo1 .feedPostDescription {
+            height: 75%;
+            overflow: hidden; }
+        .feedMain .feedContent section .feedPostBlock .feedPostInfo2 {
+          text-align: right;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-pack: space-between;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: space-between;
+          justify-content: space-between;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center; }
+          .feedMain .feedContent section .feedPostBlock .feedPostInfo2 > div {
+            width: 100%;
+            padding-right: 5px;
+            font-size: 0.85rem;
+            color: #878787; }
+            .feedMain .feedContent section .feedPostBlock .feedPostInfo2 > div:nth-of-type(2) {
+              padding-right: 0;
+              text-align: center;
+              font-size: 2rem;
+              color: #7AAF36;
+              display: -webkit-box;
+              display: -webkit-flex;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -webkit-flex-direction: row;
+              -ms-flex-direction: row;
+              flex-direction: row;
+              -webkit-box-pack: space-around;
+              -webkit-justify-content: space-around;
+              -ms-flex-pack: space-around;
+              justify-content: space-around;
+              -webkit-box-align: center;
+              -webkit-align-items: center;
+              -ms-flex-align: center;
+              align-items: center; }
+              .feedMain .feedContent section .feedPostBlock .feedPostInfo2 > div:nth-of-type(2) > i {
+                -webkit-transition: all .25s ease;
+                transition: all .25s ease; }
+                .feedMain .feedContent section .feedPostBlock .feedPostInfo2 > div:nth-of-type(2) > i:hover {
+                  color: #96d642; }
 
 /**************************
 FOOTER
