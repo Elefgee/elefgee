@@ -34,8 +34,32 @@
   DER SHULD BE GAMES HUR
 </div>
 
-<div class="info accountPosts" ng-if='(navs[2].active)'>
-  POSTS SHULD BE HUR
+<div class="info accountPosts" ng-if='(navs[2].active)' ng-controller="FeedController">
+  <div class="feedPostBlock" ng-repeat="i in getNumber(number) track by $index">
+    <div class="feedPostImage">
+      <img src="http://www.placehold.it/200x200">
+    </div>
+    <div class="feedPostInfo1">
+      <div class="feedPostName">
+        <h4>Mr. Gameman</h4>
+      </div>
+      <div class="feedPostDescription">
+        Looking to own some noobs in TF2! Please respond only if you are above the age of 30, have at least 100 hours played, and can withstand constant sobbing.
+      </div>
+    </div>
+    <div class="feedPostInfo2">
+      <div class="feedPostGame">
+        Team Fortress 2
+      </div>
+      <div class="feedPostActions">
+        <i class="fa fa-envelope"></i>
+        <i class="fa fa-user-plus"></i>
+      </div>
+      <div class="feedPostTime">
+        2 hours ago
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 
