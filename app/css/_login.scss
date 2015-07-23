@@ -96,15 +96,3 @@ MAIN
     }
   }
 }
-
-/**************************
-FOOTER
-**************************/
-
-.loginFooter {
-  background-color: $darkblack;
-  color: $wt;
-  font-size: 0.6rem;
-  height: 100px;
-  @include flexbox(row, center, center);
-}

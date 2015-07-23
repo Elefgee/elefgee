@@ -111,6 +111,7 @@ PARTIALS
 @import 'login';
 @import 'feed';
 @import 'account';
+@import 'post';
 
 /**************************
 GLOBALS
@@ -120,7 +121,7 @@ GLOBALS
   font-family: $sans;
   font-size: 2rem;
   font-weight: bolder;
-  top: 2.5%;
+  top: -1%;
   left: 2.5%;
   position: absolute;
   z-index: 1;
@@ -130,4 +131,12 @@ GLOBALS
   a {
     color: white;
   }
+}
+
+footer {
+  background-color: $darkblack;
+  color: $wt;
+  font-size: 0.6rem;
+  height: 100px;
+  @include flexbox(row, center, center);
 }
