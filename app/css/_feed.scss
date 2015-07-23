@@ -7,7 +7,7 @@ HEADER
   background-position: 50% 55%;
   position: relative;
   height: 500px;
-  color: $wt;
+  color: $wt2;
   @include flexbox(row, center, center);
 
   .feedHeaderBlock {
@@ -92,8 +92,6 @@ MAIN
 
 nav {
   height: 75px;
-  border-top: 2px solid $darkblack;
-  border-bottom: 2px solid $darkblack;
   @include flexbox(row, center, center);
 
   > div {
@@ -157,7 +155,6 @@ MAIN
     section {
       width: 75%;
       background-image: url('../media/triangles.png');
-      padding: 10px 0;
       overflow: scroll;
 
       .feedPostBlock {
