@@ -26,13 +26,19 @@ HEADER
     }
 
     .feedHeader1 {
-      @include flexbox(column, center, center);
+      @include flexbox(column, space-between, center);
 
       .feedUserImage {
+        height: 75%;
 
         img {
           border-radius: 50%;
         }
+      }
+
+      .feedUserScore {
+        height: 25%;
+        font-size: 2rem;
       }
     }
 
@@ -84,6 +90,8 @@ MAIN
 
 nav {
   height: 75px;
+  border-top: 2px solid $darkblack;
+  border-bottom: 2px solid $darkblack;
   @include flexbox(row, center, center);
 
   > div {
@@ -120,12 +128,116 @@ MAIN
 
     aside {
       width: 25%;
-      background-color: blue;
+      background-color: $lightgray;
+      @include flexbox(row, center, center);
+
+      .feedFilterMain {
+        width: 90%;
+        padding: 25px 10%;
+        align-self: flex-start;
+        text-align: center;
+
+        h3 {
+          font-size: 1.65rem;
+          text-decoration: underline;
+          margin-bottom: 25px;
+        }
+
+        > div {
+
+          > div {
+            @include flexbox(row, space-around, center);
+          }
+        }
+      }
+
+      .feedFilterCollapse {
+        width: 10%;
+        height: 100%;
+        background-color: $darkgray;
+        @include flexbox(row, center, center);
+      }
     }
 
     section {
       width: 75%;
       background-image: url('../media/triangles.png');
+      padding: 10px 0;
+      overflow: scroll;
+
+      .feedPostBlock {
+        height: 300px;
+        width: 98%;
+        margin: 0 auto 10px;
+        background-color: whitesmoke;
+        @include flexbox(row, center, center);
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        > div {
+          width: 25%;
+          height: 100%;
+        }
+
+        > div:nth-of-type(2) {
+          width: 50%;
+        }
+
+        .feedPostImage {
+          @include flexbox(row, center, center);
+
+          img {
+            border-radius: 50%;
+          }
+        }
+
+        .feedPostInfo1 {
+          padding: 25px 0;
+          @include flexbox(column, center, center);
+
+          .feedPostName {
+            height: 25%;
+
+            h4 {
+              font-size: 1.25rem;
+            }
+          }
+
+          .feedPostDescription {
+            height: 75%;
+            overflow: hidden;
+          }
+        }
+
+        .feedPostInfo2 {
+          text-align: right;
+          @include flexbox(column, space-between, center);
+
+          > div {
+            width: 100%;
+            padding-right: 5px;
+            font-size: 0.85rem;
+            color: $ddt;
+
+            &:nth-of-type(2) {
+              padding-right: 0;
+              text-align: center;
+              font-size: 2rem;
+              color: $green;
+              @include flexbox(row, space-around, center);
+
+              > i {
+                @include transition;
+                &:hover {
+                  color: $lightgreen;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
