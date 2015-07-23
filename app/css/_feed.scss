@@ -2,77 +2,78 @@
 HEADER
 **************************/
 
-.loginHeader {
+.feedHeader {
+  background-image: url('../media/tetris.jpg');
+  background-position: 50% 55%;
   position: relative;
   height: 500px;
+  color: $wt;
+  @include flexbox(row, center, center);
 
-  .siteTitle {
-    font-family: $sans;
-    font-size: 2rem;
-    font-weight: bolder;
-    top: 2.5%;
-    left: 2.5%;
-    position: absolute;
-    z-index: 1;
-    color: white;
-    text-shadow: $shadow .01em .01em 0, $shadow .02em .02em 0, $shadow .03em .03em 0, $shadow .04em .04em 0, $shadow .05em .05em 0, $shadow .06em .06em 0, $shadow .07em .07em 0, $shadow .08em .08em 0, $shadow .09em .09em 0, $shadow .1em .1em 0;
-  }
+  .feedHeaderBlock {
+    height: 70%;
+    width: 90%;
+    margin: 0 auto;
+    @include flexbox(row, space-between, center);
 
-  .video {
-   position: fixed;
-   top: 50%; left: 50%;
-   min-width: 100%;
-   width: 1400px;
-   height: 1000px;
-   z-index: -100;
-   transform: translate(-50%, -50%);
-  }
-
-  .loginBlock {
-    font-family: $sans;
-    border: 5px solid $green;
-    color: $wt;
-    position: absolute;
-    height: 100px;
-    background-color: $lightgray;
-    width: 300px;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
-    bottom: -50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-
-    &:hover .loginAbso {
-      opacity: 0;
+    > div {
+      width: 25%;
+      height: 100%;
     }
 
-    span {
-      font-size: 0.5rem;
+    > div:nth-of-type(2) {
+      width: 50%;
     }
 
-    img {
-      height: 40%;
-      width: 75%;
+    .feedHeader1 {
+      @include flexbox(column, center, center);
+
+      .feedUserImage {
+
+        img {
+          border-radius: 50%;
+        }
+      }
     }
 
-    .loginAbso {
-      opacity: 1;
-      transition: all .25s ease;
-      -webkit-transition: all .25s ease;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: $green;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
+    .feedHeader2 {
+      @include flexbox(column, center, center);
+
+      > div {
+        @include flexbox(column, stretch, center);
+      }
+
+      .feedUserName {
+        height: 25%;
+        justify-content: center;
+      }
+
+      .feedUserDescription {
+        height: 75%;
+        max-height: 75%;
+        padding: 10px;
+        overflow: hidden;
+        justify-content: flex-start;
+      }
+    }
+
+    .feedHeader3 {
+      @include flexbox(column, center, center);
+
+      button {
+        height: 50%;
+        width: 95%;
+        margin: 0 auto;
+        font-size: 4rem;
+        font-family: $sans;
+        background-color: $green;
+        border: none;
+        @include transition;
+
+        &:hover {
+          background-color: $lightgreen;
+        }
+      }
     }
   }
 }
@@ -81,36 +82,50 @@ HEADER
 MAIN
 **************************/
 
-.loginMain {
-  background-image: url('../media/triangles.png');
-  border-top: 5px solid $green;
-  padding-top: 100px;
-  padding-bottom: 200px;
+nav {
+  height: 75px;
+  @include flexbox(row, center, center);
 
-  .mainWrapper {
-    width: 85%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
+  > div {
+    height: 100%;
+    width: 50%;
+    background-color: $lightblack;
+    font-size: 2rem;
+    font-family: $sans;
+    color: $wt;
+    @include flexbox(row, center, center);
+  }
 
-    .loginInfoBlock {
+  > div:first-of-type {
+    background-color: $darkgray;
+  }
+}
 
-      color: $wt;
-      width: 32%;
+/**************************
+MAIN
+**************************/
 
-      .loginInfoImage {
-        padding-top: 10px;
-        text-align: center;
+.feedMain {
+  position: relative;
+  min-height: 800px;
+  height: 800px;
 
-        img {
-          border-radius: 50%;
-        }
-      }
+  .feedContent {
+    height: 100%;
+    @include flexbox(row, center, center);
 
-      .loginInfoContent {
-        padding: 10px 5px;
-        font-size: 0.9rem;
-      }
+    > * {
+      height: 100%;
+    }
+
+    aside {
+      width: 25%;
+      background-color: blue;
+    }
+
+    section {
+      width: 75%;
+      background-image: url('../media/triangles.png');
     }
   }
 }
@@ -120,7 +135,7 @@ FOOTER
 **************************/
 
 .loginFooter {
-  background-color: $darkgray;
+  background-color: $darkblack;
   color: $wt;
   font-size: 0.6rem;
   height: 100px;

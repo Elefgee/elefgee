@@ -1,376 +1,53 @@
-/**************************
-SASS VARIABLES
-**************************/
-/**************************
-SETUP
-**************************/
-*, *:before, *:after {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box; }
+/*
+Error: Invalid CSS after "...ay: -webkit-box": expected "{", was ";"
+        on line 84 of css/styles.scss
 
-a {
-  text-decoration: none;
-  color: #212121; }
+79: MIXINS
+80: **************************\/
+81: 
+82: @mixin flexbox($direction, $justify, $align) {
+83: <<<<<<< HEAD
+84:  display: -webkit-box;
+85:  display: -webkit-flex;
+86:  display: -ms-flexbox;
+87:  display: flex;
+88:  -webkit-box-orient: vertical;
+89:  -webkit-box-direction: normal;
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif; }
-
-h1, h2, h3, h4, h5, h6, li, ul {
-  margin: 0;
-  padding: 0; }
-
-ul {
-  list-style-type: none; }
-
-img {
-  max-width: 100%; }
-
-html {
-  font-size: 24px;
-  font-family: "Roboto Slab", serif;
-  color: #212121; }
-
-html, body {
-  height: 100%;
-  width: 100%; }
-
-.clearfix {
-  overflow: auto; }
-
-#pageWrapper {
-  max-width: 960px;
-  margin: 0 auto; }
-
-/**************************
-MIXINS
-**************************/
-/**************************
-PARTIALS
-**************************/
-/**************************
-HEADER
-**************************/
-.loginHeader {
-  position: relative;
-  height: 500px; }
-  .loginHeader .siteTitle {
-    font-family: "Roboto", sans-serif;
-    font-size: 2rem;
-    font-weight: bolder;
-    top: 2.5%;
-    left: 2.5%;
-    position: absolute;
-    z-index: 1;
-    color: white;
-    text-shadow: #7AAF36 0.01em 0.01em 0, #7AAF36 0.02em 0.02em 0, #7AAF36 0.03em 0.03em 0, #7AAF36 0.04em 0.04em 0, #7AAF36 0.05em 0.05em 0, #7AAF36 0.06em 0.06em 0, #7AAF36 0.07em 0.07em 0, #7AAF36 0.08em 0.08em 0, #7AAF36 0.09em 0.09em 0, #7AAF36 0.1em 0.1em 0; }
-  .loginHeader .video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    width: 1400px;
-    height: 1000px;
-    z-index: -100;
-    transform: translate(-50%, -50%); }
-  .loginHeader .loginBlock {
-    font-family: "Roboto", sans-serif;
-    border: 5px solid #7AAF36;
-    color: rgba(255, 255, 255, 0.75);
-    position: absolute;
-    height: 100px;
-    background-color: #CCC;
-    width: 300px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    bottom: -50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center; }
-    .loginHeader .loginBlock:hover .loginAbso {
-      opacity: 0; }
-    .loginHeader .loginBlock span {
-      font-size: 0.5rem; }
-    .loginHeader .loginBlock img {
-      height: 40%;
-      width: 75%; }
-    .loginHeader .loginBlock .loginAbso {
-      opacity: 1;
-      transition: all .25s ease;
-      -webkit-transition: all .25s ease;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: #7AAF36;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem; }
-
-/**************************
-MAIN
-**************************/
-.loginMain {
-  background-image: url("../media/triangles.png");
-  border-top: 5px solid #7AAF36;
-  padding-top: 100px;
-  padding-bottom: 200px; }
-  .loginMain .mainWrapper {
-    width: 85%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around; }
-    .loginMain .mainWrapper .loginInfoBlock {
-      color: rgba(255, 255, 255, 0.75);
-      width: 32%; }
-      .loginMain .mainWrapper .loginInfoBlock .loginInfoImage {
-        padding-top: 10px;
-        text-align: center; }
-        .loginMain .mainWrapper .loginInfoBlock .loginInfoImage img {
-          border-radius: 50%; }
-      .loginMain .mainWrapper .loginInfoBlock .loginInfoContent {
-        padding: 10px 5px;
-        font-size: 0.9rem; }
-
-/**************************
-FOOTER
-**************************/
-.loginFooter {
-  background-color: #4D4D4D;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.6rem;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-/**************************
-HEADER
-**************************/
-.loginHeader {
-  position: relative;
-  height: 500px; }
-  .loginHeader .siteTitle {
-    font-family: "Roboto", sans-serif;
-    font-size: 2rem;
-    font-weight: bolder;
-    top: 2.5%;
-    left: 2.5%;
-    position: absolute;
-    z-index: 1;
-    color: white;
-    text-shadow: #7AAF36 0.01em 0.01em 0, #7AAF36 0.02em 0.02em 0, #7AAF36 0.03em 0.03em 0, #7AAF36 0.04em 0.04em 0, #7AAF36 0.05em 0.05em 0, #7AAF36 0.06em 0.06em 0, #7AAF36 0.07em 0.07em 0, #7AAF36 0.08em 0.08em 0, #7AAF36 0.09em 0.09em 0, #7AAF36 0.1em 0.1em 0; }
-  .loginHeader .video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    width: 1400px;
-    height: 1000px;
-    z-index: -100;
-    transform: translate(-50%, -50%); }
-  .loginHeader .loginBlock {
-    font-family: "Roboto", sans-serif;
-    border: 5px solid #7AAF36;
-    color: rgba(255, 255, 255, 0.75);
-    position: absolute;
-    height: 100px;
-    background-color: #CCC;
-    width: 300px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    bottom: -50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center; }
-    .loginHeader .loginBlock:hover .loginAbso {
-      opacity: 0; }
-    .loginHeader .loginBlock span {
-      font-size: 0.5rem; }
-    .loginHeader .loginBlock img {
-      height: 40%;
-      width: 75%; }
-    .loginHeader .loginBlock .loginAbso {
-      opacity: 1;
-      transition: all .25s ease;
-      -webkit-transition: all .25s ease;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: #7AAF36;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem; }
-
-/**************************
-MAIN
-**************************/
-.loginMain {
-  background-image: url("../media/triangles.png");
-  border-top: 5px solid #7AAF36;
-  padding-top: 100px;
-  padding-bottom: 200px; }
-  .loginMain .mainWrapper {
-    width: 85%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around; }
-    .loginMain .mainWrapper .loginInfoBlock {
-      color: rgba(255, 255, 255, 0.75);
-      width: 32%; }
-      .loginMain .mainWrapper .loginInfoBlock .loginInfoImage {
-        padding-top: 10px;
-        text-align: center; }
-        .loginMain .mainWrapper .loginInfoBlock .loginInfoImage img {
-          border-radius: 50%; }
-      .loginMain .mainWrapper .loginInfoBlock .loginInfoContent {
-        padding: 10px 5px;
-        font-size: 0.9rem; }
-
-/**************************
-FOOTER
-**************************/
-.loginFooter {
-  background-color: #4D4D4D;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.6rem;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.accountHeader {
-  position: relative;
-  height: 500px;
-  background: url("../media/subtle_white_feathers.png");
-  background-position: center;
-  background-attachment: fixed;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center; }
-  .accountHeader .accountProfilePicture img {
-    border-radius: 50%;
-    box-shadow: 0px 1px 5px 1px black; }
-  .accountHeader .accountSideNav {
-    position: absolute;
-    font-size: 1.5em;
-    color: #7AAF36;
-    height: 100%;
-    right: 25px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center; }
-    .accountHeader .accountSideNav i {
-      margin-top: 25px;
-      margin-bottom: 25px; }
-
-.accountNav {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 75px;
-  width: 100vw; }
-  .accountNav .navBtn {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 100%;
-    color: whitesmoke;
-    background-color: #CCC;
-    border: 5px solid #7AAF36;
-    height: 100%; }
-
-.infoWrap {
-  min-height: 800px;
-  width: 100vw; }
-  .infoWrap .info {
-    width: 100%;
-    height: 100%; }
-
-.siteTitle {
-  font-family: "Roboto", sans-serif;
-  font-size: 2rem;
-  font-weight: bolder;
-  top: 2.5%;
-  left: 2.5%;
-  position: absolute;
-  z-index: 1;
-  color: white;
-  text-shadow: #7AAF36 0.01em 0.01em 0, #7AAF36 0.02em 0.02em 0, #7AAF36 0.03em 0.03em 0, #7AAF36 0.04em 0.04em 0, #7AAF36 0.05em 0.05em 0, #7AAF36 0.06em 0.06em 0, #7AAF36 0.07em 0.07em 0, #7AAF36 0.08em 0.08em 0, #7AAF36 0.09em 0.09em 0, #7AAF36 0.1em 0.1em 0; }
-
-.loginFooter {
-  background-color: #4D4D4D;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.6rem;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-/*# sourceMappingURL=styles.css.map */
+Backtrace:
+css/styles.scss:84
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:1162:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:1098:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:1093:in `tok!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:638:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:708:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:658:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:647:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:639:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:231:in `mixin_directive'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:219:in `special_directive'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:194:in `directive'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:657:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:650:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:117:in `stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:42:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/engine.rb:393:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...ay: -webkit-box\": expected \"{\", was \";\"\A         on line 84 of css/styles.scss\A \A 79: MIXINS\A 80: **************************/\A 81: \A 82: @mixin flexbox($direction, $justify, $align) {\A 83: <<<<<<< HEAD\A 84:  display: -webkit-box;\A 85:  display: -webkit-flex;\A 86:  display: -ms-flexbox;\A 87:  display: flex;\A 88:  -webkit-box-orient: vertical;\A 89:  -webkit-box-direction: normal;"; }
