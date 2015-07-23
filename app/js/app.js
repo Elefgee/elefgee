@@ -21,6 +21,10 @@
           templateUrl: 'feed/views/feed.html',
           controller: 'FeedController'
         })
+        .when('/post', {
+          templateUrl: 'post/views/post.html',
+          controller: 'PostController'
+        })
         .when('/404', {
           template: '<h2>Sorry, page not found</h2>'
         })

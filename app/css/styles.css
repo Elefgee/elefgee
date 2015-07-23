@@ -169,32 +169,6 @@ MAIN
         font-size: 0.9rem; }
 
 /**************************
-FOOTER
-**************************/
-.loginFooter {
-  background-color: #181818;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.6rem;
-  height: 100px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center; }
-
-/**************************
 HEADER
 **************************/
 .feedHeader {
@@ -598,6 +572,11 @@ MAIN
             padding-right: 5px;
             font-size: 0.85rem;
             color: #878787; }
+            .feedMain .feedContent section .feedPostBlock .feedPostInfo2 > div:first-of-type {
+              text-align: center;
+              background-color: #4D4D4D;
+              padding-right: 0;
+              color: whitesmoke; }
             .feedMain .feedContent section .feedPostBlock .feedPostInfo2 > div:nth-of-type(2) {
               padding-right: 0;
               text-align: center;
@@ -779,25 +758,303 @@ FOOTER
     width: 100%;
     height: 100%; }
 
-.siteTitle {
-  font-family: "Roboto", sans-serif;
-  font-size: 2rem;
-  font-weight: bolder;
-  top: 2.5%;
-  left: 2.5%;
-  position: absolute;
-  z-index: 1;
-  color: white;
-  text-shadow: #7AAF36 0.01em 0.01em 0, #7AAF36 0.02em 0.02em 0, #7AAF36 0.03em 0.03em 0, #7AAF36 0.04em 0.04em 0, #7AAF36 0.05em 0.05em 0, #7AAF36 0.06em 0.06em 0, #7AAF36 0.07em 0.07em 0, #7AAF36 0.08em 0.08em 0, #7AAF36 0.09em 0.09em 0, #7AAF36 0.1em 0.1em 0; }
-
-.loginFooter {
-  background-color: #181818;
+/**************************
+HEADER
+**************************/
+.postHeader {
+  background-image: url("../media/tetris.jpg");
+  background-position: 50% 55%;
+  position: relative;
+  height: 500px;
   color: rgba(255, 255, 255, 0.75);
-  font-size: 0.6rem;
-  height: 100px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center; }
+  .postHeader > div:first-of-type {
+    width: auto; }
+  .postHeader > div {
+    width: 100%; }
+  .postHeader .postHeaderSearchBlock {
+    height: 10%;
+    padding: 0 2.5%;
+    color: #212121;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: flex-end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: flex-end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .postHeader .postHeaderSearchBlock .postHeaderSearch {
+      height: 90%;
+      background-color: rgba(255, 255, 255, 0.75);
+      padding: 5px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .postHeader .postHeaderSearchBlock .postHeaderSearch > * {
+        height: 100%; }
+      .postHeader .postHeaderSearchBlock .postHeaderSearch input {
+        background: none;
+        border: 0;
+        text-align: center; }
+        .postHeader .postHeaderSearchBlock .postHeaderSearch input:focus {
+          outline: 0; }
+      .postHeader .postHeaderSearchBlock .postHeaderSearch i {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; }
+  .postHeader .postHeaderGamesBlock {
+    width: 95%;
+    margin: 0 auto;
+    height: 90%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .postHeader .postHeaderGamesBlock .postHeaderGamesWrapper {
+      position: relative;
+      height: 400px;
+      padding: 25px 0;
+      overflow: auto;
+      overflow-y: hidden;
+      white-space: nowrap; }
+      .postHeader .postHeaderGamesBlock .postHeaderGamesWrapper .postHeaderGameBlock {
+        display: inline-block;
+        height: 350px;
+        width: 350px;
+        margin-right: 25px;
+        background-color: #4D4D4D; }
+        .postHeader .postHeaderGamesBlock .postHeaderGamesWrapper .postHeaderGameBlock:last-of-type {
+          margin-right: 0; }
+        .postHeader .postHeaderGamesBlock .postHeaderGamesWrapper .postHeaderGameBlock > div:first-of-type {
+          height: 80%; }
+          .postHeader .postHeaderGamesBlock .postHeaderGamesWrapper .postHeaderGameBlock > div:first-of-type img {
+            height: 100%;
+            width: 100%; }
+        .postHeader .postHeaderGamesBlock .postHeaderGamesWrapper .postHeaderGameBlock > div:last-of-type {
+          text-align: center;
+          white-space: nowrap;
+          height: 20%;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 1.25rem;
+          font-family: "Roboto", sans-serif;
+          padding: 17.5px 5px; }
+
+/**************************
+MAIN
+**************************/
+.postMain {
+  background-image: url("../media/triangles.png");
+  padding: 25px 0; }
+  .postMain .postMainBlock {
+    height: 500px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .postMain .postMainBlock > div {
+      height: 100%; }
+    .postMain .postMainBlock > div:first-of-type {
+      padding-top: 25px;
+      width: 25%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: flex-start;
+      -webkit-justify-content: flex-start;
+      -ms-flex-pack: flex-start;
+      justify-content: flex-start;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .postMain .postMainBlock > div:first-of-type img {
+        border-radius: 50%; }
+    .postMain .postMainBlock > div:last-of-type {
+      height: 100%;
+      width: 75%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: flex-start;
+      -webkit-align-items: flex-start;
+      -ms-flex-align: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap; }
+      .postMain .postMainBlock > div:last-of-type > div {
+        width: 50%;
+        height: 20%;
+        font-family: "Roboto", sans-serif;
+        font-size: 2rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; }
+      .postMain .postMainBlock > div:last-of-type > div:nth-of-type(2) {
+        background-color: #4D4D4D;
+        color: rgba(255, 255, 255, 0.75); }
+      .postMain .postMainBlock > div:last-of-type > div:last-of-type {
+        width: 100%;
+        height: 80%;
+        font-family: "Roboto Slab", serif;
+        font-size: 0.80rem;
+        padding-top: 25px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: flex-start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: flex-start;
+        justify-content: flex-start;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        .postMain .postMainBlock > div:last-of-type > div:last-of-type textarea {
+          resize: none;
+          border: 2.5px solid #212121;
+          background-color: whitesmoke;
+          padding: 10px;
+          width: 80%;
+          height: 300px;
+          margin: 12.5px auto 0;
+          font-size: 1.25rem; }
+          .postMain .postMainBlock > div:last-of-type > div:last-of-type textarea:focus {
+            outline: 0; }
+  .postMain .postMainSubmitBlock {
+    width: 80%;
+    margin: 0 auto; }
+    .postMain .postMainSubmitBlock button {
+      padding: 25px;
+      width: 100%;
+      background-color: #7AAF36;
+      border: 0;
+      font-size: 2rem;
+      color: whitesmoke;
+      -webkit-transition: all .25s ease;
+      transition: all .25s ease; }
+      .postMain .postMainSubmitBlock button:hover {
+        background-color: #96d642; }
+      .postMain .postMainSubmitBlock button:focus {
+        outline: 0; }
 
 /**************************
 GLOBALS
@@ -806,7 +1063,7 @@ GLOBALS
   font-family: "Roboto", sans-serif;
   font-size: 2rem;
   font-weight: bolder;
-  top: 2.5%;
+  top: -1%;
   left: 2.5%;
   position: absolute;
   z-index: 1;
@@ -814,5 +1071,28 @@ GLOBALS
   text-shadow: #7AAF36 0.01em 0.01em 0, #7AAF36 0.02em 0.02em 0, #7AAF36 0.03em 0.03em 0, #7AAF36 0.04em 0.04em 0, #7AAF36 0.05em 0.05em 0, #7AAF36 0.06em 0.06em 0, #7AAF36 0.07em 0.07em 0, #7AAF36 0.08em 0.08em 0, #7AAF36 0.09em 0.09em 0, #7AAF36 0.1em 0.1em 0; }
   .siteTitle a {
     color: white; }
+
+footer {
+  background-color: #181818;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.6rem;
+  height: 100px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 /*# sourceMappingURL=styles.css.map */
