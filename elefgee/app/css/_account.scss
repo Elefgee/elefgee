@@ -1,0 +1,234 @@
+.accountHeader {
+  position: relative;
+  height: 500px;
+  background: url('../media/white_wall_hash.png');
+  background-position: center;
+  background-attachment: fixed;
+  @include flexbox(row, center, center);
+
+  .accountProfilePicture {
+    img {
+      border-radius: 50%;
+      box-shadow: 0px 1px 5px 1px black;
+    }
+  }
+
+  .accountSideNav {
+    position: absolute;
+    font-size: 1.5em;
+    color: $green;
+    height: 100%;
+    width: 50px;
+    right: 25px;
+    @include flexbox(column, center, center);
+
+    i {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+
+    .fa-user-plus {
+      margin-left: 10px;
+    }
+
+    i:hover {
+      color: $lightgreen;
+      cursor: pointer;
+      @include transition;
+    }
+  }
+}
+
+.accountNav {
+  @include flexbox(row, center, center);
+  height: 75px;
+  width: 100vw;
+  @include transition;
+  border-bottom: 2px solid $green;
+
+  .navBtn {
+    @include flexbox(row, center, center);
+    width: 100%;
+    color: $wt2;
+    background-color: $lightblack;
+    border: 5px solid $darkgray;
+    height: 100%;
+    @include transition;
+  }
+
+  .navBtnActive {
+    @include flexbox(row, center, center);
+    width: 100%;
+    color: $wt2;
+    background-color: $darkgray;
+    border: 5px solid $darkgray;
+    height: 100%;
+    @include transition;
+  }
+
+  .navBtn:hover {
+    background-color: $darkgray;
+    cursor: pointer;
+  }
+  .navBtn:active {
+    background-color: $lightblack;
+    cursor: pointer;
+  }
+
+  .navBtnActive:hover {
+    background-color: $darkgray;
+    cursor: pointer
+  }
+  .navBtnActive:active {
+    background-color: $lightblack;
+    cursor: pointer
+  }
+}
+
+.infoWrap {
+  min-height: 800px;
+  width: 100vw;
+  background: url('../media/triangles.png');
+
+  .accountInfo {
+    color: whitesmoke;
+  }
+
+  .accountLibrary {
+    color: whitesmoke;
+  }
+
+  .info {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+
+.siteTitleAccount {
+  font-family: $sans;
+  font-size: 2rem;
+  font-weight: bolder;
+  top: 25px;
+  left: 2.5%;
+  position: absolute;
+  z-index: 1;
+  color: white;
+
+  text-shadow: $green .01em .01em 0, $green .02em .02em 0, $green .03em .03em 0, $green .04em .04em 0, $green .05em .05em 0, $green .06em .06em 0, $green .07em .07em 0, $green .08em .08em 0, $green .09em .09em 0, $green .1em .1em 0;
+}
+
+.accountLFGBtn {
+    @include flexbox(row,center,center);
+    color:white;
+    height: 50px;
+    width: 200px;
+    position: absolute;
+    top: 35px;
+    right: 2.5%;
+    margin: 0 auto;
+    box-shadow: 0px 2px 5px 0px $lightblack;
+    font-size: 1.5rem;
+    font-family: $sans;
+    z-index: 2;
+    background-color: $green;
+    border: none;
+    @include transition;
+
+    &:hover {
+      background-color: $lightgreen;
+    }
+
+    &:focus {
+      outline: none;
+    }
+}
+
+// FEED //
+
+.feedPostBlock {
+  height: 300px;
+  width: 100%;
+  margin: 0 auto 10px;
+  background-color: whitesmoke;
+  @include flexbox(row, center, center);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  > div {
+    width: 25%;
+    height: 100%;
+  }
+
+  > div:nth-of-type(2) {
+    width: 50%;
+  }
+
+  .feedPostImage {
+    @include flexbox(row, center, center);
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .feedPostInfo1 {
+    padding: 25px 0;
+    @include flexbox(column, center, center);
+
+    .feedPostName {
+      height: 25%;
+
+      h4 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .feedPostDescription {
+      height: 75%;
+      overflow: hidden;
+    }
+  }
+
+  .feedPostInfo2 {
+    text-align: right;
+    @include flexbox(column, space-between, center);
+
+    > div {
+      width: 100%;
+      padding-right: 5px;
+      font-size: 0.85rem;
+      color: $ddt;
+
+      &:nth-of-type(2) {
+        padding-right: 0;
+        text-align: center;
+        font-size: 2rem;
+        color: $green;
+        @include flexbox(row, space-around, center);
+
+        > i {
+          @include transition;
+          &:hover {
+            color: $lightgreen;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// FOOTER //
+.loginFooter {
+  background-color: $darkblack;
+  color: $wt;
+  font-size: 0.6rem;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

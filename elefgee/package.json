@@ -1,0 +1,11 @@
+{
+  "name": "Steam-Auth",
+  "version": "0.0.1",
+  "dependencies": {
+    "ejs": ">= 0.0.0",
+    "express": "2.5.8",
+    "mongoose": "^4.1.0",
+    "passport": ">= 0.0.0",
+    "passport-steam": "*"
+  }
+}

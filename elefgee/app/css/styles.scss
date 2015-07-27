@@ -1,0 +1,139 @@
+/**************************
+SASS VARIABLES
+**************************/
+
+$mw: 960px;
+
+$pt: #212121;
+$ht: #E6C0C3;
+$st: #727272;
+$dt: #B6B6B6;
+$ddt: #878787;
+$wt: rgba(255,255,255,0.75);
+$wt2: whitesmoke;
+
+$lightblack: #242424;
+$darkblack: #181818;
+$lightgray: #CCC;
+$darkgray: #4D4D4D;
+
+$green: #7AAF36;
+$lightgreen: #96d642;
+
+$sans: 'Roboto', sans-serif;
+$serif: 'Roboto Slab', serif;
+
+
+/**************************
+SETUP
+**************************/
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: $pt;
+  font-family: $sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans;
+}
+
+h1, h2, h3, h4, h5, h6, li, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+  font-size: 24px;
+  font-family: $serif;
+  color: $pt;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+#pageWrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/**************************
+MIXINS
+**************************/
+
+@mixin flexbox($direction, $justify, $align) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+          flex-direction: $direction;
+  -webkit-box-pack: $justify;
+  -webkit-justify-content: $justify;
+  -ms-flex-pack: $justify;
+          justify-content: $justify;
+  -webkit-box-align: $align;
+  -webkit-align-items: $align;
+  -ms-flex-align: $align;
+          align-items: $align;
+}
+
+@mixin transition {
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+/**************************
+PARTIALS
+**************************/
+
+@import 'login';
+@import 'feed';
+@import 'account';
+@import 'post';
+
+/**************************
+GLOBALS
+**************************/
+
+.siteTitle {
+  top: -1%;
+  left: 1.5%;
+  position: absolute;
+  z-index: 1;
+
+  img {
+    height: 75px;
+    width: 225px;
+  }
+}
+
+footer {
+  background-color: $darkblack;
+  color: $wt;
+  font-size: 0.6rem;
+  height: 100px;
+  @include flexbox(row, center, center);
+}

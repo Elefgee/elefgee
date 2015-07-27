@@ -1,0 +1,253 @@
+/**************************
+HEADER
+**************************/
+
+.feedHeader {
+  background-image: url('../media/white_wall_hash.png');
+  background-position: 50% 55%;
+  position: relative;
+  height: 100px;
+  color: $wt2;
+  @include flexbox(row, center, center);
+
+  .feedHeaderBlock {
+    height: 100%;
+    @include flexbox(row, center, center);
+
+    > div {
+      height: 100%;
+      width: 20%;
+      @include flexbox(row, center, center);
+    }
+
+    .feedHeaderImage {
+      img {
+        box-sizing: content-box;
+        position: relative;
+        top: 12.5px;
+        height: 125px;
+        width: 125px;
+        border-radius: 50%;
+      }
+    }
+
+    .feedHeaderName,
+    .feedHeaderPost,
+    .feedHeaderLogout {
+      a {
+        height: 50%;
+        width: 50%;
+        @include flexbox(row, center, center);
+        @include transition;
+
+        &:hover {
+          color: $lightgray;
+        }
+      }
+    }
+
+    .feedHeaderPost {
+      a {
+        background: $green;
+        color: $wt2;
+
+        &:hover {
+          background: $lightgreen;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+/**************************
+MAIN
+**************************/
+
+nav {
+  height: 75px;
+  @include flexbox(row, center, center);
+
+  > div {
+    height: 100%;
+    width: 50%;
+    background-color: $lightblack;
+    font-size: 2rem;
+    font-family: $sans;
+    color: $wt;
+    @include flexbox(row, center, center);
+  }
+
+  > div:first-of-type {
+    background-color: $darkgray;
+  }
+}
+
+/**************************
+MAIN
+**************************/
+
+.feedMain {
+  position: relative;
+  min-height: 800px;
+  height: 800px;
+
+  .feedContent {
+    height: 100%;
+    @include flexbox(row, center, center);
+
+    > * {
+      height: 100%;
+    }
+
+    aside {
+      width: 25%;
+      background-color: $lightgray;
+      @include flexbox(row, center, center);
+
+      .feedFilterMain {
+        width: 100%;
+        padding: 25px 10%;
+        align-self: flex-start;
+        text-align: center;
+
+        h3 {
+          font-size: 1.65rem;
+          text-decoration: underline;
+          margin-bottom: 25px;
+        }
+
+        > div {
+
+          > div {
+            @include flexbox(row, space-around, center);
+          }
+        }
+      }
+    }
+
+    section {
+      width: 75%;
+      background-image: url('../media/triangles.png');
+      overflow: scroll;
+
+      .feedPostBlock {
+        height: 200px;
+        width: 98%;
+        margin: 0 auto 10px;
+        background-color: $wt2;
+        @include flexbox(row, center, center);
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        > div {
+          width: 25%;
+          height: 100%;
+        }
+
+        > div:nth-of-type(2) {
+          width: 50%;
+        }
+
+        .feedPostImage {
+          @include flexbox(row, center, center);
+
+          img {
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+          }
+        }
+
+        .feedPostInfo1 {
+          padding: 6.25px 0;
+          @include flexbox(column, center, center);
+
+          .feedPostName {
+            height: 25%;
+
+            h4 {
+              font-size: 1.25rem;
+            }
+          }
+
+          .feedPostDescription {
+            font-size: 0.9rem;
+            height: 75%;
+            overflow: hidden;
+          }
+        }
+
+        .feedPostInfo2 {
+          text-align: right;
+          @include flexbox(column, space-between, center);
+
+          > div {
+            width: 100%;
+            padding-right: 5px;
+            font-size: 0.85rem;
+            color: $ddt;
+
+            &:first-of-type {
+              text-align: center;
+              background-color: $darkgray;
+              padding-right: 0;
+              color: $wt2;
+            }
+
+            &:nth-of-type(2) {
+              height: 33.33%;
+              padding-right: 0;
+              text-align: center;
+              font-size: 2rem;
+              color: $green;
+              @include flexbox(row, space-around, center);
+
+              > a {
+                font-size: 3rem;
+                @include flexbox(row, center, center);
+
+                > i {
+                  color: $green;
+                  @include transition;
+
+                  &:hover {
+                    color: $lightgreen;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.siteTitleFeed {
+  top: 2%;
+  left: 1.5%;
+  position: absolute;
+  z-index: 1;
+
+  img {
+    height: 75px;
+    width: 225px;
+  }
+}
+
+/**************************
+FOOTER
+**************************/
+
+.loginFooter {
+  background-color: $darkblack;
+  color: $wt;
+  font-size: 0.6rem;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
