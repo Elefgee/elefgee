@@ -23,8 +23,8 @@ passport.deserializeUser(function(obj, done) {
 });
 
 passport.use(new SteamStrategy({
-    returnURL: 'https://elefgeesam.com/auth/steam/return',
-    realm: 'https://elefgeesam.com/',
+    returnURL: 'https://localhost:3000/auth/steam/return',
+    realm: 'https://localhost:3000/',
     apiKey: '41AB27857C781D410407E14B482DB2ED'
   },
   function(identifier, profile, done) {
