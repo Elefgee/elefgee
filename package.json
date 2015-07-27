@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "postinstall": "bower install"
   },
   "name": "Steam-Auth",
