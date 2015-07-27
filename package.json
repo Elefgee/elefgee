@@ -1,11 +1,12 @@
 {
   "scripts": {
-  "start": "node index.js",
-  "postinstall": "bower install"
-},
+    "start": "node index.js",
+    "postinstall": "bower install"
+  },
   "name": "Steam-Auth",
   "version": "0.0.1",
   "dependencies": {
+    "bower": "^1.4.1",
     "ejs": ">= 0.0.0",
     "express": "2.5.8",
     "mongoose": "^4.1.0",
