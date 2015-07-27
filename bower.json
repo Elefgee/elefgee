@@ -1,16 +1,36 @@
 {
-  "name": "ElEfGee",
+  "name": "Elefgee",
   "version": "0.0.0",
-  "homepage": "https://github.com/SamGrayson/elefgee",
   "authors": [
-    "Sam Grayson <samuel.c.grayson17@gmail.com>"
+    "Clayton Kinder <ClaytonAlanKinder@gmail.com>",
+    "Samuel Grayson <Samuel.C.Grayson17@gmail.com>"
+  ],
+  "description": "Web application used for finding friends to play games with.",
+  "main": "index.html",
+  "keywords": [
+    "Steam",
+    "Video",
+    "Games",
+    "Gaming",
+    "Friends",
+    "Group",
+    "Looking",
+    "For",
+    "Group"
   ],
   "license": "MIT",
+  "homepage": "www.elefgee.github.io/elefgee",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "fontawesome": "~4.3.0",
+    "underscore": "~1.8.3",
+    "jquery": "~2.1.4",
+    "normalize.css": "~3.0.3"
+  }
 }
