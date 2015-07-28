@@ -616,8 +616,6 @@ FOOTER
   .accountHeader .accountProfilePicture img {
     border-radius: 50%;
     box-shadow: 0px 1px 5px 1px black; }
-  .accountHeader .accountProfilePicture h2 {
-    text-align: center; }
   .accountHeader .accountSideNav {
     position: absolute;
     font-size: 1.5em;
@@ -674,7 +672,8 @@ FOOTER
   height: 75px;
   width: 100vw;
   -webkit-transition: all .25s ease;
-  transition: all .25s ease; }
+  transition: all .25s ease;
+  border-bottom: 2px solid #7AAF36; }
   .accountNav .navBtn {
     display: -webkit-box;
     display: -webkit-flex;
@@ -695,7 +694,7 @@ FOOTER
     align-items: center;
     width: 100%;
     color: whitesmoke;
-    background-color: #4D4D4D;
+    background-color: #242424;
     border: 5px solid #4D4D4D;
     height: 100%;
     -webkit-transition: all .25s ease;
@@ -720,22 +719,22 @@ FOOTER
     align-items: center;
     width: 100%;
     color: whitesmoke;
-    background-color: #242424;
+    background-color: #4D4D4D;
     border: 5px solid #4D4D4D;
     height: 100%;
     -webkit-transition: all .25s ease;
     transition: all .25s ease; }
   .accountNav .navBtn:hover {
-    background-color: #242424;
+    background-color: #4D4D4D;
     cursor: pointer; }
   .accountNav .navBtn:active {
-    background-color: #4D4D4D;
-    cursor: pointer; }
-  .accountNav .navBtnActive:hover {
     background-color: #242424;
     cursor: pointer; }
-  .accountNav .navBtnActive:active {
+  .accountNav .navBtnActive:hover {
     background-color: #4D4D4D;
+    cursor: pointer; }
+  .accountNav .navBtnActive:active {
+    background-color: #242424;
     cursor: pointer; }
 
 .infoWrap {
@@ -925,61 +924,6 @@ FOOTER
           transition: all .25s ease; }
           .feedPostBlock .feedPostInfo2 > div:nth-of-type(2) > i:hover {
             color: #96d642; }
-
-.libraryBlock {
-  width: 90%;
-  margin: 0 auto;
-  padding: 50px 0 25px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: space-around;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
-  justify-content: space-around;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  flex-wrap: wrap; }
-
-.libraryGameBlock {
-  position: relative;
-  display: inline-block;
-  height: 350px;
-  width: 350px;
-  margin-bottom: 25px;
-  background-color: #4D4D4D;
-  cursor: pointer; }
-  .libraryGameBlock:last-of-type {
-    margin-right: 0; }
-  .libraryGameBlock > i {
-    display: none;
-    position: absolute;
-    font-size: 3rem;
-    right: -18px;
-    top: -36px;
-    color: #7AAF36; }
-  .libraryGameBlock > div:first-of-type {
-    height: 80%; }
-    .libraryGameBlock > div:first-of-type img {
-      height: 100%;
-      width: 100%; }
-  .libraryGameBlock > div:last-of-type {
-    text-align: center;
-    white-space: nowrap;
-    height: 20%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    font-size: 1.25rem;
-    font-family: "Roboto", sans-serif;
-    padding: 17.5px 5px; }
 
 .loginFooter {
   background-color: #181818;

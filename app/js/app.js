@@ -25,10 +25,6 @@
           templateUrl: 'post/views/post.html',
           controller: 'PostController'
         })
-        .when('/account/:steamId', {
-          templateUrl: 'account/views/account.html',
-          controller: 'AccountController'
-        })
         .when('/404', {
           template: '<h2>Sorry, page not found</h2>'
         })
