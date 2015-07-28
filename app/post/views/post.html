@@ -30,7 +30,7 @@
     <div>
       <div class="postBlockImage">
         <a href="#/account">
-          <img src="https://www.placehold.it/200x200">
+          <img ng-src="{{ me.photos[2].value }}">
         </a>
       </div>
       <div class="postBlockScore">
@@ -39,7 +39,7 @@
     </div>
     <div>
       <div class="postBlockName">
-        Mr. Gameman
+        {{ me.displayName }}
       </div>
       <div class="postBlockGame">
         Team Fortress 2

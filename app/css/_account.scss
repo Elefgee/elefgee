@@ -11,6 +11,10 @@
       border-radius: 50%;
       box-shadow: 0px 1px 5px 1px black;
     }
+
+    h2 {
+      text-align: center;
+    }
   }
 
   .accountSideNav {
@@ -44,13 +48,12 @@
   height: 75px;
   width: 100vw;
   @include transition;
-  border-bottom: 2px solid $green;
 
   .navBtn {
     @include flexbox(row, center, center);
     width: 100%;
     color: $wt2;
-    background-color: $lightblack;
+    background-color: $darkgray;
     border: 5px solid $darkgray;
     height: 100%;
     @include transition;
@@ -60,27 +63,27 @@
     @include flexbox(row, center, center);
     width: 100%;
     color: $wt2;
-    background-color: $darkgray;
+    background-color: $lightblack;
     border: 5px solid $darkgray;
     height: 100%;
     @include transition;
   }
 
   .navBtn:hover {
-    background-color: $darkgray;
+    background-color: $lightblack;
     cursor: pointer;
   }
   .navBtn:active {
-    background-color: $lightblack;
+    background-color: $darkgray;
     cursor: pointer;
   }
 
   .navBtnActive:hover {
-    background-color: $darkgray;
+    background-color: $lightblack;
     cursor: pointer
   }
   .navBtnActive:active {
-    background-color: $lightblack;
+    background-color: $darkgray;
     cursor: pointer
   }
 }
@@ -221,6 +224,58 @@
   }
 }
 
+// LIBRARY //
+
+.libraryBlock {
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 0 25px;
+  @include flexbox(row, space-around, center);
+  flex-wrap: wrap;
+}
+
+.libraryGameBlock {
+  position: relative;
+  display: inline-block;
+  height: 350px;
+  width: 350px;
+  margin-bottom: 25px;
+  background-color: $darkgray;
+  cursor: pointer;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  > i {
+    display: none;
+    position: absolute;
+    font-size: 3rem;
+    right: -18px;
+    top: -36px;
+    color: $green;
+  }
+
+  > div:first-of-type {
+    height: 80%;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  > div:last-of-type {
+    text-align: center;
+    white-space: nowrap;
+    height: 20%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 1.25rem;
+    font-family: $sans;
+    padding: 17.5px 5px;
+  }
+}
 
 // FOOTER //
 .loginFooter {

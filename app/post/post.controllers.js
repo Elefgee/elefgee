@@ -9,6 +9,16 @@
         return new Array(num);
       }
 
+      SteamService.getUserInfo().success(function(data){
+        console.log(data);
+        $scope.user = data[0];
+      });
+
+      SteamService.getMe().success(function (me) {
+        console.log('this should be me: ',me);
+        $scope.me = me
+      })
+
       $scope.selectGame = function($event) {
         console.log($event.currentTarget);
         var target = $event.currentTarget;
