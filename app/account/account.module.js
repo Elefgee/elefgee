@@ -8,11 +8,6 @@
     .config(function ($routeProvider) {
       $routeProvider
 
-        .when('/account', {
-          templateUrl: 'account/views/account.html',
-          controller: 'AccountController'
-        })
-
     })
     angular
       .module('underscore', [])
