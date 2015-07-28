@@ -21,7 +21,6 @@ module.exports = function(app, passport) {
         res.redirect('/');
       });
 
-// What we worked on Jul 26. (Getting the data back from database)
 
     app.get('/auth/steam/return',
       passport.authenticate('steam', { failureRedirect: '/login' }),
@@ -34,13 +33,8 @@ module.exports = function(app, passport) {
         User.find({steamId: req.user.id}, function(err, user) {
           if (user.length !== 0) {
             console.log('Logging in as existing user!');
-            res.redirect('#/feed')
 
-            var user = new User({
-              displayName: req.user.displayName,
-              steamId: req.user.id,
-              picture: req.user.photos[2].value
-            });
+            res.redirect('#/feed')
 
           } else {
             console.log('Creating a new user!');
@@ -55,6 +49,7 @@ module.exports = function(app, passport) {
             user.save(function(err) {
               if(err) throw err;
               console.log('SAVED USER', user);
+
               res.redirect('#/feed');
             })
 
@@ -81,7 +76,7 @@ module.exports = function(app, passport) {
 
     function ensureAuthenticated(req, res, next) {
       if (req.isAuthenticated()) { return next(); }
-      res.redirect('/login')
+      res.redirect('#/login');
     }
 
 };
