@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Steam Boilerplate
 Steam Authentication Example, using Passport and Node.
 
@@ -18,3 +19,7 @@ Open up Steam Boilerplate by typing `localhost:3000` in your browser.
 <img src="screenshots/S3.png"></img>
 <img src="screenshots/S4.png"></img>
 <img src="screenshots/S5.png"></img>
+=======
+# elefgee
+Make new friends to play games with.
+>>>>>>> f05770405cf8727b765e92a99d1fa87dc1eb1980
