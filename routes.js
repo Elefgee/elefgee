@@ -6,15 +6,6 @@ var jwt = require('jwt-simple');
 //    Creating Tokens   //
 /////////////////////////
 
-function createToken(user) {
-  var payload = {
-    sub: user._id,
-    iat: moment().unix(),
-    exp: moment().add(14, 'days').unix()
-  };
-  return jwt.encode(payload, config.TOKEN_SECRET);
-}
-
 ////////////////////////
 
 
@@ -51,8 +42,6 @@ module.exports = function(app, passport) {
               picture: req.user.photos[2].value
             });
 
-            res.send({ token: createToken(user) });
-
           } else {
             console.log('Creating a new user!');
             var user = new User({
@@ -62,8 +51,6 @@ module.exports = function(app, passport) {
             });
 
             console.log('User created!');
-
-            res.send({ token: createToken(user) });
 
             user.save(function(err) {
               if(err) throw err;
