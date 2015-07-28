@@ -16,7 +16,6 @@
       var getUserInfo = function() {
         return $http.get('/user');
       }
-
       var getMe = function () {
         return $http.get('/me');
       }

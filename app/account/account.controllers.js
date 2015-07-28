@@ -3,10 +3,20 @@
   angular
     .module('account')
     .controller('AccountController', function($scope, $route, SteamService, _, $routeParams) {
-      $scope.number = 15;
-      $scope.getNumber = function(num) {
-        return new Array(num);
-      }
+      $scope.navs = [
+        {
+          name: 'account',
+          active: true
+        },
+        {
+          name: 'library',
+          active: false
+        },
+        {
+          name: 'posts',
+          active: false
+        }
+      ]
 
       // SteamService.getUserInfo().success(function(data){
       //   console.log(data);
@@ -27,21 +37,6 @@
           $scope.user = foundUser[0];
         });
       }
-
-      $scope.navs = [
-        {
-          name: 'account',
-          active: true
-        },
-        {
-          name: 'library',
-          active: false
-        },
-        {
-          name: 'posts',
-          active: false
-        }
-      ]
 
       $scope.accountNavClick = function(clicked) {
         _.each($scope.navs, function(el){
