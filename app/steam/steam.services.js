@@ -16,10 +16,14 @@
       var getUserInfo = function() {
         return $http.get('/user');
       }
+      var getMe = function () {
+        return $http.get('/me');
+      }
 
       return {
         buildPlayerUrl: playerUrlOpts.buildUrl,
-        getUserInfo: getUserInfo
+        getUserInfo: getUserInfo,
+        getMe: getMe
       };
 
     });

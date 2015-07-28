@@ -33,7 +33,7 @@ module.exports = function(app, passport) {
         User.find({steamId: req.user.id}, function(err, user) {
           if (user.length !== 0) {
             console.log('Logging in as existing user!');
-
+            // res.send(user);
             res.redirect('#/feed')
 
           } else {
@@ -64,6 +64,10 @@ module.exports = function(app, passport) {
           res.send(user);
         });
     });
+
+    app.get('/me', function (req, res, next) {
+      res.send(req.user);
+    })
 
     app.get('/feed', ensureAuthenticated, function(req, res){
       res.render('feed', { user: req.user });
