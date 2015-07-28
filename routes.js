@@ -2,13 +2,6 @@ var User = require('./models/User');
 var mongoose = require('mongoose');
 var jwt = require('jwt-simple');
 
-///////////////////////////
-//    Creating Tokens   //
-/////////////////////////
-
-////////////////////////
-
-
 module.exports = function(app, passport) {
 
     app.get('/', function(req, res){
@@ -49,9 +42,10 @@ module.exports = function(app, passport) {
             user.save(function(err) {
               if(err) throw err;
               console.log('SAVED USER', user);
-
               res.redirect('#/feed');
             })
+
+            console.log('Finished saving user!');
 
           }
         })

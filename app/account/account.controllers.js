@@ -21,8 +21,9 @@
       if($routeParams.steamId) {
         SteamService.getUserInfo().success(function(data){
           var routeSteamId = $routeParams.steamId;
-          console.log(data);
+          console.log('ALL USERS: ', data);
           var foundUser = _.where(data, {steamId: routeSteamId});
+          console.log('SPECIFIC USER: ', foundUser);
           $scope.user = foundUser[0];
         });
       }
