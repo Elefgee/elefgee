@@ -1,0 +1,112 @@
+/**************************
+HEADER
+**************************/
+
+.loginHeader {
+  position: relative;
+  height: 500px;
+
+  .video {
+   position: fixed;
+   top: 50%; left: 50%;
+   min-width: 100%;
+   width: 1400px;
+   height: 1000px;
+   z-index: -100;
+   transform: translate(-50%, -50%);
+  }
+
+  .loginBlock {
+    font-family: $sans;
+    border: 5px solid $green;
+    color: $wt;
+    position: absolute;
+    height: 100px;
+    background-color: $lightblack;
+    width: 300px;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    bottom: -50px;
+    @include flexbox(column, space-around, center);
+
+    &:hover .loginAbso {
+      opacity: 0;
+    }
+
+    span {
+      font-size: 0.5rem;
+    }
+
+    img {
+      height: 40%;
+      width: 75%;
+    }
+
+    .loginAbso {
+      opacity: 1;
+      transition: all .25s ease;
+      -webkit-transition: all .25s ease;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $green;
+      font-size: 2rem;
+      @include flexbox(row, center, center);
+    }
+  }
+}
+
+/**************************
+MAIN
+**************************/
+
+.loginMain {
+  background-image: url('../media/triangles.png');
+  border-top: 5px solid $green;
+  padding-top: 100px;
+  padding-bottom: 200px;
+
+  .mainWrapper {
+    width: 85%;
+    margin: 0 auto;
+    @include flexbox(row, space-around, stretch);
+
+    .loginInfoBlock {
+
+      color: $wt;
+      width: 32%;
+
+      .loginInfoImage {
+        padding-top: 10px;
+        text-align: center;
+
+        img {
+          border-radius: 50%;
+        }
+      }
+
+      .loginInfoContent {
+        padding: 10px 5px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.siteTitleLogin {
+
+  top: 2%;
+  left: 1.5%;
+  position: absolute;
+  z-index: 1;
+
+  img {
+    height: 75px;
+    width: 225px;
+  }
+
+}

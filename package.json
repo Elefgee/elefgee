@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "bower install"
+  },
+  "name": "Steam-Auth",
+  "version": "0.0.1",
+  "dependencies": {
+    "bower": "^1.4.1",
+    "ejs": ">= 0.0.0",
+    "express": "2.5.8",
+    "jwt-simple": "^0.3.0",
+    "mongoose": "^4.1.0",
+    "passport": ">= 0.0.0",
+    "passport-steam": "*"
+  }
+}

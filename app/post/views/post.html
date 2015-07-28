@@ -1,0 +1,59 @@
+<header class="postHeader">
+  <div class="siteTitleFeed">
+    <a href="#/feed"><img src="../media/elefgee.png" alt=""></a>
+  </div>
+
+  <div class="postHeaderSearchBlock">
+    <div class="postHeaderSearch">
+      <input type="text" name="postSearch">
+      <i class="fa fa-search"></i>
+    </div>
+  </div>
+
+  <div class="postHeaderGamesBlock">
+    <div class="postHeaderGamesWrapper">
+      <div class="postHeaderGameBlock" ng-repeat="i in getNumber(number) track by $index" ng-click="selectGame($event)">
+        <i class="fa fa-check"></i>
+        <div>
+          <img src="https://www.placehold.it/300x300">
+        </div>
+        <div>
+          Team Fortress 2
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+<main class="postMain">
+  <div class="postMainBlock">
+    <div>
+      <div class="postBlockImage">
+        <a href="#/account">
+          <img src="https://www.placehold.it/200x200">
+        </a>
+      </div>
+      <div class="postBlockScore">
+        85%
+      </div>
+    </div>
+    <div>
+      <div class="postBlockName">
+        Mr. Gameman
+      </div>
+      <div class="postBlockGame">
+        Team Fortress 2
+      </div>
+      <div class="postBlockDescription">
+        <label for="postDescription">Enter a description for your LFG post:</label>
+        <textarea maxlength="300" name="postDescription"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="postMainSubmitBlock">
+    <button id="postMainSubmit">Submit LFG post</button>
+  </div>
+</main>
+<footer>
+  &copy; 2015 Elefgee, All Rights Reserved
+</footer>
