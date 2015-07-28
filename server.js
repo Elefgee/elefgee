@@ -12,7 +12,6 @@ mongoose.connection.on('error', function() {
   console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
 });
 
-
 passport.serializeUser(function(user, done) {
   done(null, user);
 });

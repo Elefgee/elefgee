@@ -12,7 +12,6 @@
     "jwt-simple": "^0.3.0",
     "mongoose": "^4.1.0",
     "passport": ">= 0.0.0",
-    "passport-steam": "*",
-    "q": "^1.4.1"
+    "passport-steam": "*"
   }
 }

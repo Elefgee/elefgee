@@ -4,10 +4,10 @@
       <a href="#/feed"><img src="media/elefgee.png"></a>
     </div>
     <div class="feedHeaderName">
-      <a href="#/account">{{ me.displayName }}</a>
+      <a href="#/account/{{ me.id }}">{{ me.displayName }}</a>
     </div>
     <div class="feedHeaderImage">
-      <a href="#/account"><img ng-src="{{ me.photos[2].value }}"></a>
+      <a href="#/account/{{ me.id }}"><img ng-src="{{ me.photos[2].value }}"></a>
     </div>
     <div class="feedHeaderPost">
       <a href="#/post">LFG</a>

@@ -20,9 +20,13 @@ module.exports = function(app, passport) {
       function(req, res, next) {
         console.log('user info from steam',req.user);
 
+        // res.status(200).send(req.user);
+        // res.redirect('/#/feed')
+
         User.find({steamId: req.user.id}, function(err, user) {
           if (user.length !== 0) {
             console.log('Logging in as existing user!');
+            // res.send(user);
             res.redirect('#/feed')
 
           } else {
@@ -30,8 +34,7 @@ module.exports = function(app, passport) {
             var user = new User({
               displayName: req.user.displayName,
               steamId: req.user.id,
-              picture: req.user.photos[2].value,
-              games: req.user.games
+              picture: req.user.photos[2].value
             });
 
             console.log('User created!');
@@ -39,9 +42,10 @@ module.exports = function(app, passport) {
             user.save(function(err) {
               if(err) throw err;
               console.log('SAVED USER', user);
-
               res.redirect('#/feed');
             })
+
+            console.log('Finished saving user!');
 
           }
         })

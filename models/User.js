@@ -5,8 +5,7 @@ var userSchema = new mongoose.Schema({
   // newProperty: String,
   displayName: String,
   picture: String,
-  steamId: String,
-  games: Object
+  steamId: String
 });
 
 userSchema.pre('save', function(next) {
