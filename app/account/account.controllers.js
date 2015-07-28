@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('account')
-    .controller('AccountController', function($scope, $route, SteamService, _) {
+    .controller('AccountController', function($scope, $route, SteamService, _, $routeParams) {
       $scope.navs = [
         {
           name: 'account',
@@ -17,6 +17,26 @@
           active: false
         }
       ]
+
+      // SteamService.getUserInfo().success(function(data){
+      //   console.log(data);
+      //   // $scope.user = data[0];
+      // });
+
+      SteamService.getMe().success(function (me) {
+        console.log('this should be me: ', me);
+        $scope.me = me
+      })
+
+      if($routeParams.steamId) {
+        SteamService.getUserInfo().success(function(data){
+          var routeSteamId = $routeParams.steamId;
+          console.log('ALL USERS: ', data);
+          var foundUser = _.where(data, {steamId: routeSteamId});
+          console.log('SPECIFIC USER: ', foundUser);
+          $scope.user = foundUser[0];
+        });
+      }
 
       $scope.accountNavClick = function(clicked) {
         _.each($scope.navs, function(el){
