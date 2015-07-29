@@ -7,7 +7,7 @@
       console.log($scope.user);
 
       SteamService.getUserInfo().success(function(data){
-        console.log(data);
+        console.log('I am zee data', data);
         $scope.user = data[0];
       });
 
