@@ -12,13 +12,15 @@
 
   <div class="postHeaderGamesBlock">
     <div class="postHeaderGamesWrapper">
-      <div class="postHeaderGameBlock" ng-repeat="game in games.games" ng-click="selectGame($event)">
+      <div class="postHeaderGameBlock" ng-repeat="game in games.games" ng-click="selectGame($event)" data-id="{{ game.appid }}">
         <i class="fa fa-check"></i>
         <div>
           <img ng-src="{{ game.pictureLink }}">
         </div>
         <div>
-          {{ game.name }}
+          <div>
+            {{ game.name }}
+          </div>
         </div>
       </div>
     </div>
@@ -28,21 +30,16 @@
 <main class="postMain" ng-controller="FeedController">
   <div class="postMainBlock">
     <div>
-      <div class="postBlockImage">
+      <div class="postBlockUser">
         <a href="#/account">
-          <img ng-src="{{me.identifier}}">
+          <img ng-src="{{me.photos[2].value}}">
         </a>
+        <span>{{ me.displayName }}</span>
       </div>
-      <!-- <div class="postBlockScore">
-        85%
-      </div> -->
-    </div>
-    <div>
-      <div class="postBlockName">
-        {{ me.displayName }}
-      </div>
-      <div class="postBlockGame">
-        Team Fortress 2
+      <div class="postBlockGame" ng-controller="PostController">
+        <a href="http://www.steamcommunity.com/app/{{selectedGame[0].appid}}">
+          {{ selectedGame[0].name }}
+        </a>
       </div>
       <div class="postBlockDescription">
         <label for="postDescription">Enter a description for your LFG post:</label>
