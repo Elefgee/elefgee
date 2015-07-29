@@ -66,6 +66,10 @@ module.exports = function(app, passport) {
       res.send(req.user);
     })
 
+    app.get('/myPosts', function(req, res, next){
+      res.send(req.user.posts);
+    })
+
     app.get('/feed', ensureAuthenticated, function(req, res){
       res.render('feed', { user: req.user });
     });
