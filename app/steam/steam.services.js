@@ -20,9 +20,16 @@
         return $http.get('/me');
       }
 
+      var addPost = function(post) {
+        $http.put('/posts', post).success(function(data){
+          console.log('I just posted this data!', data);
+        })
+      }
+
       return {
         buildPlayerUrl: playerUrlOpts.buildUrl,
         getUserInfo: getUserInfo,
+        addPost: addPost,
         getMe: getMe
       };
 
