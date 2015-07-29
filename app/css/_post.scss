@@ -202,10 +202,13 @@ MAIN
 
         > a {
           height: 100%;
+          width: 100%;
           padding: 5px;
           color: $wt2;
+          font-size: 0.95rem;
           background-color: $darkgray;
           @include transition;
+          @include flexbox(row, center, center);
 
           &:hover {
             background-color: $green;
