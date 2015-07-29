@@ -44,6 +44,10 @@ HEADER
       width: 75%;
     }
 
+    > a {
+      color: $wt2;
+    }
+
     .loginAbso {
       opacity: 1;
       transition: all .25s ease;

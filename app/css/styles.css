@@ -100,6 +100,8 @@ HEADER
     .loginHeader .loginBlock img {
       height: 40%;
       width: 75%; }
+    .loginHeader .loginBlock > a {
+      color: whitesmoke; }
     .loginHeader .loginBlock .loginAbso {
       opacity: 1;
       transition: all .25s ease;
@@ -277,7 +279,7 @@ HEADER
       .feedHeader .feedHeaderBlock .feedHeaderName a:hover,
       .feedHeader .feedHeaderBlock .feedHeaderPost a:hover,
       .feedHeader .feedHeaderBlock .feedHeaderLogout a:hover {
-        color: #CCC; }
+        color: #7AAF36; }
     .feedHeader .feedHeaderBlock .feedHeaderPost a {
       background: #7AAF36;
       color: whitesmoke; }
@@ -1087,31 +1089,22 @@ HEADER
             height: 100%;
             width: 100%; }
         .postHeader .postHeaderGamesBlock .postHeaderGamesWrapper .postHeaderGameBlock > div:last-of-type {
-          text-align: center;
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-orient: vertical;
-          -webkit-box-direction: normal;
-          -webkit-flex-direction: row;
-          -ms-flex-direction: row;
-          flex-direction: row;
-          -webkit-box-pack: center;
-          -webkit-justify-content: center;
-          -ms-flex-pack: center;
-          justify-content: center;
-          -webkit-box-align: center;
-          -webkit-align-items: center;
-          -ms-flex-align: center;
-          align-items: center;
-          white-space: nowrap;
-          height: 40%;
-          text-overflow: ellipsis;
+          display: table;
+          /* @include flexbox(row, center, center); */
+          /* flex-wrap: wrap; */
           overflow: hidden;
+          height: 40%;
+          width: 100%;
           font-size: .75rem;
           font-family: "Roboto", sans-serif;
-          padding: 2px; }
+          padding: 5px; }
+          .postHeader .postHeaderGamesBlock .postHeaderGamesWrapper .postHeaderGameBlock > div:last-of-type > div {
+            max-width: 240px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            text-overflow: ellipsis;
+            overflow: hidden; }
       .postHeader .postHeaderGamesBlock .postHeaderGamesWrapper .postHeaderGameBlock.selectedGame {
         background-color: #7AAF36; }
         .postHeader .postHeaderGamesBlock .postHeaderGamesWrapper .postHeaderGameBlock.selectedGame > i {
@@ -1147,30 +1140,7 @@ MAIN
     align-items: center; }
     .postMain .postMainBlock > div {
       height: 100%; }
-    .postMain .postMainBlock > div:first-of-type {
-      margin-left: 25px;
-      padding-top: 25px;
-      width: 25%;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-box-pack: flex-start;
-      -webkit-justify-content: flex-start;
-      -ms-flex-pack: flex-start;
-      justify-content: flex-start;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center; }
-      .postMain .postMainBlock > div:first-of-type img {
-        border-radius: 50%; }
-    .postMain .postMainBlock > div:last-of-type {
+    .postMain .postMainBlock > div {
       height: 100%;
       width: 100%;
       display: -webkit-box;
@@ -1191,7 +1161,7 @@ MAIN
       -ms-flex-align: flex-start;
       align-items: flex-start;
       flex-wrap: wrap; }
-      .postMain .postMainBlock > div:last-of-type > div {
+      .postMain .postMainBlock > div > div {
         width: 50%;
         height: 20%;
         font-family: "Roboto", sans-serif;
@@ -1213,10 +1183,26 @@ MAIN
         -webkit-align-items: center;
         -ms-flex-align: center;
         align-items: center; }
-      .postMain .postMainBlock > div:last-of-type > div:nth-of-type(2) {
+      .postMain .postMainBlock > div > div:first-of-type a {
+        margin-right: 10px; }
+        .postMain .postMainBlock > div > div:first-of-type a img {
+          height: 75px;
+          width: 75px;
+          border-radius: 50%; }
+      .postMain .postMainBlock > div > div:first-of-type span {
+        margin-left: 10px; }
+      .postMain .postMainBlock > div > div:nth-of-type(2) {
         background-color: #4D4D4D;
-        color: rgba(255, 255, 255, 0.75); }
-      .postMain .postMainBlock > div:last-of-type > div:last-of-type {
+        padding: 5px;
+        color: rgba(255, 255, 255, 0.75);
+        text-align: center; }
+        .postMain .postMainBlock > div > div:nth-of-type(2) > a {
+          color: whitesmoke;
+          -webkit-transition: all .25s ease;
+          transition: all .25s ease; }
+          .postMain .postMainBlock > div > div:nth-of-type(2) > a:hover {
+            color: #7AAF36; }
+      .postMain .postMainBlock > div > div:last-of-type {
         width: 100%;
         height: 80%;
         font-family: "Roboto Slab", serif;
@@ -1239,7 +1225,7 @@ MAIN
         -webkit-align-items: center;
         -ms-flex-align: center;
         align-items: center; }
-        .postMain .postMainBlock > div:last-of-type > div:last-of-type textarea {
+        .postMain .postMainBlock > div > div:last-of-type textarea {
           resize: none;
           border: 2.5px solid #212121;
           background-color: whitesmoke;
@@ -1248,7 +1234,7 @@ MAIN
           height: 300px;
           margin: 12.5px auto 0;
           font-size: 1.25rem; }
-          .postMain .postMainBlock > div:last-of-type > div:last-of-type textarea:focus {
+          .postMain .postMainBlock > div > div:last-of-type textarea:focus {
             outline: 0; }
   .postMain .postMainSubmitBlock {
     width: 80%;

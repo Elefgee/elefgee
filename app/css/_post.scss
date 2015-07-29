@@ -68,7 +68,6 @@ HEADER
       white-space: nowrap;
 
       .postHeaderGameBlock {
-
         position: relative;
         display: inline-block;
         height: 175px;
@@ -100,15 +99,24 @@ HEADER
         }
 
         > div:last-of-type {
-          text-align: center;
-          @include flexbox(row, center, center);
-          white-space: nowrap;
-          height: 40%;
-          text-overflow: ellipsis;
+          display: table;
+          /* @include flexbox(row, center, center); */
+          /* flex-wrap: wrap; */
           overflow: hidden;
+          height: 40%;
+          width: 100%;
           font-size: .75rem;
           font-family: "Roboto", sans-serif;
-          padding: 2px;
+          padding: 5px;
+
+          > div {
+            max-width: 240px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
         }
       }
 
@@ -142,18 +150,7 @@ MAIN
       height: 100%;
     }
 
-    > div:first-of-type {
-      margin-left: 25px;
-      padding-top: 25px;
-      width: 25%;
-      @include flexbox(column, flex-start, center);
-
-      img {
-        border-radius: 50%;
-      }
-    }
-
-    > div:last-of-type {
+    > div {
       height: 100%;
       width: 100%;
       @include flexbox(row, center, flex-start);
@@ -167,9 +164,36 @@ MAIN
         @include flexbox(row, center, center);
       }
 
+      > div:first-of-type {
+        a {
+          margin-right: 10px;
+
+          img {
+            height: 75px;
+            width: 75px;
+            border-radius: 50%;
+          }
+        }
+
+        span {
+          margin-left: 10px;
+        }
+      }
+
       > div:nth-of-type(2) {
         background-color: $darkgray;
+        padding: 5px;
         color: $wt;
+        text-align: center;
+
+        > a {
+          color: $wt2;
+          @include transition;
+
+          &:hover {
+            color: $green;
+          }
+        }
       }
 
       > div:last-of-type {

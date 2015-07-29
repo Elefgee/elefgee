@@ -12,13 +12,16 @@
 
   <div class="postHeaderGamesBlock">
     <div class="postHeaderGamesWrapper">
-      <div class="postHeaderGameBlock" ng-repeat="game in games.games" ng-click="selectGame($event)" data-id="{{game.name}}">
-        <div data-id="{{game.appid}}">
+      <div class="postHeaderGameBlock" ng-repeat="game in games.games" ng-click="selectGame($event)" data-id="{{ game.appid }}">
+        <i class="fa fa-check"></i>
+        <div>
           <img ng-src="{{ game.pictureLink }}">
         </div>
         <i class="fa fa-check"></i>
         <div>
-          {{ game.name }}
+          <div>
+            {{ game.name }}
+          </div>
         </div>
       </div>
     </div>
@@ -28,22 +31,15 @@
 <main class="postMain" ng-controller="FeedController">
   <div class="postMainBlock">
     <div>
-      <div class="postBlockImage">
+      <div class="postBlockUser">
         <a href="#/account">
           <img ng-src="{{me.photos[2].value}}">
         </a>
-      </div>
-      <!-- <div class="postBlockScore">
-        85%
-      </div> -->
-    </div>
-    <div>
-      <div class="postBlockName">
-        {{ me.displayName }}
+        <span>{{ me.displayName }}</span>
       </div>
       <div class="postBlockGame" ng-controller="PostController">
-        <a href="http://steamcommunity.com/app/{{selectedGameId}}/">
-          {{selectedGameName}}
+        <a href="http://www.steamcommunity.com/app/{{selectedGame[0].appid}}">
+          {{ selectedGame[0].name }}
         </a>
       </div>
       <div class="postBlockDescription">
