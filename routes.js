@@ -66,9 +66,23 @@ module.exports = function(app, passport) {
       res.send(req.user);
     })
 
-    app.get('/myPosts', function(req, res, next){
-      res.send(req.user.posts);
-    })
+    app.put('/posts', function(req, res, next){  // Look for user with id, push object to 'posts' array, Save the user data
+      console.log('Body',req.body);
+      console.log('1',req.body.userData.id);
+
+      User.find({steamId: req.body.userData.id}, function(err, user) {
+        console.log('I am the user!', user[0]);
+        console.log('I am the posts!', user[0].posts)
+
+        user[0].posts.push(req.body);
+
+        user[0].save(function(err) {
+           if(err) throw err;
+           console.log('Added posts', user);
+         })
+      });
+
+    });
 
     app.get('/feed', ensureAuthenticated, function(req, res){
       res.render('feed', { user: req.user });

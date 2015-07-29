@@ -21,7 +21,7 @@
       }
 
       var addPost = function(post) {
-        $http.post('/myPosts', post).success(function(data){
+        $http.put('/posts', post).success(function(data){
           console.log('I just posted this data!', data);
         })
       }

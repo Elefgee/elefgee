@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('elefgee')
-    .controller('PostController', function($scope, $rootScope, $route, SteamService, _) {
+    .controller('PostController', function($scope, $rootScope, $route, SteamService, _, $location) {
       $scope.$route = $route;
       $rootScope.selectedGame = [{name: '-'}];
 
@@ -27,6 +27,7 @@
 
       $scope.addPost = function(postData) {
         SteamService.addPost(postData)
+        $location.path('/feed')
       }
     })
 
