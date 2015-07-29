@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('elefgee')
-    .controller('PostController', function($scope, $rootScope, $route, SteamService, _, $location) {
+    .controller('PostController', function($scope, $window, $rootScope, $route, SteamService, _, $location) {
       $scope.$route = $route;
       $rootScope.selectedGame = [{name: '-'}];
       $scope.post = {};
@@ -26,10 +26,6 @@
         })
       }
 
-      $scope.addPost = function(postData) {
-        SteamService.addPost(postData);
-      }
-
       $scope.selectGame = function($event) {
         var target = $event.currentTarget;
         var targetId = $(target).data('id');
@@ -42,8 +38,10 @@
       }
 
       $scope.addPost = function(postData) {
-        SteamService.addPost(postData)
-        $location.path('/feed')
+        postData.timestamp = new Date();
+        SteamService.addPost(postData);
+        $location.path('/feed');
+        $window.scrollTo(0, 0);
       }
     })
 

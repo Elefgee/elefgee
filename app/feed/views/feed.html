@@ -55,29 +55,31 @@
       </div>
     </aside>
     <section>
-      <div class="feedPostBlock" ng-repeat="i in getNumber(number) track by $index">
+      <div class="feedPostBlock" ng-repeat="post in allPosts">
         <div class="feedPostImage">
-          <a href="#/account">
-            <img src="https://www.placehold.it/200x200">
+          <a href="#/account/{{ post.userData.id }}">
+            <img ng-src="{{ post.userData.photos[2].value }}">
           </a>
         </div>
         <div class="feedPostInfo1">
           <div class="feedPostName">
-            <h4>Mr. Gameman</h4>
+            <h4>{{ post.userData.displayName }}</h4>
           </div>
           <div class="feedPostDescription">
-            Looking to own some noobs in TF2! Please respond only if you are above the age of 30, have at least 100 hours played, and can withstand constant sobbing.
+            {{ post.text }}
           </div>
         </div>
         <div class="feedPostInfo2">
           <div class="feedPostGame">
-            Team Fortress 2
+            <a target="_blank" href="http://www.steamcommunity.com/app/{{ post.appid }}">
+              {{ post.name }}
+            </a>
           </div>
           <div class="feedPostAction">
-            <a href="#/"><i class="fa fa-user"></i></a>
+            <a target="_blank" href="http://www.steamcommunity.com/profiles/{{ post.userData.id }}"><i class="fa fa-steam-square"></i></a>
           </div>
           <div class="feedPostTime">
-            2 hours ago
+            <span am-time-ago="post.timestamp"></span>
           </div>
         </div>
       </div>

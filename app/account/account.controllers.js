@@ -15,7 +15,6 @@
       ]
 
       SteamService.getMe().success(function (me) {
-        console.log('ME: ', me);
         $scope.me = me;
       })
 
@@ -25,8 +24,8 @@
           var foundUser = _.where(data, {steamId: routeSteamId});
           $scope.user = foundUser[0];
           $scope.games = foundUser[0].games;
+          $scope.posts = foundUser[0].posts;
           $scope.gamesList = _.sortBy(foundUser[0].games.games, 'name');
-          console.log('USER:', $scope.user);
         });
       }
 

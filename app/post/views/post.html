@@ -15,7 +15,7 @@
       <div class="postHeaderGameBlock" ng-repeat="game in games.games | filter:search:strict" ng-model="search" ng-click="selectGame($event)" data-id="{{ game.appid }}">
         <i class="fa fa-check"></i>
         <div>
-          <img ng-src="{{ game.pictureLink }}">
+          <img ng-src="{{ game.pictureLink }}" err-src="https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txt=Image+Unavailable&w=250&h=105&txttrack=0">
         </div>
         <i class="fa fa-check"></i>
         <div>
