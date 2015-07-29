@@ -8,10 +8,11 @@
       $scope.getNumber = function(num) {
         return new Array(num);
       }
-      //
-      // SteamService.getMe().success(function(data){
-      //   $scope.games = data
-      // })
+
+      SteamService.getMe().success(function(data){
+        $scope.games = data.games
+        console.log($scope.games.games);
+      })
 
       $scope.selectGame = function($event) {
         console.log($event.currentTarget);

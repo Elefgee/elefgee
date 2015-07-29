@@ -12,34 +12,34 @@
 
   <div class="postHeaderGamesBlock">
     <div class="postHeaderGamesWrapper">
-      <div class="postHeaderGameBlock" ng-repeat="i in getNumber(number) track by $index" ng-click="selectGame($event)">
+      <div class="postHeaderGameBlock" ng-repeat="game in games.games" ng-click="selectGame($event)">
         <i class="fa fa-check"></i>
         <div>
-          <img src="https://www.placehold.it/300x300">
+          <img ng-src="{{ game.pictureLink }}">
         </div>
         <div>
-          Team Fortress 2
+          {{ game.name }}
         </div>
       </div>
     </div>
   </div>
 
 </header>
-<main class="postMain">
+<main class="postMain" ng-controller="FeedController">
   <div class="postMainBlock">
     <div>
       <div class="postBlockImage">
         <a href="#/account">
-          <img src="https://www.placehold.it/200x200">
+          <img ng-src="{{me.identifier}}">
         </a>
       </div>
-      <div class="postBlockScore">
+      <!-- <div class="postBlockScore">
         85%
-      </div>
+      </div> -->
     </div>
     <div>
       <div class="postBlockName">
-        Mr. Gameman
+        {{ me.displayName }}
       </div>
       <div class="postBlockGame">
         Team Fortress 2
