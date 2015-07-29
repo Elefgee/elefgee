@@ -33,6 +33,7 @@ module.exports = function(app, passport) {
           } else {
             console.log('Creating a new user!');
             var user = new User({
+              userInfo: req.user._json,
               displayName: req.user.displayName,
               steamId: req.user.id,
               picture: req.user.photos[2].value,
