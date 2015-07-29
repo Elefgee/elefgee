@@ -44,12 +44,12 @@
       </div>
       <div class="postBlockDescription">
         <label for="postDescription">Enter a description for your LFG post:</label>
-        <textarea maxlength="300" name="postDescription"></textarea>
+        <textarea maxlength="300" name="postDescription" ng-model="post.text"></textarea>
       </div>
     </div>
   </div>
   <div class="postMainSubmitBlock">
-    <button id="postMainSubmit">Submit LFG post</button>
+    <button id="postMainSubmit" ng-click='addPost(post)'>Submit LFG post</button>
   </div>
 </main>
 <footer>
