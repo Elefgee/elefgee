@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var userSchema = new mongoose.Schema({
   // add any additional properties here as well as routes/auth.js and routes/profile.js
   // newProperty: String,
+  userInfo: Object,
   displayName: String,
   picture: String,
   steamId: String,

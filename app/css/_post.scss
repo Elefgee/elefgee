@@ -166,7 +166,16 @@ MAIN
 
       > div:first-of-type {
         a {
-          margin-right: 10px;
+          height: 100%;
+          width: 100%;
+          background-color: $wt2;
+          @include flexbox(row, center, center);
+          @include transition;
+
+          &:hover {
+            color: $wt2;
+            background-color: $green;
+          }
 
           img {
             height: 75px;
@@ -181,17 +190,25 @@ MAIN
       }
 
       > div:nth-of-type(2) {
-        background-color: $darkgray;
-        padding: 5px;
-        color: $wt;
+        color: $wt2;
         text-align: center;
 
+        > span {
+          height: 100%;
+          width: 100%;
+          background-color: $darkgray;
+          @include flexbox(row, center, center);
+        }
+
         > a {
+          height: 100%;
+          padding: 5px;
           color: $wt2;
+          background-color: $darkgray;
           @include transition;
 
           &:hover {
-            color: $green;
+            background-color: $green;
           }
         }
       }
@@ -213,9 +230,11 @@ MAIN
           height: 300px;
           margin: 12.5px auto 0;
           font-size: 1.25rem;
+          @include transition;
 
           &:focus {
             outline: 0;
+            border-color: $green;
           }
         }
       }
