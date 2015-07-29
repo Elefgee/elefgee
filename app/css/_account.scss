@@ -7,9 +7,11 @@
   @include flexbox(row, center, center);
 
   .accountProfilePicture {
+    @include flexbox(column, center, center);
     img {
       border-radius: 50%;
       box-shadow: 0px 1px 5px 1px black;
+      margin-bottom: 10px;
     }
   }
 
@@ -50,8 +52,7 @@
     @include flexbox(row, center, center);
     width: 100%;
     color: $wt2;
-    background-color: $lightblack;
-    border: 5px solid $darkgray;
+    background-color: $darkgray;
     height: 100%;
     @include transition;
   }
@@ -60,27 +61,26 @@
     @include flexbox(row, center, center);
     width: 100%;
     color: $wt2;
-    background-color: $darkgray;
-    border: 5px solid $darkgray;
+    background-color: $lightblack;
     height: 100%;
     @include transition;
   }
 
   .navBtn:hover {
-    background-color: $darkgray;
+    background-color: $lightblack;
     cursor: pointer;
   }
   .navBtn:active {
-    background-color: $lightblack;
+    background-color: $darkblack;
     cursor: pointer;
   }
 
   .navBtnActive:hover {
-    background-color: $darkgray;
+    background-color: $lightblack;
     cursor: pointer
   }
   .navBtnActive:active {
-    background-color: $lightblack;
+    background-color: $darkblack;
     cursor: pointer
   }
 }

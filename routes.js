@@ -1,6 +1,7 @@
 var User = require('./models/User');
 var mongoose = require('mongoose');
 var jwt = require('jwt-simple');
+var _ = require('underscore');
 
 module.exports = function(app, passport) {
 
@@ -19,6 +20,10 @@ module.exports = function(app, passport) {
       passport.authenticate('steam', { failureRedirect: '/login' }),
       function(req, res, next) {
         console.log('user info from steam',req.user);
+
+        _.each(req.user.games.games, function(el){
+          el.pictureLink = "http://media.steampowered.com/steamcommunity/public/images/apps/" + el.appid + "/" + el.img_logo_url + ".jpg"
+        });
 
         User.find({steamId: req.user.id}, function(err, user) {
           console.log('TEST');

@@ -3,12 +3,11 @@ HEADER
 **************************/
 
 .postHeader {
-  background-image: url('../media/tetris.jpg');
+  background-image: url('../media/white_wall_hash.png');
   background-position: 50% 55%;
   position: relative;
-  height: 500px;
+  height: 325px;
   color: $wt;
-  @include flexbox(column, center, center);
 
   > div:first-of-type {
     width: auto;
@@ -19,15 +18,17 @@ HEADER
   }
 
   .postHeaderSearchBlock {
-    height: 10%;
+    height: 30%;
     padding: 0 2.5%;
     color: $pt;
     @include flexbox(row, flex-end, center);
 
     .postHeaderSearch {
-      height: 90%;
+      height: 50%;
       background-color: $wt;
       padding: 5px;
+      border: 1px solid $green;
+      border-radius: 10px;
       @include flexbox(row, center, center);
 
       > * {
@@ -37,7 +38,8 @@ HEADER
       input {
         background: none;
         border: 0;
-        text-align: center;
+        text-align: left;
+        padding-left: 10px;
 
         &:focus {
           outline: 0;
@@ -46,6 +48,7 @@ HEADER
 
       i {
         @include flexbox(row, center, center);
+        margin-right: 5px;
       }
     }
   }
@@ -53,22 +56,23 @@ HEADER
   .postHeaderGamesBlock {
     width: 95%;
     margin: 0 auto;
-    height: 90%;
+    height: 70%;
     @include flexbox(row, center, center);
 
     .postHeaderGamesWrapper {
       position: relative;
-      height: 400px;
+      height: 100%;
       padding: 25px 0;
       overflow: auto;
       overflow-y: hidden;
       white-space: nowrap;
 
       .postHeaderGameBlock {
+
         position: relative;
         display: inline-block;
-        height: 350px;
-        width: 350px;
+        height: 175px;
+        width: 300px;
         margin-right: 25px;
         background-color: $darkgray;
         cursor: pointer;
@@ -97,13 +101,14 @@ HEADER
 
         > div:last-of-type {
           text-align: center;
+          @include flexbox(row, center, center);
           white-space: nowrap;
           height: 20%;
           text-overflow: ellipsis;
           overflow: hidden;
-          font-size: 1.25rem;
-          font-family: $sans;
-          padding: 17.5px 5px;
+          font-size: .9rem;
+          font-family: "Roboto", sans-serif;
+          padding: 2px;
         }
       }
 
