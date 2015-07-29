@@ -2,20 +2,20 @@
   'use strict';
   angular
     .module('elefgee')
-    .controller('PostController', function($scope, $route, SteamService) {
+    .controller('PostController', function($scope, $rootScope, $route, SteamService, _) {
       $scope.$route = $route;
-      $scope.number = 15;
-      $scope.getNumber = function(num) {
-        return new Array(num);
-      }
-      //
-      // SteamService.getMe().success(function(data){
-      //   $scope.games = data
-      // })
+
+      SteamService.getMe().success(function(data){
+        $scope.me = data;
+        $scope.games = data.games
+      })
 
       $scope.selectGame = function($event) {
         console.log($event.currentTarget);
         var target = $event.currentTarget;
+        var targetId = $(target).data('id');
+        $rootScope.selectedGame = _.where($scope.games.games, {appid: targetId});
+        console.log('SELECTEDGAME', $rootScope.selectedGame[0]);
         $(target).siblings().removeClass('selectedGame');
         $(target).addClass('selectedGame');
       }
