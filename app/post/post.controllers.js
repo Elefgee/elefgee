@@ -2,9 +2,11 @@
   'use strict';
   angular
     .module('elefgee')
-    .controller('PostController', function($scope, $rootScope, $route, SteamService, _) {
+    .controller('PostController', function($scope, $rootScope, $route, SteamService, _, $location) {
       $scope.$route = $route;
       $rootScope.selectedGame = [{name: '-'}];
+      $scope.post = {};
+
       $scope.post = {};
 
       SteamService.getMe().success(function(data){
@@ -38,5 +40,11 @@
         $(target).siblings().removeClass('selectedGame');
         $(target).addClass('selectedGame');
       }
+
+      $scope.addPost = function(postData) {
+        SteamService.addPost(postData)
+        $location.path('/feed')
+      }
     })
+
 })();

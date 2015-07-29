@@ -17,6 +17,7 @@
         <div>
           <img ng-src="{{ game.pictureLink }}">
         </div>
+        <i class="fa fa-check"></i>
         <div>
           <div>
             {{ game.name }}
@@ -46,12 +47,12 @@
       </div>
       <div class="postBlockDescription">
         <label for="postDescription">Enter a description for your LFG post:</label>
-        <textarea maxlength="300" name="postDescription" ng-model="post.description"></textarea>
+        <textarea maxlength="300" name="postDescription" ng-model="post.text"></textarea>
       </div>
     </div>
   </div>
   <div class="postMainSubmitBlock">
-    <button id="postMainSubmit" ng-click="addPost(post)">Submit LFG post</button>
+    <button id="postMainSubmit" ng-click='addPost(post)'>Submit LFG post</button>
   </div>
 </main>
 <footer>
