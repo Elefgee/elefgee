@@ -1428,11 +1428,30 @@ MAIN
           align-items: center; }
         .postMain .postMainBlock > div > div:nth-of-type(2) > a {
           height: 100%;
+          width: 100%;
           padding: 5px;
           color: whitesmoke;
+          font-size: 0.95rem;
           background-color: #4D4D4D;
           -webkit-transition: all .25s ease;
-          transition: all .25s ease; }
+          transition: all .25s ease;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center; }
           .postMain .postMainBlock > div > div:nth-of-type(2) > a:hover {
             background-color: #7AAF36; }
       .postMain .postMainBlock > div > div:last-of-type {
