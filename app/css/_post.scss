@@ -72,7 +72,7 @@ HEADER
         position: relative;
         display: inline-block;
         height: 175px;
-        width: 300px;
+        width: 250px;
         margin-right: 25px;
         background-color: $darkgray;
         cursor: pointer;
@@ -91,7 +91,7 @@ HEADER
         }
 
         > div:first-of-type {
-          height: 80%;
+          height: 60%;
 
           img {
             height: 100%;
@@ -103,10 +103,10 @@ HEADER
           text-align: center;
           @include flexbox(row, center, center);
           white-space: nowrap;
-          height: 20%;
+          height: 40%;
           text-overflow: ellipsis;
           overflow: hidden;
-          font-size: .9rem;
+          font-size: .75rem;
           font-family: "Roboto", sans-serif;
           padding: 2px;
         }
@@ -143,6 +143,7 @@ MAIN
     }
 
     > div:first-of-type {
+      margin-left: 25px;
       padding-top: 25px;
       width: 25%;
       @include flexbox(column, flex-start, center);
@@ -154,7 +155,7 @@ MAIN
 
     > div:last-of-type {
       height: 100%;
-      width: 75%;
+      width: 100%;
       @include flexbox(row, center, flex-start);
       flex-wrap: wrap;
 
@@ -162,7 +163,7 @@ MAIN
         width: 50%;
         height: 20%;
         font-family: $sans;
-        font-size: 2rem;
+        font-size: 3.2vw;
         @include flexbox(row, center, center);
       }
 

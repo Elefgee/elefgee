@@ -1068,7 +1068,7 @@ HEADER
         position: relative;
         display: inline-block;
         height: 175px;
-        width: 300px;
+        width: 250px;
         margin-right: 25px;
         background-color: #4D4D4D;
         cursor: pointer; }
@@ -1082,7 +1082,7 @@ HEADER
           top: -36px;
           color: #7AAF36; }
         .postHeader .postHeaderGamesBlock .postHeaderGamesWrapper .postHeaderGameBlock > div:first-of-type {
-          height: 80%; }
+          height: 60%; }
           .postHeader .postHeaderGamesBlock .postHeaderGamesWrapper .postHeaderGameBlock > div:first-of-type img {
             height: 100%;
             width: 100%; }
@@ -1106,10 +1106,10 @@ HEADER
           -ms-flex-align: center;
           align-items: center;
           white-space: nowrap;
-          height: 20%;
+          height: 40%;
           text-overflow: ellipsis;
           overflow: hidden;
-          font-size: .9rem;
+          font-size: .75rem;
           font-family: "Roboto", sans-serif;
           padding: 2px; }
       .postHeader .postHeaderGamesBlock .postHeaderGamesWrapper .postHeaderGameBlock.selectedGame {
@@ -1148,6 +1148,7 @@ MAIN
     .postMain .postMainBlock > div {
       height: 100%; }
     .postMain .postMainBlock > div:first-of-type {
+      margin-left: 25px;
       padding-top: 25px;
       width: 25%;
       display: -webkit-box;
@@ -1171,7 +1172,7 @@ MAIN
         border-radius: 50%; }
     .postMain .postMainBlock > div:last-of-type {
       height: 100%;
-      width: 75%;
+      width: 100%;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -1194,7 +1195,7 @@ MAIN
         width: 50%;
         height: 20%;
         font-family: "Roboto", sans-serif;
-        font-size: 2rem;
+        font-size: 3.2vw;
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
