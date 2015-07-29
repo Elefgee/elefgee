@@ -823,6 +823,10 @@ FOOTER
         color: #7AAF36; }
 
 .accountNav {
+  height: 75px;
+  width: 100vw;
+  border-bottom: 2px solid #7AAF36;
+  font-family: "Roboto", sans-serif;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -840,36 +844,15 @@ FOOTER
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 75px;
-  width: 100vw;
   -webkit-transition: all .25s ease;
-  transition: all .25s ease;
-  border-bottom: 2px solid #7AAF36; }
+  transition: all .25s ease; }
   .accountNav .navBtn {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
     width: 100%;
     color: whitesmoke;
     background-color: #4D4D4D;
     height: 100%;
     -webkit-transition: all .25s ease;
-    transition: all .25s ease; }
-  .accountNav .navBtnActive {
+    transition: all .25s ease;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -886,13 +869,31 @@ FOOTER
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
-    align-items: center;
+    align-items: center; }
+  .accountNav .navBtnActive {
     width: 100%;
     color: whitesmoke;
     background-color: #242424;
     height: 100%;
     -webkit-transition: all .25s ease;
-    transition: all .25s ease; }
+    transition: all .25s ease;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
   .accountNav .navBtn:hover {
     background-color: #242424;
     cursor: pointer; }

@@ -99,28 +99,29 @@
 }
 
 .accountNav {
-  @include flexbox(row, center, center);
   height: 75px;
   width: 100vw;
-  @include transition;
   border-bottom: 2px solid $green;
+  font-family: $sans;
+  @include flexbox(row, center, center);
+  @include transition;
 
   .navBtn {
-    @include flexbox(row, center, center);
     width: 100%;
     color: $wt2;
     background-color: $darkgray;
     height: 100%;
     @include transition;
+    @include flexbox(row, center, center);
   }
 
   .navBtnActive {
-    @include flexbox(row, center, center);
     width: 100%;
     color: $wt2;
     background-color: $lightblack;
     height: 100%;
     @include transition;
+    @include flexbox(row, center, center);
   }
 
   .navBtn:hover {

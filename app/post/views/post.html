@@ -5,14 +5,14 @@
 
   <div class="postHeaderSearchBlock">
     <div class="postHeaderSearch">
-      <input type="text" name="postSearch">
+      <input type="text" name="search" ng-model="search.name">
       <i class="fa fa-search"></i>
     </div>
   </div>
 
   <div class="postHeaderGamesBlock">
     <div class="postHeaderGamesWrapper">
-      <div class="postHeaderGameBlock" ng-repeat="game in games.games" ng-click="selectGame($event)" data-id="{{ game.appid }}">
+      <div class="postHeaderGameBlock" ng-repeat="game in games.games | filter:search:strict" ng-model="search" ng-click="selectGame($event)" data-id="{{ game.appid }}">
         <i class="fa fa-check"></i>
         <div>
           <img ng-src="{{ game.pictureLink }}">
@@ -46,12 +46,12 @@
       </div>
       <div class="postBlockDescription">
         <label for="postDescription">Enter a description for your LFG post:</label>
-        <textarea maxlength="300" name="postDescription"></textarea>
+        <textarea maxlength="300" name="postDescription" ng-model="post.description"></textarea>
       </div>
     </div>
   </div>
   <div class="postMainSubmitBlock">
-    <button id="postMainSubmit">Submit LFG post</button>
+    <button id="postMainSubmit" ng-click="addPost(post)">Submit LFG post</button>
   </div>
 </main>
 <footer>
