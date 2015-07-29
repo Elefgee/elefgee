@@ -2,44 +2,85 @@
     <a href="#/feed"><img src="../media/elefgee.png" alt=""></a>
 </div>
 
-<a href="#/post">
-<div class="accountLFGBtn">
-  LFG
-</div>
-</a>
-
 <div class="accountHeader">
-  <div class="accountProfilePicture">
-    <img ng-src="{{ user.picture }}" alt="">
-    <h2>{{ user.displayName }}</h2>
+  <div class="accountButtonsWrapper">
+    <div class="accountButtonsBlock">
+      <a href="#/post">
+        LFG
+      </a>
+      <a href="/logout">
+        LOGOUT
+      </a>
+    </div>
   </div>
-  <!-- <div class="accountSideNav">
-    <i class="fa fa-user"></i>
-  </div> -->
+  <div class="accountProfileInfo">
+      <a href="http://www.steamcommunity.com/profiles/{{ user.steamId }}">
+        <img ng-src="{{ user.picture }}" alt="">
+        <h2>{{ user.displayName }}</h2>
+      </a>
+  </div>
+  <div class="accountProfileStats">
+    <div>
+      <div>
+        <div>
+          {{ user.games.game_count }}
+        </div>
+      </div>
+      <div>
+        Game Count
+      </div>
+    </div>
+    <div>
+      <div>
+        <div>
+          {{ user.userInfo.lastlogoff * 1000 | date:'MM/dd' }}
+        </div>
+      </div>
+      <div>
+        Last Online
+      </div>
+    </div>
+    <div>
+      <div>
+        <div>
+          {{ user.userInfo.timecreated * 1000 | date:'MM/dd/yy' }}
+        </div>
+      </div>
+      <div>
+        Profile Created
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="accountNav">
-  <div class="navBtn accountAccBtn" ng-class="isTrue('account') ? 'navBtnActive' : 'navBtn'" ng-click="accountNavClick('account')" >
-    Account
+  <div class="navBtn accountLibBtn" ng-class="isTrue('library') ? 'navBtnActive' : 'navBtn'" ng-click="accountNavClick('library')" >
+    Library
   </div>
   <div class="navBtn accountPostsBtn" ng-class="isTrue('posts') ? 'navBtnActive' : 'navBtn'" ng-click="accountNavClick('posts')" >
     Posts
   </div>
-  <div class="navBtn accountLibBtn" ng-class="isTrue('library') ? 'navBtnActive' : 'navBtn'" ng-click="accountNavClick('library')" >
-    Library
-  </div>
 </div>
 
 <div class="infoWrap">
-<div class="info accountInfo" ng-if='(navs[0].active)'>
-  ALL DE INFO ON JEW
+<div class="info accountLibrary" ng-if='(navs[0].active)'>
+  <div class="libraryWrapper">
+    <div class="libraryGameBlockWrapper" ng-repeat="game in gamesList">
+      <a href="http://www.steamcommunity.com/app/{{ game.appid }}" class="libraryGameBlock" ng-click="selectGame($event)" data-id="{{ game.appid }}">
+        <div>
+          <img ng-src="{{ game.pictureLink }}">
+        </div>
+        <div>
+          <div>
+            {{ game.name }}
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
 
-<div class="info accountLibrary" ng-if='(navs[1].active)'>
-  DER SHULD BE GAMES HUR
-</div>
-
-<div class="info accountPosts" ng-if='(navs[2].active)' ng-controller="FeedController">
+<div class="info accountPosts" ng-if='(navs[1].active)' ng-controller="FeedController">
   <div class="feedPostBlock" ng-repeat="i in getNumber(number) track by $index">
     <div class="feedPostImage">
       <img src="https://www.placehold.it/200x200">

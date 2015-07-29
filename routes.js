@@ -37,7 +37,8 @@ module.exports = function(app, passport) {
               displayName: req.user.displayName,
               steamId: req.user.id,
               picture: req.user.photos[2].value,
-              games: req.user.games
+              games: req.user.games,
+              posts: []
             });
 
             console.log('User created!');

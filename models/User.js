@@ -7,6 +7,7 @@ var userSchema = new mongoose.Schema({
   displayName: String,
   picture: String,
   steamId: String,
+  posts: Array,
   games: Object
 });
 

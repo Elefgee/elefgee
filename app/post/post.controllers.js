@@ -4,6 +4,7 @@
     .module('elefgee')
     .controller('PostController', function($scope, $rootScope, $route, SteamService, _) {
       $scope.$route = $route;
+      $rootScope.selectedGame = [{name: '-'}];
 
       $scope.post = {};
 
@@ -14,7 +15,6 @@
       })
 
       $scope.selectGame = function($event) {
-        console.log($event.currentTarget);
         var target = $event.currentTarget;
         var targetId = $(target).data('id');
         var selectedGames = _.where($scope.games.games, {appid: targetId});

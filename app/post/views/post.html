@@ -32,15 +32,18 @@
   <div class="postMainBlock">
     <div>
       <div class="postBlockUser">
-        <a href="#/account">
+        <a href="#/account/{{ me.id }}">
           <img ng-src="{{me.photos[2].value}}">
+          <span>{{ me.displayName }}</span>
         </a>
-        <span>{{ me.displayName }}</span>
       </div>
       <div class="postBlockGame" ng-controller="PostController">
-        <a href="http://www.steamcommunity.com/app/{{selectedGame[0].appid}}">
+        <a ng-if="selectedGame[0].name !== '-'" href="http://www.steamcommunity.com/app/{{selectedGame[0].appid}}">
           {{ selectedGame[0].name }}
         </a>
+        <span ng-if="selectedGame[0].name === '-'">
+          {{ selectedGame[0].name }}
+        </span>
       </div>
       <div class="postBlockDescription">
         <label for="postDescription">Enter a description for your LFG post:</label>
