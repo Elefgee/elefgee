@@ -21,6 +21,7 @@ module.exports = function(app, passport) {
         console.log('user info from steam',req.user);
 
         User.find({steamId: req.user.id}, function(err, user) {
+          console.log('TEST');
           if (user.length !== 0) {
             console.log('Logging in as existing user!');
             res.redirect('#/feed')
@@ -34,7 +35,7 @@ module.exports = function(app, passport) {
               games: req.user.games
             });
 
-            console.log('User created!');
+            console.log('User created!', user);
 
             user.save(function(err) {
               if(err) throw err;
