@@ -7,8 +7,6 @@
       $rootScope.selectedGame = [{name: '-'}];
       $scope.post = {};
 
-      $scope.post = {};
-
       SteamService.getMe().success(function(data){
         $scope.me = data;
         $scope.games = data.games;
@@ -40,8 +38,18 @@
       $scope.addPost = function(postData) {
         postData.timestamp = new Date();
         SteamService.addPost(postData);
+        console.log($scope.post);
         $location.path('/feed');
         $window.scrollTo(0, 0);
+      }
+
+      $scope.loggedIn = function(displayName) {
+        if (displayName === undefined) {
+          console.log('Log in!');
+        }
+        else if (displayName.length > 0) {
+          return true;
+        }
       }
     })
 
