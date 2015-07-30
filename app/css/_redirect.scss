@@ -56,7 +56,7 @@ CONTENT
       color: $wt2;
       float: right;
       width: 60%;
-      height: 100%;
+      height: 80%;
       @include flexbox(column, center, center);
 
       #oops {
@@ -90,8 +90,8 @@ CONTENT
 
     .bonk {
       position: absolute;
-      top: 60px;
-      right: 95px;
+      top: 40px;
+      right: 103px;
       img {
         height: 150px;
         width: 150px;

@@ -1743,7 +1743,7 @@ CONTENT
       color: whitesmoke;
       float: right;
       width: 60%;
-      height: 100%;
+      height: 80%;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -1802,8 +1802,8 @@ CONTENT
           background-color: #96d642; }
     .redirectContentWrap .redirectContent .bonk {
       position: absolute;
-      top: 60px;
-      right: 95px; }
+      top: 40px;
+      right: 103px; }
       .redirectContentWrap .redirectContent .bonk img {
         height: 150px;
         width: 150px;
