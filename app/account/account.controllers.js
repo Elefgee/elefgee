@@ -16,6 +16,14 @@
 
       SteamService.getMe().success(function (me) {
         $scope.me = me;
+        $scope.loggedIn = function(meName) {
+          if (meName === undefined) {
+            $location.path('/BONK')
+          }
+          else if (meName.length > 0) {
+            return true;
+          }
+        }
       })
 
       if($routeParams.steamId) {
@@ -44,13 +52,5 @@
         return nameBtn.active;
       }
 
-      $scope.loggedIn = function(meName) {
-        if (meName === undefined) {
-          
-        }
-        else if (meName.length > 0) {
-          return true;
-        }
-      }
     })
 })();
