@@ -64,14 +64,33 @@ module.exports = function(app, passport) {
 
     app.get('/me', function (req, res, next) {
       res.send(req.user);
-    }) 
+    })
+
+    app.put('/deletePost', function(req, res, next){
+      console.log(req.body);
+
+      User.find({steamId: req.body.userData.id}, function(err, user) {
+
+        var post = _.findWhere(user[0].posts, {timestamp: req.body.timestamp, text: req.body.text});
+        var updatedPosts = _.without(user[0].posts, post);
+        user[0].posts = updatedPosts;
+
+        user[0].save(function(err) {
+           if(err) throw err;
+           console.log('Deleted this post', user);
+         })
+
+        res.send(user[0]);
+
+      });
+
+      //splice index of Object sent to database.
+    })
 
     app.put('/posts', function(req, res, next){  // Look for user with id, push object to 'posts' array, Save the user data
       console.log('Body',req.body);
-      console.log('1',req.body.userData.id);
 
       User.find({steamId: req.body.userData.id}, function(err, user) {
-        console.log('I am the user!', user[0]);
         console.log('I am the posts!', user[0].posts)
 
         user[0].posts.push(req.body);
@@ -80,6 +99,8 @@ module.exports = function(app, passport) {
            if(err) throw err;
            console.log('Added posts', user);
          })
+
+        res.send(user[0]);
       });
 
     });

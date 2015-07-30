@@ -5,6 +5,7 @@
     .controller('FeedController', function($scope, $route, SteamService, $location) {
       $scope.$route = $route;
       SteamService.getUserInfo().success(function(data){
+        console.log(data);
         $scope.allPosts = [];
         _.each(data, function(el, idx, list) {
           _.each(data[idx].posts, function(el2, idx2) {

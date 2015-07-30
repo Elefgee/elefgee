@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="accountProfileInfo">
-      <a href="http://www.steamcommunity.com/profiles/{{ user.steamId }}">
+      <a target="_blank" href="http://www.steamcommunity.com/profiles/{{ user.steamId }}">
         <img ng-src="{{ user.picture }}" alt="">
         <h2>{{ user.displayName }}</h2>
       </a>
@@ -68,7 +68,7 @@
 <div class="info accountLibrary" ng-if='(navs[0].active)'>
   <div class="libraryWrapper">
     <div class="libraryGameBlockWrapper" ng-repeat="game in gamesList">
-      <a href="http://www.steamcommunity.com/app/{{ game.appid }}" class="libraryGameBlock" ng-click="selectGame($event)" data-id="{{ game.appid }}">
+      <a target="_blank" href="http://www.steamcommunity.com/app/{{ game.appid }}" class="libraryGameBlock" ng-click="selectGame($event)" data-id="{{ game.appid }}">
         <div>
           <img ng-src="{{ game.pictureLink }}" err-src="https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txt=Image+Unavailable&w=250&h=105&txttrack=0">
         </div>
@@ -102,7 +102,7 @@
         </a>
       </div>
       <div class="feedPostSteam">
-        <i class="fa fa-times"></i>
+        <i class="fa fa-times" ng-click="deletePost(post.timestamp, post.text, post.userData)"></i>
       </div>
       <div class="feedPostTimestamp">
         <span am-time-ago="post.timestamp"></span>

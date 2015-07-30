@@ -52,5 +52,23 @@
         return nameBtn.active;
       }
 
+      $scope.deletePost = function(time, text, userData) {
+        console.log(userData);
+        var selectedPost = {timestamp: time, text: text, userData: userData};
+        var id = $routeParams.steamId;
+        SteamService.deletePost(selectedPost);
+      }
+
+      var postDeletedCallback = function() {
+        console.log('CALLIN BACK');
+        SteamService.getUserInfo().success(function(data){
+          var routeSteamId = $routeParams.steamId;
+          var foundUser = _.where(data, {steamId: routeSteamId});
+          console.log(foundUser[0].posts);
+          $scope.posts = foundUser[0].posts;
+        });
+      }
+
+      $scope.$on('post:deleted', postDeletedCallback);
     })
 })();

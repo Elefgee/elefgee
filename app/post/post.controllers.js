@@ -47,7 +47,6 @@
       $scope.addPost = function(postData) {
         postData.timestamp = new Date();
         SteamService.addPost(postData);
-        console.log($scope.post);
         $location.path('/feed');
         $window.scrollTo(0, 0);
       }

@@ -28,6 +28,10 @@ HEADER
         height: 125px;
         width: 125px;
         border-radius: 50%;
+        @include transition;
+      }
+      img:hover {
+        box-shadow: 0px 0px 1px 2px $green;
       }
     }
 
