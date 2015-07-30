@@ -75,6 +75,11 @@ HEADER
         margin-right: 25px;
         background-color: $darkgray;
         cursor: pointer;
+        @include transition;
+
+        &:hover {
+          background-color: $green;
+        }
 
         &:last-of-type {
           margin-right: 0;
@@ -100,8 +105,6 @@ HEADER
 
         > div:last-of-type {
           display: table;
-          /* @include flexbox(row, center, center); */
-          /* flex-wrap: wrap; */
           overflow: hidden;
           height: 40%;
           width: 100%;

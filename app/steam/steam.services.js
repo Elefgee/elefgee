@@ -12,12 +12,16 @@
           return url;
         }
       };
-
       var getUserInfo = function() {
         return $http.get('/user');
       }
       var getMe = function () {
         return $http.get('/me');
+      }
+      var addPost = function(post) {
+        $http.put('/posts', post).success(function(data){
+         console.log('I just posted this data!', data);
+        })
       }
 
       var addPost = function(post) {

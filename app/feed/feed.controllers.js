@@ -3,18 +3,20 @@
   angular
     .module('elefgee')
     .controller('FeedController', function($scope, $route, SteamService) {
-
+      $scope.$route = $route;
       SteamService.getUserInfo().success(function(data){
+        $scope.allPosts = [];
+        _.each(data, function(el, idx, list) {
+          _.each(data[idx].posts, function(el2, idx2) {
+            $scope.allPosts.push(el2);
+          })
+        });
+        console.log($scope.allPosts);
         $scope.user = data[0];
       });
 
       SteamService.getMe().success(function (me) {
-        $scope.me = me
+        $scope.me = me;
       })
-      $scope.$route = $route;
-      $scope.number = 5;
-      $scope.getNumber = function(num) {
-        return new Array(num);
-      }
     })
 })();

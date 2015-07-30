@@ -55,10 +55,10 @@
 
 <div class="accountNav">
   <div class="navBtn accountLibBtn" ng-class="isTrue('library') ? 'navBtnActive' : 'navBtn'" ng-click="accountNavClick('library')" >
-    Library
+    LIBRARY
   </div>
   <div class="navBtn accountPostsBtn" ng-class="isTrue('posts') ? 'navBtnActive' : 'navBtn'" ng-click="accountNavClick('posts')" >
-    Posts
+    POSTS
   </div>
 </div>
 
@@ -68,7 +68,7 @@
     <div class="libraryGameBlockWrapper" ng-repeat="game in gamesList">
       <a href="http://www.steamcommunity.com/app/{{ game.appid }}" class="libraryGameBlock" ng-click="selectGame($event)" data-id="{{ game.appid }}">
         <div>
-          <img ng-src="{{ game.pictureLink }}">
+          <img ng-src="{{ game.pictureLink }}" err-src="https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txt=Image+Unavailable&w=250&h=105&txttrack=0">
         </div>
         <div>
           <div>
@@ -81,28 +81,29 @@
 </div>
 
 <div class="info accountPosts" ng-if='(navs[1].active)' ng-controller="FeedController">
-  <div class="feedPostBlock" ng-repeat="i in getNumber(number) track by $index">
-    <div class="feedPostImage">
-      <img src="https://www.placehold.it/200x200">
+  <div class="accountPostBlock" ng-repeat="post in posts">
+    <div class="accountPostImage">
+      <img ng-src="{{ post.userData.photos[2].value }}">
     </div>
-    <div class="feedPostInfo1">
-      <div class="feedPostName">
-        <h4>Mr. Gameman</h4>
+    <div class="accountPostInfo1">
+      <div class="accountPostName">
+        <h4>{{ post.userData.displayName }}</h4>
       </div>
-      <div class="feedPostDescription">
-        Looking to own some noobs in TF2! Please respond only if you are above the age of 30, have at least 100 hours played, and can withstand constant sobbing.
+      <div class="accountPostDescription">
+        {{ post.text }}
       </div>
     </div>
-    <div class="feedPostInfo2">
-      <div class="feedPostGame">
-        Team Fortress 2
+    <div class="accountPostInfo2">
+      <div class="accountPostGame">
+        <a target="_blank" href="http://www.steamcommunity.com/app/{{ post.appid }}">
+          {{ post.name }}
+        </a>
       </div>
-      <div class="feedPostActions">
-        <i class="fa fa-envelope"></i>
-        <i class="fa fa-user-plus"></i>
+      <div class="accountPostActions">
+        <i class="fa fa-times"></i>
       </div>
-      <div class="feedPostTime">
-        2 hours ago
+      <div class="accountPostTime">
+        <span am-time-ago="post.timestamp"></span>
       </div>
     </div>
   </div>
