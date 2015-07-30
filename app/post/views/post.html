@@ -5,17 +5,17 @@
 
   <div class="postHeaderSearchBlock">
     <div class="postHeaderSearch">
-      <input type="text" name="postSearch">
+      <input type="text" name="search" ng-model="search.name">
       <i class="fa fa-search"></i>
     </div>
   </div>
 
   <div class="postHeaderGamesBlock">
     <div class="postHeaderGamesWrapper">
-      <div class="postHeaderGameBlock" ng-repeat="game in games.games" ng-click="selectGame($event)" data-id="{{ game.appid }}">
+      <div class="postHeaderGameBlock" ng-repeat="game in games.games | filter:search:strict" ng-model="search" ng-click="selectGame($event)" data-id="{{ game.appid }}">
         <i class="fa fa-check"></i>
         <div>
-          <img ng-src="{{ game.pictureLink }}">
+          <img ng-src="{{ game.pictureLink }}" err-src="https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txt=Image+Unavailable&w=250&h=105&txttrack=0">
         </div>
         <i class="fa fa-check"></i>
         <div>

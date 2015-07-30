@@ -2,17 +2,29 @@
   'use strict';
   angular
     .module('elefgee')
-    .controller('PostController', function($scope, $rootScope, $route, SteamService, _, $location) {
+    .controller('PostController', function($scope, $window, $rootScope, $route, SteamService, _, $location) {
       $scope.$route = $route;
       $rootScope.selectedGame = [{name: '-'}];
+      $scope.post = {};
 
       $scope.post = {};
 
       SteamService.getMe().success(function(data){
         $scope.me = data;
-        $scope.games = data.games
+        $scope.games = data.games;
         $scope.post.userData = data;
+        var sortedGames = _.sortBy($scope.games.games, 'playtime_forever');
+        $scope.games.games = sortedGames.reverse();
       })
+
+      $scope.getUserById = function(steamIdArg) {
+        SteamService.getUserInfo().success(function(allUsers){
+          console.log('ALL USERS', allUsers);
+          var certainUser = _.where(allUsers, {steamId: steamIdArg});
+          console.log(certainUser);
+          return certainUser;
+        })
+      }
 
       $scope.selectGame = function($event) {
         var target = $event.currentTarget;
@@ -26,8 +38,10 @@
       }
 
       $scope.addPost = function(postData) {
-        SteamService.addPost(postData)
-        $location.path('/feed')
+        postData.timestamp = new Date();
+        SteamService.addPost(postData);
+        $location.path('/feed');
+        $window.scrollTo(0, 0);
       }
     })
 

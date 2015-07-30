@@ -49,10 +49,26 @@
     a {
       @include flexbox(column, center, center);
 
+      &:hover {
+        h2 {
+          color: $green;
+        }
+
+        img {
+          box-shadow: 0px 0px 1px 5px $green;
+        }
+
+      }
+
+      h2 {
+        @include transition;
+      }
+
       img {
         border-radius: 50%;
         box-shadow: 0px 1px 5px 1px black;
         margin-bottom: 10px;
+        @include transition;
       }
     }
   }
@@ -99,28 +115,29 @@
 }
 
 .accountNav {
-  @include flexbox(row, center, center);
   height: 75px;
   width: 100vw;
-  @include transition;
   border-bottom: 2px solid $green;
+  font-family: $sans;
+  @include flexbox(row, center, center);
+  @include transition;
 
   .navBtn {
-    @include flexbox(row, center, center);
     width: 100%;
     color: $wt2;
     background-color: $darkgray;
     height: 100%;
     @include transition;
+    @include flexbox(row, center, center);
   }
 
   .navBtnActive {
-    @include flexbox(row, center, center);
     width: 100%;
     color: $wt2;
     background-color: $lightblack;
     height: 100%;
     @include transition;
+    @include flexbox(row, center, center);
   }
 
   .navBtn:hover {
@@ -177,9 +194,13 @@
 
 // FEED //
 
-.feedPostBlock {
+.accountPosts {
+  padding: 25px 0;
+}
+
+.accountPostBlock {
   height: 300px;
-  width: 100%;
+  width: 80%;
   margin: 0 auto 10px;
   background-color: whitesmoke;
   @include flexbox(row, center, center);
@@ -197,7 +218,7 @@
     width: 50%;
   }
 
-  .feedPostImage {
+  .accountPostImage {
     @include flexbox(row, center, center);
 
     img {
@@ -205,11 +226,11 @@
     }
   }
 
-  .feedPostInfo1 {
+  .accountPostInfo1 {
     padding: 25px 0;
     @include flexbox(column, center, center);
 
-    .feedPostName {
+    .accountPostName {
       height: 25%;
 
       h4 {
@@ -217,33 +238,56 @@
       }
     }
 
-    .feedPostDescription {
+    .accountPostDescription {
       height: 75%;
       overflow: hidden;
     }
   }
 
-  .feedPostInfo2 {
+  .accountPostInfo2 {
     text-align: right;
     @include flexbox(column, space-between, center);
 
     > div {
       width: 100%;
-      padding-right: 5px;
+      text-align: center;
       font-size: 0.85rem;
       color: $ddt;
+
+      &:first-of-type {
+        font-size: 1rem;
+        background-color: none;
+        text-align: center;
+        padding: 0;
+        @include flexbox(row, center, center);
+
+        > a {
+          padding: 5px;
+          height: 100%;
+          width: 100%;
+          color: $wt2;
+          background-color: $darkgray;
+          @include transition;
+
+          &:hover {
+            background-color: $green;
+          }
+        }
+      }
 
       &:nth-of-type(2) {
         padding-right: 0;
         text-align: center;
-        font-size: 2rem;
-        color: $green;
+        font-size: 3rem;
+        color: $red;
         @include flexbox(row, space-around, center);
 
         > i {
           @include transition;
+
           &:hover {
-            color: $lightgreen;
+            cursor: pointer;
+            color: $lightred;
           }
         }
       }

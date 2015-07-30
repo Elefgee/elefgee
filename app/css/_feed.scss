@@ -186,20 +186,32 @@ MAIN
 
           > div {
             width: 100%;
-            padding-right: 5px;
             font-size: 0.85rem;
             color: $ddt;
+            padding: 0 5px;
 
             &:first-of-type {
+              background-color: none;
               text-align: center;
-              background-color: $darkgray;
-              padding-right: 0;
-              color: $wt2;
+              padding: 0;
+              @include flexbox(row, center, center);
+
+              > a {
+                padding: 5px;
+                height: 100%;
+                width: 100%;
+                color: $wt2;
+                background-color: $darkgray;
+                @include transition;
+
+                &:hover {
+                  background-color: $green;
+                }
+              }
             }
 
             &:nth-of-type(2) {
               height: 33.33%;
-              padding-right: 0;
               text-align: center;
               font-size: 2rem;
               color: $green;
