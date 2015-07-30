@@ -202,95 +202,109 @@
   height: 300px;
   width: 80%;
   margin: 0 auto 10px;
-  background-color: whitesmoke;
+  background-color: $wt2;
   @include flexbox(row, center, center);
 
   &:last-of-type {
     margin-bottom: 0;
   }
 
-  > div {
-    width: 25%;
+  div {
     height: 100%;
+    width: 100%;
   }
 
-  > div:nth-of-type(2) {
-    width: 50%;
-  }
-
-  .accountPostImage {
-    @include flexbox(row, center, center);
-
-    img {
-      border-radius: 50%;
-    }
-  }
-
-  .accountPostInfo1 {
-    padding: 25px 0;
+  // div containing user and description blocks
+  > div:first-of-type {
+    width: 82.5%;
     @include flexbox(column, center, center);
 
-    .accountPostName {
-      height: 25%;
+    // post user block
+    > div:first-of-type {
+      height: 20%;
 
-      h4 {
-        font-size: 1.25rem;
+      > div {
+        width: 75%;
+        margin: 0 auto;
+        border-bottom: 2px solid $lightgray;
+        @include flexbox(row, center, center);
+        @include transition;
+
+        > img {
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          margin-right: 5px;
+        }
+
+        > h4 {
+          margin-left: 5px;
+        }
       }
     }
 
-    .accountPostDescription {
-      height: 75%;
+    // post description block
+    > div:last-of-type {
+      height: 80%;
+      padding: 5px;
       overflow: hidden;
+      font-size: 1.1rem;
+      border-bottom: 1.1rem solid $wt2;
     }
   }
 
-  .accountPostInfo2 {
-    text-align: right;
-    @include flexbox(column, space-between, center);
+  // div containing game, steam link, and timestamp blocks
+  > div:last-of-type {
+    width: 17.5%;
+    position: relative;
+    @include flexbox(column, center, center);
 
-    > div {
-      width: 100%;
-      text-align: center;
-      font-size: 0.85rem;
-      color: $ddt;
+    // game block
+    > div:first-of-type {
+      position: absolute;
+      top: 0;
+      height: 20%;
+      overflow: hidden;
 
-      &:first-of-type {
-        font-size: 1rem;
-        background-color: none;
-        text-align: center;
-        padding: 0;
-        @include flexbox(row, center, center);
+      a {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        text-align: right;
+        overflow: hidden;
 
-        > a {
-          padding: 5px;
+        img {
           height: 100%;
           width: 100%;
-          color: $wt2;
-          background-color: $darkgray;
-          @include transition;
-
-          &:hover {
-            background-color: $green;
-          }
         }
       }
+    }
 
-      &:nth-of-type(2) {
-        padding-right: 0;
-        text-align: center;
-        font-size: 3rem;
+    // steam link block
+    > div:nth-of-type(2) {
+      height: 100%;
+      @include flexbox(row, center, center);
+
+      > i {
+        cursor: pointer;
+        font-size: 2.5rem;
         color: $red;
-        @include flexbox(row, space-around, center);
+        @include transition;
 
-        > i {
-          @include transition;
-
-          &:hover {
-            cursor: pointer;
-            color: $lightred;
-          }
+        &:hover {
+          color: $lightred;
         }
       }
+    }
+
+    // timestamp block
+    > div:last-of-type {
+      height: 25%;
+      position: absolute;
+      bottom: 0;
+      @include flexbox(row, center, flex-end);
+      font-size: 0.7rem;
+      color: gray;
     }
   }
 }

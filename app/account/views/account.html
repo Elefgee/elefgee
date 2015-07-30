@@ -84,32 +84,31 @@
 
 <div class="info accountPosts" ng-if='(navs[1].active)' ng-controller="FeedController">
   <div class="accountPostBlock" ng-repeat="post in posts">
-    <div class="accountPostImage">
-      <img ng-src="{{ post.userData.photos[2].value }}">
-    </div>
-    <div class="accountPostInfo1">
-      <div class="accountPostName">
-        <h4>{{ post.userData.displayName }}</h4>
+    <div>
+      <div class="feedPostUser">
+          <div>
+            <img ng-src="{{ post.userData.photos[2].value }}">
+            <h4>{{ post.userData.displayName }}</h4>
+          </div>
       </div>
-      <div class="accountPostDescription">
+      <div class="feedPostDescription">
         {{ post.text }}
       </div>
     </div>
-    <div class="accountPostInfo2">
-      <div class="accountPostGame">
+    <div>
+      <div class="feedPostGame">
         <a target="_blank" href="http://www.steamcommunity.com/app/{{ post.appid }}">
-          {{ post.name }}
+          <img ng-src="{{ post.pictureLink }}" err-src="https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txt=Image+Unavailable&w=250&h=105&txttrack=0">
         </a>
       </div>
-      <div class="accountPostActions">
+      <div class="feedPostSteam">
         <i class="fa fa-times"></i>
       </div>
-      <div class="accountPostTime">
+      <div class="feedPostTimestamp">
         <span am-time-ago="post.timestamp"></span>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 </div>
