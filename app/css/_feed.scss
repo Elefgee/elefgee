@@ -138,7 +138,7 @@ MAIN
       .feedPostBlock {
         height: 200px;
         width: 98%;
-        margin: 0 auto 10px;
+        margin: 0 auto 25px;
         background-color: $wt2;
         @include flexbox(row, center, center);
 
@@ -153,7 +153,7 @@ MAIN
 
         // div containing user and description blocks
         > div:first-of-type {
-          width: 82.5%;
+          @include postImageCalc("width", "100% - #{$postImageWidth}");
           @include flexbox(column, center, center);
 
           // post user block
@@ -202,12 +202,13 @@ MAIN
             padding: 5px;
             overflow: hidden;
             border-bottom: 1rem solid $wt2;
+            word-wrap: break-word;
           }
         }
 
         // div containing game, steam link, and timestamp blocks
         > div:last-of-type {
-          width: 17.5%;
+          width: $postImageWidth;
           position: relative;
           @include flexbox(column, center, center);
 
@@ -256,7 +257,7 @@ MAIN
             position: absolute;
             bottom: 0;
             @include flexbox(row, center, flex-end);
-            font-size: 0.7rem;
+            font-size: 0.575rem;
             color: gray;
           }
         }

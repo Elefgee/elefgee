@@ -2,7 +2,8 @@
   'use strict';
   angular
     .module('elefgee')
-    .controller('PostController', function($scope, $window, $rootScope, $route, SteamService, _, $location) {
+    .controller('PostController', function($scope, $window, $rootScope, $route, SteamService, PostService, _, $location) {
+      var alreadySubmitted = false;
       $scope.$route = $route;
       $rootScope.selectedGame = [{name: '-'}];
       $scope.post = {};
@@ -25,9 +26,7 @@
 
       $scope.getUserById = function(steamIdArg) {
         SteamService.getUserInfo().success(function(allUsers){
-          console.log('ALL USERS', allUsers);
           var certainUser = _.where(allUsers, {steamId: steamIdArg});
-          console.log(certainUser);
           return certainUser;
         })
       }
@@ -42,15 +41,70 @@
         $scope.post.pictureLink = selectedGames[0].pictureLink;
         $(target).siblings().removeClass('selectedGame');
         $(target).addClass('selectedGame');
+        $rootScope.$broadcast('game:selected');
       }
 
       $scope.addPost = function(postData) {
-        postData.timestamp = new Date();
-        SteamService.addPost(postData);
-        $location.path('/feed');
-        $window.scrollTo(0, 0);
+        alreadySubmitted = true;
+        if (!postData.name || !postData.text) {
+          $('#postErrorBlock').css('visibility', 'visible');
+          if (!postData.name && !postData.text) {
+            $('#postErrorGame').show();
+            $('#postErrorDescription').show();
+          } else if (postData.text && !postData.name) {
+            $('#postErrorGame').show();
+            $('#postErrorDescription').hide();
+          } else if (postData.name && !postData.text) {
+            $('#postErrorDescription').show();
+            $('#postErrorGame').hide();
+          }
+        } else {
+          postData.timestamp = new Date();
+          SteamService.addPost(postData);
+          $location.path('/feed');
+          $window.scrollTo(0, 0);
+        }
       }
 
+      $scope.checkForDescription = function() {
+        var descriptionContent = $scope.post.text;
+        if (descriptionContent.length > 0) {
+          $rootScope.$broadcast('description:entered');
+        } else {
+          if (alreadySubmitted === true) {
+            $('#postErrorBlock').css('visibility', 'visible');
+          }
+          $('#postErrorDescription').show();
+        }
+      }
+
+      var gameHasBeenSelected = function() {
+        $('#postErrorGame').hide();
+        if ($('#postErrorGame').css('display') === 'none' && $('#postErrorDescription').css('display') === 'none') {
+          $('#postErrorBlock').css('visibility', 'hidden');
+        }
+      }
+
+      var descriptionHasBeenEntered = function() {
+        var descriptionContent = $scope.post.text;
+
+        if (alreadySubmitted === true) {
+          if (descriptionContent.length === 0) {
+            $('#postErrorBlock').css('visibility', 'visible');
+            $('#postErrorDescription').show();
+          } else {
+            $('#postErrorDescription').hide();
+            $('#postErrorBlock').css('visibility', 'hidden');
+          }
+        } else {
+          if ($('#postErrorGame').css('display') === 'none' && $('#postErrorDescription').css('display') === 'none' && descriptionContent.length > 0) {
+            $('#postErrorBlock').css('visibility', 'hidden');
+          }
+        }
+      }
+
+      $scope.$on('game:selected', gameHasBeenSelected);
+      $scope.$on('description:entered', descriptionHasBeenEntered);
     })
 
 })();

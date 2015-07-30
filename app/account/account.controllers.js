@@ -34,6 +34,7 @@
           $scope.games = foundUser[0].games;
           $scope.posts = foundUser[0].posts;
           $scope.gamesList = _.sortBy(foundUser[0].games.games, 'name');
+          console.log($scope.user);
         });
       }
 

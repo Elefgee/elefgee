@@ -23,6 +23,8 @@ $lightgreen: #96d642;
 $red: #F44336;
 $lightred: #F26F65;
 
+$postImageWidth: 184px;
+
 $sans: 'Roboto', sans-serif;
 $serif: 'Roboto Slab', serif;
 
@@ -106,6 +108,12 @@ MIXINS
 @mixin transition {
   -webkit-transition: all .25s ease;
   transition: all .25s ease;
+}
+
+@mixin postImageCalc($key, $value) {
+  #{$key}: -webkit-calc(#{$value});
+  #{$key}: -moz-calc(#{$value});
+  #{$key}: calc(#{$value});
 }
 
 /**************************

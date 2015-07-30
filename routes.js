@@ -22,7 +22,8 @@ module.exports = function(app, passport) {
         console.log('user info from steam',req.user);
 
         _.each(req.user.games.games, function(el){
-          el.pictureLink = "http://media.steampowered.com/steamcommunity/public/images/apps/" + el.appid + "/" + el.img_logo_url + ".jpg"
+          el.pictureLink = "http://media.steampowered.com/steamcommunity/public/images/apps/" + el.appid + "/" + el.img_logo_url + ".jpg";
+          el.iconLink = "http://media.steampowered.com/steamcommunity/public/images/apps/" + el.appid + "/" + el.img_icon_url + ".jpg";
         });
 
         User.find({steamId: req.user.id}, function(err, user) {
@@ -86,6 +87,7 @@ module.exports = function(app, passport) {
 
       //splice index of Object sent to database.
     })
+
 
     app.put('/posts', function(req, res, next){  // Look for user with id, push object to 'posts' array, Save the user data
       console.log('Body',req.body);
