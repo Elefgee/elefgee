@@ -39,6 +39,7 @@
         $rootScope.selectedGame = _.where($scope.games.games, {appid: targetId});
         $scope.post.name = selectedGames[0].name;
         $scope.post.appid = selectedGames[0].appid;
+        $scope.post.pictureLink = selectedGames[0].pictureLink;
         $(target).siblings().removeClass('selectedGame');
         $(target).addClass('selectedGame');
       }
