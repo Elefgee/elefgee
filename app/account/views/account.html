@@ -68,7 +68,7 @@
 <div class="info accountLibrary" ng-if='(navs[0].active)'>
   <div class="libraryWrapper">
     <div class="libraryGameBlockWrapper" ng-repeat="game in gamesList">
-      <a href="http://www.steamcommunity.com/app/{{ game.appid }}" class="libraryGameBlock" ng-click="selectGame($event)" data-id="{{ game.appid }}">
+      <a target="_blank" href="http://www.steamcommunity.com/app/{{ game.appid }}" class="libraryGameBlock" data-id="{{ game.appid }}">
         <div>
           <img ng-src="{{ game.pictureLink }}" err-src="https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txt=Image+Unavailable&w=250&h=105&txttrack=0">
         </div>

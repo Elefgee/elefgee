@@ -40,7 +40,7 @@
         </a>
       </div>
       <div class="postBlockGame">
-        <a ng-if="selectedGame[0].name !== '-'" href="http://www.steamcommunity.com/app/{{selectedGame[0].appid}}">
+        <a target="_blank" ng-if="selectedGame[0].name !== '-'" href="http://www.steamcommunity.com/app/{{selectedGame[0].appid}}">
           {{ selectedGame[0].name }}
         </a>
         <span ng-if="selectedGame[0].name === '-'">
@@ -49,7 +49,16 @@
       </div>
       <div class="postBlockDescription">
         <label for="postDescription">Enter a description for your LFG post (max 200 characters):</label>
-        <textarea maxlength="200" name="postDescription" ng-model="post.text"></textarea>
+        <textarea ng-keyup="checkForDescription()" [ng-trim="true"] maxlength="200" name="postDescription" ng-model="post.text"></textarea>
+        <div id="postErrorBlock">
+          <span><i class="fa fa-exclamation-circle"></i></span>
+          <div id="postErrorGame">
+            Please select a game.
+          </div>
+          <div id="postErrorDescription">
+            Please enter a valid description for your post.
+          </div>
+        </div>
       </div>
     </div>
   </div>

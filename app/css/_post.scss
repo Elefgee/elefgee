@@ -234,13 +234,44 @@ MAIN
           padding: 10px;
           width: 80%;
           height: 300px;
-          margin: 12.5px auto 0;
+          margin: 12.5px auto 12.5px;
           font-size: 1.25rem;
           @include transition;
 
           &:focus {
             outline: 0;
             border-color: $green;
+          }
+        }
+
+        #postErrorBlock {
+          visibility: hidden;
+          position: relative;
+          height: 50px;
+          min-height: 50px;
+          width: 80%;
+          text-align: center;
+          background-color: $red;
+          font-family: $sans;
+          font-size: 0.75rem;
+          color: $wt2;
+          margin-bottom: 25px;
+          @include flexbox(column, center, center);
+
+          > span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 10%;
+            @include flexbox(row, center, center);
+          }
+
+          #postErrorGame,
+          #postErrorDescription {
+            display: none;
+            height: 50%;
+            @include flexbox(row, center, center);
           }
         }
       }
