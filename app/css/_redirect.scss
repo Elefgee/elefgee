@@ -1,0 +1,102 @@
+/**************************
+HEADER
+**************************/
+
+.redirectHeader {
+  background-image: url('../media/white_wall_hash.png');
+  background-position: 50% 55%;
+  position: relative;
+  height: 15vh;
+  color: $wt2;
+  border-bottom: 2px solid $green;
+  @include flexbox(row, center, center);
+
+  .redirectHeaderBlock {
+    height: 100%;
+    @include flexbox(row, center, center);
+
+    .redirectHeaderLogo {
+      img {
+        height: 100px;
+        width: 300px;
+      }
+    }
+  }
+}
+
+/**************************
+CONTENT
+**************************/
+
+.redirectContentWrap {
+  height: 85vh;
+  width: 100%;
+  background-image: url('../media/triangles.png');
+  @include flexbox(row, center, center);
+
+  .redirectContent {
+    position: relative;
+    height: 70vh;
+    width: 800px;
+    background-color: rgba(4, 0, 6, 0.2);
+
+    .spyImg {
+      width: 40%;
+      float: left;
+      height: 100%;
+      @include flexbox(column, center, center);
+      img {
+        position:relative;
+        left: 30px;
+        height: 80%;
+      }
+    }
+
+    .redirect{
+      color: $wt2;
+      float: right;
+      width: 60%;
+      height: 100%;
+      @include flexbox(column, center, center);
+
+      #oops {
+        position: relative;
+        right: 50px;
+        width: 60%;
+        height: 40%;
+        font-weight: lighter;
+        h1 {
+          font-size: 4em;
+          font-weight: lighter;
+        }
+        a {
+          text-align: center;
+          width: 100%;
+          height: 40px;
+        }
+        .redirectLogBtn {
+          height: 40px;
+          width: 80%;
+          background-color: $green;
+          color: white;
+          @include flexbox (column, center, center);
+          @include transition;
+        }
+        .redirectLogBtn:hover {
+          background-color: $lightgreen;
+        }
+      }
+    }
+
+    .bonk {
+      position: absolute;
+      top: 60px;
+      right: 95px;
+      img {
+        height: 150px;
+        width: 150px;
+        transform: rotateZ(20deg);
+      }
+    }
+  }
+}

@@ -30,11 +30,12 @@
           templateUrl: 'account/views/account.html',
           controller: 'AccountController'
         })
-        .when('/404', {
-          template: '<h2>Sorry, page not found</h2>'
+        .when('/BONK', {
+          templateUrl: 'login/views/redirectView.html',
+          controller: 'SteamController'
         })
         .otherwise({
-          redirectTo: '/404'
+          redirectTo: '/BONK'
         });
     })
     .directive('errSrc', function() {
