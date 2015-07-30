@@ -30,11 +30,15 @@
         SteamService.getUserInfo().success(function(data){
           var routeSteamId = $routeParams.steamId;
           var foundUser = _.where(data, {steamId: routeSteamId});
-          $scope.user = foundUser[0];
-          $scope.games = foundUser[0].games;
-          $scope.posts = foundUser[0].posts;
-          $scope.gamesList = _.sortBy(foundUser[0].games.games, 'name');
-          console.log($scope.user);
+          if (foundUser[0] === undefined) {
+            $location.path('/BONK');
+          } else {
+            $scope.user = foundUser[0];
+            $scope.games = foundUser[0].games;
+            $scope.posts = foundUser[0].posts;
+            $scope.gamesList = _.sortBy(foundUser[0].games.games, 'name');
+            console.log($scope.user);
+          }
         });
       }
 
@@ -53,5 +57,23 @@
         return nameBtn.active;
       }
 
+      $scope.deletePost = function(time, text, userData) {
+        console.log(userData);
+        var selectedPost = {timestamp: time, text: text, userData: userData};
+        var id = $routeParams.steamId;
+        SteamService.deletePost(selectedPost);
+      }
+
+      var postDeletedCallback = function() {
+        console.log('CALLIN BACK');
+        SteamService.getUserInfo().success(function(data){
+          var routeSteamId = $routeParams.steamId;
+          var foundUser = _.where(data, {steamId: routeSteamId});
+          console.log(foundUser[0].posts);
+          $scope.posts = foundUser[0].posts;
+        });
+      }
+
+      $scope.$on('post:deleted', postDeletedCallback);
     })
 })();
