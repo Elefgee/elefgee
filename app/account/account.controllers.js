@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('account')
-    .controller('AccountController', function($scope, $route, SteamService, _, $routeParams) {
+    .controller('AccountController', function($scope, $route, SteamService, _, $routeParams, $location) {
       $scope.navs = [
         {
           name: 'library',
@@ -16,7 +16,7 @@
 
       SteamService.getMe().success(function (me) {
         $scope.me = me;
-      })
+      });
 
       if($routeParams.steamId) {
         SteamService.getUserInfo().success(function(data){
