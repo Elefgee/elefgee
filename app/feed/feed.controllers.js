@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('elefgee')
-    .controller('FeedController', function($scope, $route, SteamService) {
+    .controller('FeedController', function($scope, $route, SteamService, $location) {
       $scope.$route = $route;
       SteamService.getUserInfo().success(function(data){
         $scope.allPosts = [];
@@ -23,6 +23,7 @@
       $scope.loggedIn = function(displayName) {
         if (displayName === undefined) {
           console.log('Log in!');
+          $location.path('/BONK')
         }
         else if (displayName.length > 0) {
           return true;
