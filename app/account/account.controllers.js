@@ -30,11 +30,15 @@
         SteamService.getUserInfo().success(function(data){
           var routeSteamId = $routeParams.steamId;
           var foundUser = _.where(data, {steamId: routeSteamId});
-          $scope.user = foundUser[0];
-          $scope.games = foundUser[0].games;
-          $scope.posts = foundUser[0].posts;
-          $scope.gamesList = _.sortBy(foundUser[0].games.games, 'name');
-          console.log($scope.user);
+          if (foundUser[0] === undefined) {
+            $location.path('/BONK');
+          } else {
+            $scope.user = foundUser[0];
+            $scope.games = foundUser[0].games;
+            $scope.posts = foundUser[0].posts;
+            $scope.gamesList = _.sortBy(foundUser[0].games.games, 'name');
+            console.log($scope.user);
+          }
         });
       }
 
