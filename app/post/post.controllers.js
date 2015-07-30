@@ -9,6 +9,14 @@
 
       SteamService.getMe().success(function(data){
         $scope.me = data;
+        $scope.loggedIn = function(displayName) {
+          if (displayName === undefined) {
+            return $location.path('/BONK')
+          }
+          else if (displayName.length > 0) {
+            return true;
+          }
+        }
         $scope.games = data.games;
         $scope.post.userData = data;
         var sortedGames = _.sortBy($scope.games.games, 'playtime_forever');
@@ -43,15 +51,6 @@
         $window.scrollTo(0, 0);
       }
 
-      $scope.loggedIn = function(displayName) {
-        if (displayName === undefined) {
-          console.log('Log in!');
-          $location.path('/BONK')
-        }
-        else if (displayName.length > 0) {
-          return true;
-        }
-      }
     })
 
 })();
