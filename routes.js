@@ -64,7 +64,7 @@ module.exports = function(app, passport) {
 
     app.get('/me', function (req, res, next) {
       res.send(req.user);
-    })
+    }) 
 
     app.put('/posts', function(req, res, next){  // Look for user with id, push object to 'posts' array, Save the user data
       console.log('Body',req.body);

@@ -1,3 +1,5 @@
+<div ng-controller="FeedController" ng-if="loggedIn(me.displayName)">
+
 <header class="postHeader">
   <div class="siteTitleFeed">
     <a href="#/feed"><img src="../media/elefgee.png" alt=""></a>
@@ -28,7 +30,7 @@
   </div>
 
 </header>
-<main class="postMain" ng-controller="FeedController">
+<main class="postMain">
   <div class="postMainBlock">
     <div>
       <div class="postBlockUser">
@@ -37,7 +39,7 @@
           <span>{{ me.displayName }}</span>
         </a>
       </div>
-      <div class="postBlockGame" ng-controller="PostController">
+      <div class="postBlockGame">
         <a ng-if="selectedGame[0].name !== '-'" href="http://www.steamcommunity.com/app/{{selectedGame[0].appid}}">
           {{ selectedGame[0].name }}
         </a>

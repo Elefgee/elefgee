@@ -72,7 +72,7 @@ MAIN
   background-image: url('../media/triangles.png');
   border-top: 5px solid $green;
   padding-top: 100px;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
 
   .mainWrapper {
     width: 85%;
@@ -80,22 +80,53 @@ MAIN
     @include flexbox(row, space-around, stretch);
 
     .loginInfoBlock {
-
+      @include flexbox(column, space-between, center);
       color: $wt;
       width: 32%;
+      height: 300px;
 
       .loginInfoImage {
         padding-top: 10px;
         text-align: center;
+        @include flexbox(row, center, center);
 
-        img {
+        .loginPicture {
+          height:200px;
+          width: 200px;
           border-radius: 50%;
+          border: 1px solid $green;
+          box-shadow: 0px 5px 20px 0px black;
         }
+
+        #picture1 {
+          background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.4)),
+                      url('https://teamfortressnerd.files.wordpress.com/2014/07/tp9cebi.jpg');
+          background-size: cover;
+          background-position: 58.5%;
+          background-repeat: no-repeat;
+        }
+
+        #picture2 {
+          background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.4)),
+                      url('http://assets.vice.com/content-images/contentimage/177945/PORTAL-2.jpg');
+          background-size: cover;
+          background-position: 48%;
+          background-repeat: no-repeat;
+        }
+
+        #picture3 {
+          background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.2)),
+                      url('http://img03.bgstatic-com.de/images/documents/documents/2853/modulecontent/612x0/en_dota2_localplay.jpg');
+          background-size: cover;
+          background-position: 73%;
+          background-repeat: no-repeat;
+        }
+
       }
 
       .loginInfoContent {
         padding: 10px 5px;
-        font-size: 0.9rem;
+        font-size: 1.2rem;
       }
     }
   }

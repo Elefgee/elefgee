@@ -1,7 +1,8 @@
+<div ng-if="loggedIn(me.displayName)">
 <header class="feedHeader">
   <div class="feedHeaderBlock">
     <div class="feedHeaderLogo">
-      <a href="#/feed"><img src="media/elefgee.png"></a>
+      <a href="#/feeds"><img src="media/elefgee.png"></a>
     </div>
     <div class="feedHeaderName">
       <a href="#/account/{{ me.id }}">{{ me.displayName }}</a>
@@ -86,6 +87,7 @@
     </section>
   </div>
 </main>
+</div>
 <footer class="loginFooter">
   &copy; 2015 Elefgee, All Rights Reserved
 </footer>
