@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('elefgee')
-    .controller('FeedController', function($scope, $route, SteamService, $location) {
+    .controller('FeedController', function($scope, $route, SteamService) {
       $scope.$route = $route;
       SteamService.getUserInfo().success(function(data){
         $scope.allPosts = [];
@@ -13,10 +13,7 @@
         });
         console.log($scope.allPosts);
         $scope.user = data[0];
-      });
-
-      SteamService.getMe().success(function (me) {
-        $scope.me = me;
+        console.log(data[0]);
       });
     })
 })();

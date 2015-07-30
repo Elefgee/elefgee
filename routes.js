@@ -19,6 +19,8 @@ module.exports = function(app, passport) {
     app.get('/auth/steam/return',
       passport.authenticate('steam', { failureRedirect: '/login' }),
       function(req, res, next) {
+        console.log('user info from steam',req.user);
+
         _.each(req.user.games.games, function(el){
           el.pictureLink = "http://media.steampowered.com/steamcommunity/public/images/apps/" + el.appid + "/" + el.img_logo_url + ".jpg"
         });
@@ -62,15 +64,21 @@ module.exports = function(app, passport) {
 
     app.get('/me', function (req, res, next) {
       res.send(req.user);
-    })
+    }) 
 
     app.put('/posts', function(req, res, next){  // Look for user with id, push object to 'posts' array, Save the user data
+      console.log('Body',req.body);
+      console.log('1',req.body.userData.id);
 
       User.find({steamId: req.body.userData.id}, function(err, user) {
+        console.log('I am the user!', user[0]);
+        console.log('I am the posts!', user[0].posts)
 
         user[0].posts.push(req.body);
+
         user[0].save(function(err) {
            if(err) throw err;
+           console.log('Added posts', user);
          })
       });
 

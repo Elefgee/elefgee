@@ -7,13 +7,13 @@
       $rootScope.selectedGame = [{name: '-'}];
       $scope.post = {};
 
-      SteamService.getMe().success(function (me) {
-        $scope.me = me;
-        $scope.games = me.games;
-        $scope.post.userData = me;
+      SteamService.getMe().success(function(data){
+        $scope.me = data;
+        $scope.games = data.games;
+        $scope.post.userData = data;
         var sortedGames = _.sortBy($scope.games.games, 'playtime_forever');
         $scope.games.games = sortedGames.reverse();
-      });
+      })
 
       $scope.getUserById = function(steamIdArg) {
         SteamService.getUserInfo().success(function(allUsers){
@@ -28,20 +28,29 @@
         var target = $event.currentTarget;
         var targetId = $(target).data('id');
         var selectedGames = _.where($scope.games.games, {appid: targetId});
-        console.log(selectedGames);
         $rootScope.selectedGame = _.where($scope.games.games, {appid: targetId});
         $scope.post.name = selectedGames[0].name;
         $scope.post.appid = selectedGames[0].appid;
+        $scope.post.pictureLink = selectedGames[0].pictureLink;
         $(target).siblings().removeClass('selectedGame');
         $(target).addClass('selectedGame');
       }
 
       $scope.addPost = function(postData) {
-        console.log(postData);
         postData.timestamp = new Date();
         SteamService.addPost(postData);
+        console.log($scope.post);
         $location.path('/feed');
         $window.scrollTo(0, 0);
+      }
+
+      $scope.loggedIn = function(displayName) {
+        if (displayName === undefined) {
+          console.log('Log in!');
+        }
+        else if (displayName.length > 0) {
+          return true;
+        }
       }
     })
 

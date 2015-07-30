@@ -16,7 +16,7 @@
 
       SteamService.getMe().success(function (me) {
         $scope.me = me;
-      });
+      })
 
       if($routeParams.steamId) {
         SteamService.getUserInfo().success(function(data){
@@ -42,6 +42,15 @@
       $scope.isTrue = function(clicked) {
         var nameBtn = _.findWhere($scope.navs, {name: clicked})
         return nameBtn.active;
+      }
+
+      $scope.loggedIn = function(meName) {
+        if (meName === undefined) {
+          
+        }
+        else if (meName.length > 0) {
+          return true;
+        }
       }
     })
 })();

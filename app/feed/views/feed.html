@@ -1,7 +1,8 @@
+<div ng-if="loggedIn(me.displayName)">
 <header class="feedHeader">
   <div class="feedHeaderBlock">
     <div class="feedHeaderLogo">
-      <a href="#/feed"><img src="media/elefgee.png"></a>
+      <a href="#/feeds"><img src="media/elefgee.png"></a>
     </div>
     <div class="feedHeaderName">
       <a href="#/account/{{ me.id }}">{{ me.displayName }}</a>
@@ -56,29 +57,31 @@
     </aside>
     <section>
       <div class="feedPostBlock" ng-repeat="post in allPosts">
-        <div class="feedPostImage">
-          <a href="#/account/{{ post.userData.id }}">
-            <img ng-src="{{ post.userData.photos[2].value }}">
-          </a>
-        </div>
-        <div class="feedPostInfo1">
-          <div class="feedPostName">
-            <h4>{{ post.userData.displayName }}</h4>
+        <div>
+          <div class="feedPostUser">
+            <a href="#/account/{{ post.userData.id }}">
+              <div>
+                <img ng-src="{{ post.userData.photos[2].value }}">
+                <h4>{{ post.userData.displayName }}</h4>
+              </div>
+            </a>
           </div>
           <div class="feedPostDescription">
             {{ post.text }}
           </div>
         </div>
-        <div class="feedPostInfo2">
+        <div>
           <div class="feedPostGame">
             <a target="_blank" href="http://www.steamcommunity.com/app/{{ post.appid }}">
-              {{ post.name }}
+              <img ng-src="{{ post.pictureLink }}" err-src="https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txt=Image+Unavailable&w=250&h=105&txttrack=0">
             </a>
           </div>
-          <div class="feedPostAction">
-            <a target="_blank" href="http://www.steamcommunity.com/profiles/{{ post.userData.id }}"><i class="fa fa-steam-square"></i></a>
+          <div class="feedPostSteam">
+            <a target="_blank" href="http://www.steamcommunity.com/profiles/{{ post.userData.id }}">
+              <i class="fa fa-steam-square"></i>
+            </a>
           </div>
-          <div class="feedPostTime">
+          <div class="feedPostTimestamp">
             <span am-time-ago="post.timestamp"></span>
           </div>
         </div>
@@ -86,6 +89,7 @@
     </section>
   </div>
 </main>
+</div>
 <footer class="loginFooter">
   &copy; 2015 Elefgee, All Rights Reserved
 </footer>
