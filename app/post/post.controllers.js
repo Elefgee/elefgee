@@ -46,6 +46,7 @@
       $scope.loggedIn = function(displayName) {
         if (displayName === undefined) {
           console.log('Log in!');
+          $location.path('/BONK')
         }
         else if (displayName.length > 0) {
           return true;

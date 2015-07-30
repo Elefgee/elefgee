@@ -1636,6 +1636,180 @@ MAIN
         outline: 0; }
 
 /**************************
+HEADER
+**************************/
+.redirectHeader {
+  background-image: url("../media/white_wall_hash.png");
+  background-position: 50% 55%;
+  position: relative;
+  height: 15vh;
+  color: whitesmoke;
+  border-bottom: 2px solid #7AAF36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .redirectHeader .redirectHeaderBlock {
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .redirectHeader .redirectHeaderBlock .redirectHeaderLogo img {
+      height: 100px;
+      width: 300px; }
+
+/**************************
+CONTENT
+**************************/
+.redirectContentWrap {
+  height: 85vh;
+  width: 100%;
+  background-image: url("../media/triangles.png");
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .redirectContentWrap .redirectContent {
+    position: relative;
+    height: 70vh;
+    width: 800px;
+    background-color: rgba(4, 0, 6, 0.2); }
+    .redirectContentWrap .redirectContent .spyImg {
+      width: 40%;
+      float: left;
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .redirectContentWrap .redirectContent .spyImg img {
+        position: relative;
+        left: 30px;
+        height: 80%; }
+    .redirectContentWrap .redirectContent .redirect {
+      color: whitesmoke;
+      float: right;
+      width: 60%;
+      height: 80%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .redirectContentWrap .redirectContent .redirect #oops {
+        position: relative;
+        right: 50px;
+        width: 60%;
+        height: 40%;
+        font-weight: lighter; }
+        .redirectContentWrap .redirectContent .redirect #oops h1 {
+          font-size: 4em;
+          font-weight: lighter; }
+        .redirectContentWrap .redirectContent .redirect #oops a {
+          text-align: center;
+          width: 100%;
+          height: 40px; }
+        .redirectContentWrap .redirectContent .redirect #oops .redirectLogBtn {
+          height: 40px;
+          width: 80%;
+          background-color: #7AAF36;
+          color: white;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-transition: all .25s ease;
+          transition: all .25s ease; }
+        .redirectContentWrap .redirectContent .redirect #oops .redirectLogBtn:hover {
+          background-color: #96d642; }
+    .redirectContentWrap .redirectContent .bonk {
+      position: absolute;
+      top: 40px;
+      right: 103px; }
+      .redirectContentWrap .redirectContent .bonk img {
+        height: 150px;
+        width: 150px;
+        transform: rotateZ(20deg); }
+
+/**************************
 GLOBALS
 **************************/
 .siteTitle {

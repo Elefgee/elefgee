@@ -46,7 +46,7 @@
 
       $scope.loggedIn = function(meName) {
         if (meName === undefined) {
-          
+          $location.path('/BONK')
         }
         else if (meName.length > 0) {
           return true;
