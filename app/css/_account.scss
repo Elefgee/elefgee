@@ -201,7 +201,7 @@
 .accountPostBlock {
   height: 300px;
   width: 80%;
-  margin: 0 auto 10px;
+  margin: 0 auto 25px;
   background-color: $wt2;
   @include flexbox(row, center, center);
 
@@ -216,7 +216,7 @@
 
   // div containing user and description blocks
   > div:first-of-type {
-    width: 82.5%;
+    @include postImageCalc("width", "100% - #{$postImageWidth}");
     @include flexbox(column, center, center);
 
     // post user block
@@ -245,17 +245,18 @@
 
     // post description block
     > div:last-of-type {
+      max-width: 100%;
       height: 80%;
       padding: 5px;
-      overflow: hidden;
       font-size: 1.1rem;
       border-bottom: 1.1rem solid $wt2;
+      word-wrap: break-word;
     }
   }
 
   // div containing game, steam link, and timestamp blocks
   > div:last-of-type {
-    width: 17.5%;
+    width: $postImageWidth;
     position: relative;
     @include flexbox(column, center, center);
 
