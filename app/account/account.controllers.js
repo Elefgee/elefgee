@@ -64,6 +64,11 @@
         SteamService.deletePost(selectedPost);
       }
 
+      $scope.timeConvert = function(timestamp) {
+        console.log(timestamp)
+        return timestamp.getTime();
+      }
+
       var postDeletedCallback = function() {
         console.log('CALLIN BACK');
         SteamService.getUserInfo().success(function(data){

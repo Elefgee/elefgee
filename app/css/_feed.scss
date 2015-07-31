@@ -71,19 +71,46 @@ MAIN
 nav {
   height: 75px;
   @include flexbox(row, center, center);
+  border-bottom: 2px solid $green;
 
-  > div {
-    height: 100%;
-    width: 50%;
-    background-color: $lightblack;
-    font-size: 2rem;
+  .navBtn {
+    width: 100%;
+    color: $wt2;
+    font-size: 1.5rem;
     font-family: $sans;
-    color: $wt;
+    background-color: $darkgray;
+    height: 100%;
+    @include transition;
     @include flexbox(row, center, center);
   }
 
-  > div:first-of-type {
-    background-color: $darkgray;
+  .navBtnActive {
+    width: 100%;
+    color: $wt2;
+    font-size: 1.5rem;
+    font-family: $sans;
+    background-color: $lightblack;
+    height: 100%;
+    @include transition;
+    @include flexbox(row, center, center);
+  }
+
+  .navBtn:hover {
+    background-color: $lightblack;
+    cursor: pointer;
+  }
+  .navBtn:active {
+    background-color: $darkblack;
+    cursor: pointer;
+  }
+
+  .navBtnActive:hover {
+    background-color: $lightblack;
+    cursor: pointer
+  }
+  .navBtnActive:active {
+    background-color: $darkblack;
+    cursor: pointer
   }
 }
 
