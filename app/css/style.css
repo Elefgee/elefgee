@@ -1245,6 +1245,7 @@ FOOTER
       display: inline-block;
       height: 175px;
       width: 250px;
+      margin-bottom: 25px;
       background-color: #4D4D4D;
       -webkit-transition: all .25s ease;
       transition: all .25s ease; }
@@ -1273,11 +1274,7 @@ FOOTER
 
 #totalTime {
   text-align: center;
-  font-size: .5em;
-  width: 100%;
-  color: #828282;
-  margin-bottom: 30px;
-  margin-top: 5px; }
+  font-size: .5em; }
 
 .loginFooter {
   background-color: #181818;
@@ -1940,4 +1937,4 @@ footer {
   -ms-flex-align: center;
   align-items: center; }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=style.css.map */

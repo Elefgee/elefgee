@@ -330,7 +330,6 @@
       display: inline-block;
       height: 175px;
       width: 250px;
-      margin-bottom: 25px;
       background-color: $darkgray;
       @include transition;
 
@@ -367,6 +366,15 @@
       }
     }
   }
+}
+
+#totalTime {
+  text-align: center;
+  font-size: .5em;
+  width: 100%;
+  color: rgb(130, 130, 130);
+  margin-bottom: 30px;
+  margin-top: 5px;
 }
 
 // FOOTER //
