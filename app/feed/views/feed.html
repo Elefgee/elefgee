@@ -56,7 +56,7 @@
       </div>
     </aside>
     <section>
-      <div class="feedPostBlock" ng-repeat="post in allPosts">
+      <div class="feedPostBlock" ng-repeat="post in allPosts | orderBy: 'timestamp':true">
         <div>
           <div class="feedPostUser">
             <a href="#/account/{{ post.userData.id }}">
