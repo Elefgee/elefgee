@@ -19,10 +19,10 @@
   </div>
 </header>
 <nav>
-  <div class="feedNavAll">
+  <div class="navBtn feedNavAll" ng-class="isTrue('all') ? 'navBtnActive' : 'navBtn'" ng-click="feedNavClick('all')">
     ALL
   </div>
-  <div class="feedNavOwned">
+  <div class="navBtn feedNavOwned" ng-class="isTrue('owned') ? 'navBtnActive' : 'navBtn'" ng-click="feedNavClick('owned')">
     OWNED
   </div>
 </nav>
@@ -56,7 +56,40 @@
       </div>
     </aside>
     <section>
-      <div class="feedPostBlock" ng-repeat="post in allPosts | orderBy: 'timestamp':true">
+      <div class="feedPostBlock" ng-repeat="post in allPosts | orderBy: 'timestamp':true" ng-if='(navs[0].active)'>
+        <div>
+          <div class="feedPostUser">
+            <a href="#/account/{{ post.userData.id }}">
+              <div>
+                <img ng-src="{{ post.userData.photos[2].value }}">
+                <h4>{{ post.userData.displayName }}</h4>
+              </div>
+            </a>
+          </div>
+          <div class="feedPostDescription">
+            {{ post.text }}
+          </div>
+        </div>
+        <div>
+          <div class="feedPostGame">
+            <a target="_blank" href="http://www.steamcommunity.com/app/{{ post.appid }}">
+              <img ng-src="{{ post.pictureLink }}" err-src="https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txt=Image+Unavailable&w=250&h=105&txttrack=0">
+            </a>
+          </div>
+          <div class="feedPostSteam">
+            <a target="_blank" href="http://www.steamcommunity.com/profiles/{{ post.userData.id }}">
+              <i class="fa fa-steam-square"></i>
+            </a>
+          </div>
+          <div class="feedPostTimestamp">
+            <span am-time-ago="post.timestamp"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Owned Games Posts -->
+
+      <div class="feedPostBlock" ng-repeat="post in myOwnedPosts | orderBy: 'timestamp':true" ng-if='(navs[1].active)'>
         <div>
           <div class="feedPostUser">
             <a href="#/account/{{ post.userData.id }}">
