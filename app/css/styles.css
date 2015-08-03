@@ -229,7 +229,8 @@ MAIN
   top: 2%;
   left: 1.5%;
   position: absolute;
-  z-index: 1; }
+  z-index: 1;
+  height: 100px; }
   .siteTitleLogin img {
     height: 75px;
     width: 225px; }
