@@ -118,6 +118,82 @@ nav {
 MAIN
 **************************/
 
+.feedAside {
+  background-color: $lightgray;
+  @include flexbox(column, center, center);
+
+  > div {
+    width: 100%;
+  }
+
+  // feed filter main
+  > div:first-of-type {
+    padding-bottom: 15px;
+    @include flexbox(column, center, center);
+    display: none;
+
+    // filter parameters
+    > div {
+      width: 80%;
+      margin: 0 auto;
+
+      h3 {
+        text-align: center;
+        text-decoration: underline;
+        margin: 15px 0;
+      }
+
+      // filter wrapper
+      > div {
+        @include flexbox(row, space-around, center);
+
+        // individual filter block (input & label)
+        > div {
+          width: 33.33%;
+          @include flexbox(row, center, center);
+
+          > label {
+            margin-left: 5px;
+          }
+
+          > input {
+            margin-right: 5px;
+          }
+        }
+
+        > input[type=text] {
+          width: 45%;
+          text-align: center;
+          border: 2px solid $darkgray;
+          padding: 5px;
+          @include transition;
+
+          &:focus {
+            outline: 0;
+            border-color: $green;
+          }
+        }
+      }
+    }
+  }
+
+  > div:last-of-type {
+    background-color: gray;
+    text-align: center;
+    font-size: 1.5rem;
+    color: $wt2;
+
+    i {
+      cursor: pointer;
+      @include transition;
+    }
+  }
+}
+
+/**************************
+MAIN
+**************************/
+
 .feedMain {
   position: relative;
   min-height: 800px;
@@ -125,46 +201,23 @@ MAIN
 
   .feedContent {
     height: 100%;
+    background-image: url('../media/triangles.png');
+    padding: 25px 0;
     @include flexbox(row, center, center);
 
     > * {
       height: 100%;
     }
 
-    aside {
-      width: 25%;
-      background-color: $lightgray;
-      @include flexbox(row, center, center);
-
-      .feedFilterMain {
-        width: 100%;
-        padding: 25px 10%;
-        align-self: flex-start;
-        text-align: center;
-
-        h3 {
-          font-size: 1.65rem;
-          text-decoration: underline;
-          margin-bottom: 25px;
-        }
-
-        > div {
-
-          > div {
-            @include flexbox(row, space-around, center);
-          }
-        }
-      }
-    }
-
     section {
-      width: 75%;
+      margin: 0 auto;
+      width: 80%;
       background-image: url('../media/triangles.png');
       overflow: scroll;
 
       .feedPostBlock {
         height: 200px;
-        width: 98%;
+        width: 80%;
         margin: 0 auto 25px;
         background-color: $wt2;
         @include flexbox(row, center, center);
@@ -203,7 +256,7 @@ MAIN
               }
 
               > div {
-                width: 75%;
+                width: 85%;
                 margin: 0 auto;
                 border-bottom: 2px solid $lightgray;
                 @include flexbox(row, center, center);
@@ -226,9 +279,11 @@ MAIN
           // post description block
           > div:last-of-type {
             height: 75%;
-            padding: 5px;
+            width: 85%;
+            padding: 5px 0 0;
             overflow: hidden;
-            border-bottom: 1rem solid $wt2;
+            font-size: 0.98rem;
+            border-bottom: 0.98rem solid $wt2;
             word-wrap: break-word;
           }
         }

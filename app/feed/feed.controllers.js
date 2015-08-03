@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('elefgee')
-    .controller('FeedController', function($scope, $route, SteamService, $location) {
+    .controller('FeedController', function($scope, $route, SteamService, $location, $rootScope) {
       $scope.navs = [
         {
           name: 'all',
@@ -14,10 +14,28 @@
         }
       ]
 
+      $scope.openFilterBlock = function(chevron) {
+        var chevron = $('#filterCollapse');
+        $('.feedFilterMain').slideToggle();
+        $(chevron).toggleClass('fa-chevron-down');
+        $(chevron).toggleClass('fa-chevron-up');
+      }
+
       $scope.isTrue = function(clicked) {
         var nameBtn = _.findWhere($scope.navs, {name: clicked})
         return nameBtn.active;
       }
+
+      $scope.sort = function(keyname){
+        $scope.sortKey = keyname;
+        if (keyname === 'timestamp') {
+          $scope.reverse = true;
+        } else {
+          $scope.reverse = false;
+        }
+      }
+
+      $scope.sort('timestamp');
 
       $scope.feedNavClick = function(clicked) {
         _.each($scope.navs, function(el){
@@ -53,12 +71,11 @@
             return true;
           }
         }
-      })
+      });
 
       SteamService.getMe().success(function(me){
-
         var me = me;
-
+        console.log(me);
         SteamService.getUserInfo().success(function(allUsers) {
 
           var allPosts = [];
@@ -84,9 +101,6 @@
             }
           })
           $scope.myOwnedPosts = myOwnedPosts;
-
-          console.log('my owned game posts', $scope.myOwnedPosts);
-
         })
 
       })

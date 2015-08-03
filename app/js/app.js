@@ -4,7 +4,6 @@
   angular
     .module('elefgee', [
       'ngRoute',
-      'ngAnimate',
       'underscore',
       'account',
       'angularMoment'
