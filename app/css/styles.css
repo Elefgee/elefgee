@@ -141,6 +141,7 @@ MAIN
   padding-bottom: 100px; }
   .loginMain .mainWrapper {
     width: 85%;
+    max-width: 1200px;
     margin: 0 auto;
     display: -webkit-box;
     display: -webkit-flex;
@@ -743,7 +744,7 @@ MAIN
           .feedMain .feedContent section .feedPostBlock > div:last-of-type > div:last-of-type {
             height: 25%;
             position: absolute;
-            bottom: 0;
+            bottom: 10px;
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
@@ -808,6 +809,11 @@ FOOTER
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
+  .accountHeader #accountLevel {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: .6em;
+    color: #828282; }
   .accountHeader .accountButtonsWrapper {
     height: 17.5%;
     width: 100%;
@@ -932,6 +938,7 @@ FOOTER
   .accountHeader .accountProfileStats {
     height: 31.25%;
     width: 100%;
+    max-width: 1200px;
     padding: 0 2.5%;
     display: -webkit-box;
     display: -webkit-flex;
@@ -1286,7 +1293,7 @@ FOOTER
     .accountPostBlock > div:last-of-type > div:last-of-type {
       height: 25%;
       position: absolute;
-      bottom: 0;
+      bottom: 10px;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;

@@ -32,13 +32,24 @@ module.exports = function(app, passport) {
             res.redirect('#/feed')
 
           } else {
+
+            var totalTime = 0;
+
             console.log('Creating a new user!');
+            _.each(req.user.games.games, function(el){
+              totalTime += el.playtime_forever;
+            })
+
+            var totalTime = Math.round(totalTime/60);
+            var elefgeeLevel = 1 + Math.floor(totalTime/100);
+
             var user = new User({
               userInfo: req.user._json,
               displayName: req.user.displayName,
               steamId: req.user.id,
               picture: req.user.photos[2].value,
               games: req.user.games,
+              level: elefgeeLevel,
               posts: []
             });
 

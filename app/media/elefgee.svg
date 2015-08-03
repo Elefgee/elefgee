@@ -13,7 +13,7 @@ animation: fade 2s linear}
 	.st3{fill:#FFFFFF;
 animation: fade 2s linear}
 	.st4{fill:#FFFFFF;stroke:#425A29;stroke-width:4;stroke-miterlimit:10;
-animation: fade 2s linear}
+animation: fade 1.6s linear}
 	.st5{fill:#FFFFFF;stroke:#425A29;stroke-width:6;stroke-miterlimit:10;
 animation: fade 2s linear}
 	.st6{fill:none;stroke:#425A29;stroke-width:6;stroke-miterlimit:10;

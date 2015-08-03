@@ -19,6 +19,7 @@
       <a target="_blank" href="http://www.steamcommunity.com/profiles/{{ user.steamId }}">
         <img ng-src="{{ user.picture }}" alt="">
         <h2>{{ user.displayName }}</h2>
+        <p id="accountLevel">Level: {{user.level}}</p>
       </a>
   </div>
   <div class="accountProfileStats">

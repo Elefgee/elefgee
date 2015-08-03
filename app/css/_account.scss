@@ -6,6 +6,13 @@
   background-attachment: fixed;
   @include flexbox(column, center, center);
 
+  #accountLevel {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: .6em;
+    color: #828282;
+  }
+
   .accountButtonsWrapper {
     height: 17.5%;
     width: 100%;
@@ -76,6 +83,7 @@
   .accountProfileStats {
     height: 31.25%;
     width: 100%;
+    max-width: 1200px;
     padding: 0 2.5%;
     @include flexbox(row, center, center);
 
@@ -302,7 +310,7 @@
     > div:last-of-type {
       height: 25%;
       position: absolute;
-      bottom: 0;
+      bottom: 10px;
       @include flexbox(row, center, flex-end);
       font-size: 0.7rem;
       color: gray;
