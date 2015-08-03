@@ -351,7 +351,7 @@ MAIN
           > div:last-of-type {
             height: 25%;
             position: absolute;
-            bottom: 0;
+            bottom: 10px;
             @include flexbox(row, center, flex-end);
             font-size: 0.575rem;
             color: gray;

@@ -83,6 +83,7 @@ MAIN
   // mainWrapper
   > div {
     width: 85%;
+    max-width: 1200px;
     margin: 0 auto;
     @include flexbox(row, space-around, stretch);
 
