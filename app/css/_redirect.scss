@@ -33,6 +33,7 @@ CONTENT
   width: 100%;
   background-image: url('../media/triangles.png');
   @include flexbox(row, center, center);
+  @include transition;
 
   .redirectContent {
     position: relative;
@@ -100,3 +101,6 @@ CONTENT
     }
   }
 }
+
+
+//////////////

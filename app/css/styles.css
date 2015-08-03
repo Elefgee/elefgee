@@ -1964,7 +1964,9 @@ CONTENT
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease; }
   .redirectContentWrap .redirectContent {
     position: relative;
     height: 70vh;
@@ -2164,7 +2166,7 @@ FEED PAGE
         height: 33.33%; }
         .feedHeader > div > div:first-of-type > a {
           height: 100%;
-          width: 40%; }
+          width: 35%; }
           .feedHeader > div > div:first-of-type > a > img {
             height: 100%;
             width: 100%; }
@@ -2321,10 +2323,14 @@ FEED PAGE
         width: 100%; }
         .feedHeader > div > div:first-of-type > a {
           height: 100%;
-          width: 60%; }
+          width: 50%; }
       .feedHeader > div > div:nth-of-type(2) {
         width: 100%; }
-      .feedHeader > div > div:nth-of-type(4),
+      .feedHeader > div > div:nth-of-type(4) {
+        width: 50%; }
+        .feedHeader > div > div:nth-of-type(4) > a {
+          width: 80%;
+          height: 80%; }
       .feedHeader > div > div:nth-of-type(5) {
         width: 50%; }
 
@@ -2341,6 +2347,75 @@ FEED PAGE
     width: 20%; }
   .feedMain > div > section > div > div:last-of-type > div:last-of-type {
     width: 40%; } }
+/**************************
+REDIRECT PAGE
+**************************/
+@media screen and (max-width: 800px) {
+  .redirectContentWrap .redirectContent .bonk {
+    top: 30px;
+    right: 80px; }
+
+  .redirectContentWrap .redirectContent .redirect #oops {
+    font-size: 3vw; }
+
+  .redirectContentWrap .redirectContent .spyImg img {
+    position: relative;
+    left: 10px; } }
+@media screen and (max-width: 600px) {
+  .redirectContentWrap .redirectContent {
+    height: 60vh; }
+
+  .redirectContentWrap .redirectContent .bonk img {
+    height: 115px;
+    width: 115px; } }
+@media screen and (max-width: 500px) {
+  .redirectContentWrap .redirectContent .redirect {
+    height: 100%; }
+
+  .redirectContentWrap .redirectContent .redirect #oops .redirectLogBtn {
+    width: 100%; }
+
+  .redirectContentWrap .redirectContent .redirect #oops {
+    position: static;
+    width: 50%;
+    height: 60%;
+    font-size: 20px; }
+
+  .redirectContentWrap .redirectContent .spyImg {
+    display: none;
+    width: 0; }
+
+  .redirectContentWrap .redirectContent .redirect {
+    width: 100%; }
+
+  .redirectContentWrap .redirectContent .redirect {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+
+  .redirectContentWrap .redirectContent .bonk {
+    top: 0px;
+    right: 15%; } }
+@media screen and (max-width: 400px) {
+  .redirectContentWrap .redirectContent .redirect #oops {
+    position: static;
+    width: 80%;
+    height: 60%;
+    font-size: 20px; } }
 /**************************
 GLOBALS
 **************************/
