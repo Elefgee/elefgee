@@ -366,14 +366,17 @@ nav {
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center; }
-  nav > div {
-    height: 100%;
-    width: 50%;
-    background-color: #242424;
-    font-size: 2rem;
+  align-items: center;
+  border-bottom: 2px solid #7AAF36; }
+  nav .navBtn {
+    width: 100%;
+    color: whitesmoke;
+    font-size: 1.5rem;
     font-family: "Roboto", sans-serif;
-    color: rgba(255, 255, 255, 0.75);
+    background-color: #4D4D4D;
+    height: 100%;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -391,8 +394,44 @@ nav {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center; }
-  nav > div:first-of-type {
-    background-color: #4D4D4D; }
+  nav .navBtnActive {
+    width: 100%;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    font-family: "Roboto", sans-serif;
+    background-color: #242424;
+    height: 100%;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  nav .navBtn:hover {
+    background-color: #242424;
+    cursor: pointer; }
+  nav .navBtn:active {
+    background-color: #181818;
+    cursor: pointer; }
+  nav .navBtnActive:hover {
+    background-color: #242424;
+    cursor: pointer; }
+  nav .navBtnActive:active {
+    background-color: #181818;
+    cursor: pointer; }
 
 /**************************
 MAIN
@@ -1226,7 +1265,6 @@ FOOTER
       display: inline-block;
       height: 175px;
       width: 250px;
-      margin-bottom: 25px;
       background-color: #4D4D4D;
       -webkit-transition: all .25s ease;
       transition: all .25s ease; }
@@ -1252,6 +1290,14 @@ FOOTER
           vertical-align: middle;
           text-overflow: ellipsis;
           overflow: hidden; }
+
+#totalTime {
+  text-align: center;
+  font-size: .5em;
+  width: 100%;
+  color: #828282;
+  margin-bottom: 30px;
+  margin-top: 5px; }
 
 .loginFooter {
   background-color: #181818;
