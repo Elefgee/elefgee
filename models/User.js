@@ -8,6 +8,7 @@ var userSchema = new mongoose.Schema({
   picture: String,
   steamId: String,
   posts: Array,
+  level: String,
   games: Object
 });
 
