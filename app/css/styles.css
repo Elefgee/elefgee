@@ -397,6 +397,31 @@ nav {
 /**************************
 MAIN
 **************************/
+.feedAside {
+  background-color: #CCC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .feedAside > div {
+    width: 50%; }
+
+/**************************
+MAIN
+**************************/
 .feedMain {
   position: relative;
   min-height: 800px;
@@ -422,60 +447,14 @@ MAIN
     align-items: center; }
     .feedMain .feedContent > * {
       height: 100%; }
-    .feedMain .feedContent aside {
-      width: 25%;
-      background-color: #CCC;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center; }
-      .feedMain .feedContent aside .feedFilterMain {
-        width: 100%;
-        padding: 25px 10%;
-        align-self: flex-start;
-        text-align: center; }
-        .feedMain .feedContent aside .feedFilterMain h3 {
-          font-size: 1.65rem;
-          text-decoration: underline;
-          margin-bottom: 25px; }
-        .feedMain .feedContent aside .feedFilterMain > div > div {
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-orient: vertical;
-          -webkit-box-direction: normal;
-          -webkit-flex-direction: row;
-          -ms-flex-direction: row;
-          flex-direction: row;
-          -webkit-box-pack: space-around;
-          -webkit-justify-content: space-around;
-          -ms-flex-pack: space-around;
-          justify-content: space-around;
-          -webkit-box-align: center;
-          -webkit-align-items: center;
-          -ms-flex-align: center;
-          align-items: center; }
     .feedMain .feedContent section {
-      width: 75%;
+      width: 100%;
       background-image: url("../media/triangles.png");
-      overflow: scroll; }
+      overflow: scroll;
+      padding-top: 25px; }
       .feedMain .feedContent section .feedPostBlock {
         height: 200px;
-        width: 98%;
+        width: 80%;
         margin: 0 auto 25px;
         background-color: whitesmoke;
         display: -webkit-box;
@@ -535,7 +514,7 @@ MAIN
                   border-color: #7AAF36;
                   color: whitesmoke; }
               .feedMain .feedContent section .feedPostBlock > div:first-of-type > div:first-of-type > a > div {
-                width: 75%;
+                width: 85%;
                 margin: 0 auto;
                 border-bottom: 2px solid #CCC;
                 display: -webkit-box;
@@ -566,9 +545,11 @@ MAIN
                   margin-left: 5px; }
           .feedMain .feedContent section .feedPostBlock > div:first-of-type > div:last-of-type {
             height: 75%;
-            padding: 5px;
+            width: 85%;
+            padding: 5px 0 0;
             overflow: hidden;
-            border-bottom: 1rem solid whitesmoke;
+            font-size: 0.98rem;
+            border-bottom: 0.98rem solid whitesmoke;
             word-wrap: break-word; }
         .feedMain .feedContent section .feedPostBlock > div:last-of-type {
           width: 184px;

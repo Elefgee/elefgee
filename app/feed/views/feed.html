@@ -26,35 +26,37 @@
     OWNED
   </div>
 </nav>
-<main class="feedMain">
-  <div class="feedContent">
-    <aside>
-      <div class="feedFilterMain">
-        <h3>Filter</h3>
-        <div class="filterParameters">
-          <div>
-            <input type="checkbox" name="filterParam1">
-            <label for="filterParam1">Parameter 1</label>
-          </div>
-          <div>
-            <input type="checkbox" name="filterParam2">
-            <label for="filterParam2">Parameter 2</label>
-          </div>
-          <div>
-            <input type="checkbox" name="filterParam3">
-            <label for="filterParam3">Parameter 3</label>
-          </div>
-          <div>
-            <input type="checkbox" name="filterParam4">
-            <label for="filterParam4">Parameter 4</label>
-          </div>
-          <div>
-            <input type="checkbox" name="filterParam5">
-            <label for="filterParam5">Parameter 5</label>
-          </div>
+<aside class="feedAside">
+  <div class="feedFilterMain">
+    <div class="filterParameters">
+      <h3>Filter</h3>
+      <div>
+        <div>
+          <input type="checkbox" name="filterParam1">
+          <label for="filterParam1">Parameter 1</label>
+        </div>
+        <div>
+          <input type="checkbox" name="filterParam2">
+          <label for="filterParam2">Parameter 2</label>
+        </div>
+        <div>
+          <input type="checkbox" name="filterParam3">
+          <label for="filterParam3">Parameter 3</label>
+        </div>
+        <div>
+          <input type="checkbox" name="filterParam4">
+          <label for="filterParam4">Parameter 4</label>
+        </div>
+        <div>
+          <input type="checkbox" name="filterParam5">
+          <label for="filterParam5">Parameter 5</label>
         </div>
       </div>
-    </aside>
+    </div>
+  </div>
+</aside>
+<main class="feedMain">
+  <div class="feedContent">
     <section>
       <div class="feedPostBlock" ng-repeat="post in allPosts">
         <div>
