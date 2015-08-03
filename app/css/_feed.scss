@@ -120,10 +120,73 @@ MAIN
 
 .feedAside {
   background-color: $lightgray;
-  @include flexbox(row, center, center);
+  @include flexbox(column, center, center);
 
   > div {
-    width: 50%;
+    width: 100%;
+  }
+
+  // feed filter main
+  > div:first-of-type {
+    padding-bottom: 15px;
+    @include flexbox(column, center, center);
+    display: none;
+
+    // filter parameters
+    > div {
+      width: 80%;
+      margin: 0 auto;
+
+      h3 {
+        text-align: center;
+        text-decoration: underline;
+        margin: 15px 0;
+      }
+
+      // filter wrapper
+      > div {
+        @include flexbox(row, space-around, center);
+
+        // individual filter block (input & label)
+        > div {
+          width: 33.33%;
+          @include flexbox(row, center, center);
+
+          > label {
+            margin-left: 5px;
+          }
+
+          > input {
+            margin-right: 5px;
+          }
+        }
+
+        > input[type=text] {
+          width: 45%;
+          text-align: center;
+          border: 2px solid $darkgray;
+          padding: 5px;
+          @include transition;
+
+          &:focus {
+            outline: 0;
+            border-color: $green;
+          }
+        }
+      }
+    }
+  }
+
+  > div:last-of-type {
+    background-color: gray;
+    text-align: center;
+    font-size: 1.5rem;
+    color: $wt2;
+
+    i {
+      cursor: pointer;
+      @include transition;
+    }
   }
 }
 
@@ -138,6 +201,8 @@ MAIN
 
   .feedContent {
     height: 100%;
+    background-image: url('../media/triangles.png');
+    padding: 25px 0;
     @include flexbox(row, center, center);
 
     > * {
@@ -145,10 +210,10 @@ MAIN
     }
 
     section {
-      width: 100%;
+      margin: 0 auto;
+      width: 80%;
       background-image: url('../media/triangles.png');
       overflow: scroll;
-      padding-top: 25px;
 
       .feedPostBlock {
         height: 200px;

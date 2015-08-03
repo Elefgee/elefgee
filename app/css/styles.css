@@ -445,9 +445,9 @@ MAIN
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -457,7 +457,94 @@ MAIN
   -ms-flex-align: center;
   align-items: center; }
   .feedAside > div {
-    width: 50%; }
+    width: 100%; }
+  .feedAside > div:first-of-type {
+    padding-bottom: 15px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: none; }
+    .feedAside > div:first-of-type > div {
+      width: 80%;
+      margin: 0 auto; }
+      .feedAside > div:first-of-type > div h3 {
+        text-align: center;
+        text-decoration: underline;
+        margin: 15px 0; }
+      .feedAside > div:first-of-type > div > div {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: space-around;
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: space-around;
+        justify-content: space-around;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        .feedAside > div:first-of-type > div > div > div {
+          width: 33.33%;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center; }
+          .feedAside > div:first-of-type > div > div > div > label {
+            margin-left: 5px; }
+          .feedAside > div:first-of-type > div > div > div > input {
+            margin-right: 5px; }
+        .feedAside > div:first-of-type > div > div > input[type=text] {
+          width: 45%;
+          text-align: center;
+          border: 2px solid #4D4D4D;
+          padding: 5px;
+          -webkit-transition: all .25s ease;
+          transition: all .25s ease; }
+          .feedAside > div:first-of-type > div > div > input[type=text]:focus {
+            outline: 0;
+            border-color: #7AAF36; }
+  .feedAside > div:last-of-type {
+    background-color: gray;
+    text-align: center;
+    font-size: 1.5rem;
+    color: whitesmoke; }
+    .feedAside > div:last-of-type i {
+      cursor: pointer;
+      -webkit-transition: all .25s ease;
+      transition: all .25s ease; }
 
 /**************************
 MAIN
@@ -468,6 +555,8 @@ MAIN
   height: 800px; }
   .feedMain .feedContent {
     height: 100%;
+    background-image: url("../media/triangles.png");
+    padding: 25px 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -488,10 +577,10 @@ MAIN
     .feedMain .feedContent > * {
       height: 100%; }
     .feedMain .feedContent section {
-      width: 100%;
+      margin: 0 auto;
+      width: 80%;
       background-image: url("../media/triangles.png");
-      overflow: scroll;
-      padding-top: 25px; }
+      overflow: scroll; }
       .feedMain .feedContent section .feedPostBlock {
         height: 200px;
         width: 80%;

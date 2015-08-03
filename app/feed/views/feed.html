@@ -32,33 +32,35 @@
       <h3>Filter</h3>
       <div>
         <div>
-          <input type="checkbox" name="filterParam1">
-          <label for="filterParam1">Parameter 1</label>
+          <input type="radio" name="filterPosts" value="time" ng-click="sort('timestamp')" checked="checked">
+          <label for="filterParam1">Time posted</label>
         </div>
         <div>
-          <input type="checkbox" name="filterParam2">
-          <label for="filterParam2">Parameter 2</label>
+          <input type="radio" name="filterPosts" value="name" ng-click="sort('displayName')">
+          <label for="filterParam2">Users</label>
         </div>
         <div>
-          <input type="checkbox" name="filterParam3">
-          <label for="filterParam3">Parameter 3</label>
-        </div>
-        <div>
-          <input type="checkbox" name="filterParam4">
-          <label for="filterParam4">Parameter 4</label>
-        </div>
-        <div>
-          <input type="checkbox" name="filterParam5">
-          <label for="filterParam5">Parameter 5</label>
+          <input type="radio" name="filterPosts" value="game" ng-click="sort('name')">
+          <label for="filterParam3">Games</label>
         </div>
       </div>
     </div>
+    <div class="searchParameters">
+      <h3>Search</h3>
+      <div>
+        <input type="text" placeholder="Search by username" name="searchPosts" ng-model="searchPosts.displayName">
+        <input type="text" placeholder="Search by game" name="searchPosts" ng-model="searchPosts.name">
+      </div>
+    </div>
+  </div>
+  <div class="filterSearchCollapse">
+    <i id="filterCollapse" class="fa fa-chevron-down" ng-click="openFilterBlock()"></i>
   </div>
 </aside>
 <main class="feedMain">
   <div class="feedContent">
     <section>
-      <div class="feedPostBlock" ng-repeat="post in allPosts | orderBy: 'timestamp':true" ng-if='(navs[0].active)'>
+      <div class="feedPostBlock" ng-repeat="post in allPosts | orderBy:sortKey:reverse | filter:searchPosts:strict" ng-if='(navs[0].active)'>
         <div>
           <div class="feedPostUser">
             <a href="#/account/{{ post.userData.id }}">
@@ -91,7 +93,7 @@
 
       <!-- Owned Games Posts -->
 
-      <div class="feedPostBlock" ng-repeat="post in myOwnedPosts | orderBy: 'timestamp':true" ng-if='(navs[1].active)'>
+      <div class="feedPostBlock" ng-repeat="post in myOwnedPosts | orderBy:sortKey:reverse | filter:searchPosts:strict" ng-if='(navs[1].active)'>
         <div>
           <div class="feedPostUser">
             <a href="#/account/{{ post.userData.id }}">

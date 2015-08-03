@@ -20,6 +20,7 @@
         }
         $scope.games = data.games;
         $scope.post.userData = data;
+        $scope.post.displayName = data.displayName;
         var sortedGames = _.sortBy($scope.games.games, 'playtime_forever');
         $scope.games.games = sortedGames.reverse();
       })
