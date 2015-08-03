@@ -5,7 +5,10 @@
       <a href="#/feed"><img src="media/elefgee.png"></a>
     </div>
     <div class="feedHeaderName">
-      <a href="#/account/{{ me.id }}">{{ me.displayName }}</a>
+      <a href="#/account/{{ me.id }}">
+        <img ng-src="{{ me.photos[2].value }}">
+        <span>{{ me.displayName }}</span>
+      </a>
     </div>
     <div class="feedHeaderImage">
       <a href="#/account/{{ me.id }}"><img ng-src="{{ me.photos[2].value }}"></a>
@@ -32,15 +35,21 @@
       <h3>Filter</h3>
       <div>
         <div>
-          <input type="radio" name="filterPosts" value="time" ng-click="sort('timestamp')" checked="checked">
+          <div>
+            <input type="radio" name="filterPosts" value="time" ng-click="sort('timestamp')" checked="checked">
+          </div>
           <label for="filterParam1">Time posted</label>
         </div>
         <div>
-          <input type="radio" name="filterPosts" value="name" ng-click="sort('displayName')">
+          <div>
+            <input type="radio" name="filterPosts" value="name" ng-click="sort('displayName')">
+          </div>
           <label for="filterParam2">Users</label>
         </div>
         <div>
-          <input type="radio" name="filterPosts" value="game" ng-click="sort('name')">
+          <div>
+            <input type="radio" name="filterPosts" value="game" ng-click="sort('name')">
+          </div>
           <label for="filterParam3">Games</label>
         </div>
       </div>
