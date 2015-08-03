@@ -3,6 +3,14 @@
   angular
     .module('account')
     .controller('AccountController', function($scope, $route, SteamService, _, $routeParams, $location) {
+      var ua = navigator.userAgent;
+      var isMobile = /Mobile/.test(ua);
+      console.log(isMobile);
+
+      if (isMobile) {
+        $('#loginAbso').css('opacity', '0');
+      }
+
       $scope.navs = [
         {
           name: 'library',

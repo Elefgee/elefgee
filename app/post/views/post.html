@@ -1,11 +1,10 @@
 <div ng-controller="FeedController" ng-if="loggedIn(me.displayName)">
 
 <header class="postHeader">
-  <div class="siteTitleFeed">
-    <a href="#/feed"><img src="../media/elefgee.png" alt=""></a>
-  </div>
-
   <div class="postHeaderSearchBlock">
+    <div class="postHeaderTitle">
+      <a href="#/feed"><img src="../media/elefgee.png" alt=""></a>
+    </div>
     <div class="postHeaderSearch">
       <input type="text" name="search" ng-model="search.name">
       <i class="fa fa-search"></i>

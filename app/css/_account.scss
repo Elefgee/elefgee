@@ -16,10 +16,19 @@
   .accountButtonsWrapper {
     height: 17.5%;
     width: 100%;
-    @include flexbox(row, flex-end, center);
+    @include flexbox(row, space-between, center);
 
-    > div {
-      margin-top: 35px;
+    > div:first-of-type {
+      height: 100%;
+      width: 20%;
+
+       > a {
+         height: 100%;
+         @include flexbox(row, center, center);
+       }
+    }
+
+    > div:last-of-type {
       height: 100%;
       width: 35%;
       @include flexbox(row, space-around, center);

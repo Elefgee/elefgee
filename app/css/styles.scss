@@ -70,6 +70,7 @@ html {
 html, body {
   height: 100%;
   width: 100%;
+  max-width: 100%;
 }
 
 .clearfix {
@@ -77,7 +78,7 @@ html, body {
 }
 
 #pageWrapper {
-  max-width: 960px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -125,22 +126,11 @@ PARTIALS
 @import 'account';
 @import 'post';
 @import 'redirect';
+@import 'queries';
 
 /**************************
 GLOBALS
 **************************/
-
-.siteTitle {
-  top: -1%;
-  left: 1.5%;
-  position: absolute;
-  z-index: 1;
-
-  img {
-    height: 75px;
-    width: 225px;
-  }
-}
 
 footer {
   background-color: $darkblack;

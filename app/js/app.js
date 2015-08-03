@@ -15,7 +15,7 @@
         })
         .when('/login', {
           templateUrl: 'login/views/login.html',
-          controller: 'LoginController'
+          controller: 'AccountController'
         })
         .when('/feed', {
           templateUrl: 'feed/views/feed.html',

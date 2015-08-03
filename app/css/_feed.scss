@@ -10,9 +10,11 @@ HEADER
   color: $wt2;
   @include flexbox(row, center, center);
 
-  .feedHeaderBlock {
+  // feedHeaderBlock
+  > div {
     height: 100%;
     @include flexbox(row, center, center);
+    flex-wrap: wrap;
 
     > div {
       height: 100%;
@@ -20,7 +22,8 @@ HEADER
       @include flexbox(row, center, center);
     }
 
-    .feedHeaderImage {
+    // feedHeaderImage
+    > div:nth-of-type(3) {
       img {
         box-sizing: content-box;
         position: relative;
@@ -35,9 +38,10 @@ HEADER
       }
     }
 
-    .feedHeaderName,
-    .feedHeaderPost,
-    .feedHeaderLogout {
+    // feedHeaderName, feedHeaderPost, and feedHeaderLogout
+    > div:nth-of-type(2),
+    > div:nth-of-type(4),
+    > div:nth-of-type(5) {
       a {
         height: 50%;
         width: 50%;
@@ -50,7 +54,17 @@ HEADER
       }
     }
 
-    .feedHeaderPost {
+    // feedHeaderName
+    > div:nth-of-type(2) {
+      > a {
+        > img {
+          display: none;
+        }
+      }
+    }
+
+    // feedHeaderPost
+    > div:nth-of-type(4) {
       a {
         background: $green;
         color: $wt2;
@@ -199,7 +213,7 @@ MAIN
   min-height: 800px;
   height: 800px;
 
-  .feedContent {
+  > div {
     height: 100%;
     background-image: url('../media/triangles.png');
     padding: 25px 0;
@@ -209,15 +223,15 @@ MAIN
       height: 100%;
     }
 
-    section {
+    > section {
       margin: 0 auto;
-      width: 80%;
+      width: 100%;
       background-image: url('../media/triangles.png');
       overflow: scroll;
 
-      .feedPostBlock {
+      > div {
         height: 200px;
-        width: 80%;
+        width: 920px;
         margin: 0 auto 25px;
         background-color: $wt2;
         @include flexbox(row, center, center);

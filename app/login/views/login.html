@@ -1,15 +1,19 @@
 <header class="loginHeader">
   <!-- VIDEO GOES HERE -->
 
-  <object class= "siteTitleLogin" type="image/svg+xml" data="../media/elefgee.svg">
-    <img src="../media/elefgee.png" alt="No SVG support">
-  </object>
+  <div class="loginHeaderLogoWrapper">
+    <div>
+      <object class= "siteTitleLogin" type="image/svg+xml" data="../media/elefgee.svg">
+        <img src="../media/elefgee.png" alt="No SVG support">
+      </object>
+    </div>
+  </div>
 
 
   <div class="loginBlock">
     <img src="media/steam-sm.png"></a>
     <span>Steam account required</span>
-    <a href="/auth/steam"><div ng-click="authenticateSteam()" class="loginAbso">
+    <a id="loginAbso" href="/auth/steam"><div ng-click="authenticateSteam()" class="loginAbso">
       LOGIN
     </div></a>
   </div>

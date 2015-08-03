@@ -18,10 +18,24 @@ HEADER
   }
 
   .postHeaderSearchBlock {
-    height: 30%;
+    height: 100px;
     padding: 0 2.5%;
     color: $pt;
-    @include flexbox(row, flex-end, center);
+    @include flexbox(row, space-between, center);
+
+    .postHeaderTitle {
+      height: 100%;
+      width: 20%;
+
+      > a {
+        height: 100%;
+        @include flexbox(row, center, center);
+
+        > img {
+          max-height: 100%;
+        }
+      }
+    }
 
     .postHeaderSearch {
       height: 50%;
@@ -56,7 +70,7 @@ HEADER
   .postHeaderGamesBlock {
     width: 95%;
     margin: 0 auto;
-    height: 70%;
+    height: 225px;
     @include flexbox(row, center, center);
 
     .postHeaderGamesWrapper {

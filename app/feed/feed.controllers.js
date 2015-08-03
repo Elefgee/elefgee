@@ -43,13 +43,11 @@
         });
        var clickedBtn = _.findWhere($scope.navs, {name: clicked});
        clickedBtn.active = true;
-
        return clickedBtn.active;
       }
 
       $scope.$route = $route;
       SteamService.getUserInfo().success(function(data){
-        console.log(data);
         $scope.allPosts = [];
         _.each(data, function(el, idx, list) {
           _.each(data[idx].posts, function(el2, idx2) {
@@ -64,7 +62,6 @@
         console.log(me);
         $scope.loggedIn = function(displayName) {
           if (displayName === undefined) {
-            console.log('Log in!');
             $location.path('/BONK')
           }
           else if (displayName.length > 0) {
@@ -75,7 +72,6 @@
 
       SteamService.getMe().success(function(me){
         var me = me;
-        console.log(me);
         SteamService.getUserInfo().success(function(allUsers) {
 
           var allPosts = [];
@@ -84,8 +80,6 @@
               allPosts.push(el2);
             })
           });
-
-          console.log(allPosts);
 
           var ownedGameNames = [];
           var myOwnedPosts = [];

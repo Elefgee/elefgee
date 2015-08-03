@@ -33,13 +33,14 @@ html {
 
 html, body {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  max-width: 100%; }
 
 .clearfix {
   overflow: auto; }
 
 #pageWrapper {
-  max-width: 960px;
+  max-width: 100%;
   margin: 0 auto; }
 
 /**************************
@@ -54,6 +55,11 @@ HEADER
 .loginHeader {
   position: relative;
   height: 500px; }
+  .loginHeader > div:first-of-type {
+    height: 100px; }
+    .loginHeader > div:first-of-type > div {
+      height: 100%;
+      width: 20%; }
   .loginHeader .video {
     position: fixed;
     top: 50%;
@@ -63,7 +69,7 @@ HEADER
     height: 1000px;
     z-index: -100;
     transform: translate(-50%, -50%); }
-  .loginHeader .loginBlock {
+  .loginHeader > div:last-of-type {
     font-family: "Roboto", sans-serif;
     border: 5px solid #7AAF36;
     color: rgba(255, 255, 255, 0.75);
@@ -93,16 +99,15 @@ HEADER
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center; }
-    .loginHeader .loginBlock:hover .loginAbso {
+    .loginHeader > div:last-of-type:hover > a {
       opacity: 0; }
-    .loginHeader .loginBlock span {
+    .loginHeader > div:last-of-type span {
       font-size: 0.5rem; }
-    .loginHeader .loginBlock img {
+    .loginHeader > div:last-of-type img {
       height: 40%;
       width: 75%; }
-    .loginHeader .loginBlock > a {
-      color: whitesmoke; }
-    .loginHeader .loginBlock .loginAbso {
+    .loginHeader > div:last-of-type > a {
+      color: whitesmoke;
       opacity: 1;
       transition: all .25s ease;
       -webkit-transition: all .25s ease;
@@ -139,7 +144,7 @@ MAIN
   border-top: 5px solid #7AAF36;
   padding-top: 100px;
   padding-bottom: 100px; }
-  .loginMain .mainWrapper {
+  .loginMain > div {
     width: 85%;
     max-width: 1200px;
     margin: 0 auto;
@@ -160,7 +165,7 @@ MAIN
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch; }
-    .loginMain .mainWrapper .loginInfoBlock {
+    .loginMain > div > div {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -181,7 +186,7 @@ MAIN
       color: rgba(255, 255, 255, 0.75);
       width: 32%;
       height: 300px; }
-      .loginMain .mainWrapper .loginInfoBlock .loginInfoImage {
+      .loginMain > div > div .loginInfoImage {
         padding-top: 10px;
         text-align: center;
         display: -webkit-box;
@@ -201,40 +206,30 @@ MAIN
         -webkit-align-items: center;
         -ms-flex-align: center;
         align-items: center; }
-        .loginMain .mainWrapper .loginInfoBlock .loginInfoImage .loginPicture {
+        .loginMain > div > div .loginInfoImage .loginPicture {
           height: 200px;
           width: 200px;
           border-radius: 50%;
           border: 1px solid #7AAF36;
           box-shadow: 0px 5px 20px 0px black; }
-        .loginMain .mainWrapper .loginInfoBlock .loginInfoImage #picture1 {
+        .loginMain > div > div .loginInfoImage #picture1 {
           background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("https://teamfortressnerd.files.wordpress.com/2014/07/tp9cebi.jpg");
           background-size: cover;
           background-position: 58.5%;
           background-repeat: no-repeat; }
-        .loginMain .mainWrapper .loginInfoBlock .loginInfoImage #picture2 {
+        .loginMain > div > div .loginInfoImage #picture2 {
           background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("http://assets.vice.com/content-images/contentimage/177945/PORTAL-2.jpg");
           background-size: cover;
           background-position: 48%;
           background-repeat: no-repeat; }
-        .loginMain .mainWrapper .loginInfoBlock .loginInfoImage #picture3 {
+        .loginMain > div > div .loginInfoImage #picture3 {
           background: linear-gradient(transparent, rgba(0, 0, 0, 0.2)), url("http://img03.bgstatic-com.de/images/documents/documents/2853/modulecontent/612x0/en_dota2_localplay.jpg");
           background-size: cover;
           background-position: 73%;
           background-repeat: no-repeat; }
-      .loginMain .mainWrapper .loginInfoBlock .loginInfoContent {
+      .loginMain > div > div .loginInfoContent {
         padding: 10px 5px;
         font-size: 1.2rem; }
-
-.siteTitleLogin {
-  top: 2%;
-  left: 1.5%;
-  position: absolute;
-  z-index: 1;
-  height: 100px; }
-  .siteTitleLogin img {
-    height: 75px;
-    width: 225px; }
 
 /**************************
 HEADER
@@ -262,7 +257,7 @@ HEADER
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
-  .feedHeader .feedHeaderBlock {
+  .feedHeader > div {
     height: 100%;
     display: -webkit-box;
     display: -webkit-flex;
@@ -280,8 +275,9 @@ HEADER
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
-    align-items: center; }
-    .feedHeader .feedHeaderBlock > div {
+    align-items: center;
+    flex-wrap: wrap; }
+    .feedHeader > div > div {
       height: 100%;
       width: 20%;
       display: -webkit-box;
@@ -301,7 +297,7 @@ HEADER
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center; }
-    .feedHeader .feedHeaderBlock .feedHeaderImage img {
+    .feedHeader > div > div:nth-of-type(3) img {
       box-sizing: content-box;
       position: relative;
       top: 12.5px;
@@ -310,11 +306,11 @@ HEADER
       border-radius: 50%;
       -webkit-transition: all .25s ease;
       transition: all .25s ease; }
-    .feedHeader .feedHeaderBlock .feedHeaderImage img:hover {
+    .feedHeader > div > div:nth-of-type(3) img:hover {
       box-shadow: 0px 0px 1px 2px #7AAF36; }
-    .feedHeader .feedHeaderBlock .feedHeaderName a,
-    .feedHeader .feedHeaderBlock .feedHeaderPost a,
-    .feedHeader .feedHeaderBlock .feedHeaderLogout a {
+    .feedHeader > div > div:nth-of-type(2) a,
+    .feedHeader > div > div:nth-of-type(4) a,
+    .feedHeader > div > div:nth-of-type(5) a {
       height: 50%;
       width: 50%;
       display: -webkit-box;
@@ -336,14 +332,16 @@ HEADER
       align-items: center;
       -webkit-transition: all .25s ease;
       transition: all .25s ease; }
-      .feedHeader .feedHeaderBlock .feedHeaderName a:hover,
-      .feedHeader .feedHeaderBlock .feedHeaderPost a:hover,
-      .feedHeader .feedHeaderBlock .feedHeaderLogout a:hover {
+      .feedHeader > div > div:nth-of-type(2) a:hover,
+      .feedHeader > div > div:nth-of-type(4) a:hover,
+      .feedHeader > div > div:nth-of-type(5) a:hover {
         color: #7AAF36; }
-    .feedHeader .feedHeaderBlock .feedHeaderPost a {
+    .feedHeader > div > div:nth-of-type(2) > a > img {
+      display: none; }
+    .feedHeader > div > div:nth-of-type(4) a {
       background: #7AAF36;
       color: whitesmoke; }
-      .feedHeader .feedHeaderBlock .feedHeaderPost a:hover {
+      .feedHeader > div > div:nth-of-type(4) a:hover {
         background: #96d642;
         color: white; }
 
@@ -554,7 +552,7 @@ MAIN
   position: relative;
   min-height: 800px;
   height: 800px; }
-  .feedMain .feedContent {
+  .feedMain > div {
     height: 100%;
     background-image: url("../media/triangles.png");
     padding: 25px 0;
@@ -575,16 +573,16 @@ MAIN
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center; }
-    .feedMain .feedContent > * {
+    .feedMain > div > * {
       height: 100%; }
-    .feedMain .feedContent section {
+    .feedMain > div > section {
       margin: 0 auto;
-      width: 80%;
+      width: 100%;
       background-image: url("../media/triangles.png");
       overflow: scroll; }
-      .feedMain .feedContent section .feedPostBlock {
+      .feedMain > div > section > div {
         height: 200px;
-        width: 80%;
+        width: 920px;
         margin: 0 auto 25px;
         background-color: whitesmoke;
         display: -webkit-box;
@@ -604,12 +602,12 @@ MAIN
         -webkit-align-items: center;
         -ms-flex-align: center;
         align-items: center; }
-        .feedMain .feedContent section .feedPostBlock:last-of-type {
+        .feedMain > div > section > div:last-of-type {
           margin-bottom: 0; }
-        .feedMain .feedContent section .feedPostBlock div {
+        .feedMain > div > section > div div {
           height: 100%;
           width: 100%; }
-        .feedMain .feedContent section .feedPostBlock > div:first-of-type {
+        .feedMain > div > section > div > div:first-of-type {
           width: -webkit-calc(100% - 184px);
           width: -moz-calc(100% - 184px);
           width: calc(100% - 184px);
@@ -630,20 +628,20 @@ MAIN
           -webkit-align-items: center;
           -ms-flex-align: center;
           align-items: center; }
-          .feedMain .feedContent section .feedPostBlock > div:first-of-type > div:first-of-type {
+          .feedMain > div > section > div > div:first-of-type > div:first-of-type {
             height: 25%; }
-            .feedMain .feedContent section .feedPostBlock > div:first-of-type > div:first-of-type > a {
+            .feedMain > div > section > div > div:first-of-type > div:first-of-type > a {
               display: inline-block;
               width: 100%;
               height: 100%;
               -webkit-transition: all .25s ease;
               transition: all .25s ease; }
-              .feedMain .feedContent section .feedPostBlock > div:first-of-type > div:first-of-type > a:hover {
+              .feedMain > div > section > div > div:first-of-type > div:first-of-type > a:hover {
                 background-color: #7AAF36; }
-                .feedMain .feedContent section .feedPostBlock > div:first-of-type > div:first-of-type > a:hover > div {
+                .feedMain > div > section > div > div:first-of-type > div:first-of-type > a:hover > div {
                   border-color: #7AAF36;
                   color: whitesmoke; }
-              .feedMain .feedContent section .feedPostBlock > div:first-of-type > div:first-of-type > a > div {
+              .feedMain > div > section > div > div:first-of-type > div:first-of-type > a > div {
                 width: 85%;
                 margin: 0 auto;
                 border-bottom: 2px solid #CCC;
@@ -666,14 +664,14 @@ MAIN
                 align-items: center;
                 -webkit-transition: all .25s ease;
                 transition: all .25s ease; }
-                .feedMain .feedContent section .feedPostBlock > div:first-of-type > div:first-of-type > a > div > img {
+                .feedMain > div > section > div > div:first-of-type > div:first-of-type > a > div > img {
                   height: 40px;
                   width: 40px;
                   border-radius: 50%;
                   margin-right: 5px; }
-                .feedMain .feedContent section .feedPostBlock > div:first-of-type > div:first-of-type > a > div > h4 {
+                .feedMain > div > section > div > div:first-of-type > div:first-of-type > a > div > h4 {
                   margin-left: 5px; }
-          .feedMain .feedContent section .feedPostBlock > div:first-of-type > div:last-of-type {
+          .feedMain > div > section > div > div:first-of-type > div:last-of-type {
             height: 75%;
             width: 85%;
             padding: 5px 0 0;
@@ -681,7 +679,7 @@ MAIN
             font-size: 0.98rem;
             border-bottom: 0.98rem solid whitesmoke;
             word-wrap: break-word; }
-        .feedMain .feedContent section .feedPostBlock > div:last-of-type {
+        .feedMain > div > section > div > div:last-of-type {
           width: 184px;
           position: relative;
           display: -webkit-box;
@@ -701,21 +699,21 @@ MAIN
           -webkit-align-items: center;
           -ms-flex-align: center;
           align-items: center; }
-          .feedMain .feedContent section .feedPostBlock > div:last-of-type > div:first-of-type {
+          .feedMain > div > section > div > div:last-of-type > div:first-of-type {
             position: absolute;
             top: 0;
             height: 25%;
             overflow: hidden; }
-            .feedMain .feedContent section .feedPostBlock > div:last-of-type > div:first-of-type a {
+            .feedMain > div > section > div > div:last-of-type > div:first-of-type a {
               display: inline-block;
               height: 100%;
               width: 100%;
               text-align: right;
               overflow: hidden; }
-              .feedMain .feedContent section .feedPostBlock > div:last-of-type > div:first-of-type a img {
+              .feedMain > div > section > div > div:last-of-type > div:first-of-type a img {
                 height: 100%;
                 width: 100%; }
-          .feedMain .feedContent section .feedPostBlock > div:last-of-type > div:nth-of-type(2) {
+          .feedMain > div > section > div > div:last-of-type > div:nth-of-type(2) {
             height: 100%;
             display: -webkit-box;
             display: -webkit-flex;
@@ -734,14 +732,14 @@ MAIN
             -webkit-align-items: center;
             -ms-flex-align: center;
             align-items: center; }
-            .feedMain .feedContent section .feedPostBlock > div:last-of-type > div:nth-of-type(2) > a > i {
+            .feedMain > div > section > div > div:last-of-type > div:nth-of-type(2) > a > i {
               font-size: 2.5rem;
               color: #7AAF36;
               -webkit-transition: all .25s ease;
               transition: all .25s ease; }
-              .feedMain .feedContent section .feedPostBlock > div:last-of-type > div:nth-of-type(2) > a > i:hover {
+              .feedMain > div > section > div > div:last-of-type > div:nth-of-type(2) > a > i:hover {
                 color: #96d642; }
-          .feedMain .feedContent section .feedPostBlock > div:last-of-type > div:last-of-type {
+          .feedMain > div > section > div > div:last-of-type > div:last-of-type {
             height: 25%;
             position: absolute;
             bottom: 10px;
@@ -826,16 +824,37 @@ FOOTER
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-pack: flex-end;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: flex-end;
-    justify-content: flex-end;
+    -webkit-box-pack: space-between;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center; }
-    .accountHeader .accountButtonsWrapper > div {
-      margin-top: 35px;
+    .accountHeader .accountButtonsWrapper > div:first-of-type {
+      height: 100%;
+      width: 20%; }
+      .accountHeader .accountButtonsWrapper > div:first-of-type > a {
+        height: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; }
+    .accountHeader .accountButtonsWrapper > div:last-of-type {
       height: 100%;
       width: 35%;
       display: -webkit-box;
@@ -855,10 +874,10 @@ FOOTER
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center; }
-      .accountHeader .accountButtonsWrapper > div > a {
+      .accountHeader .accountButtonsWrapper > div:last-of-type > a {
         -webkit-transition: all .25s ease;
         transition: all .25s ease; }
-      .accountHeader .accountButtonsWrapper > div > a:first-of-type {
+      .accountHeader .accountButtonsWrapper > div:last-of-type > a:first-of-type {
         width: 150px;
         height: 50px;
         background-color: #7AAF36;
@@ -880,9 +899,9 @@ FOOTER
         -webkit-align-items: center;
         -ms-flex-align: center;
         align-items: center; }
-        .accountHeader .accountButtonsWrapper > div > a:first-of-type:hover {
+        .accountHeader .accountButtonsWrapper > div:last-of-type > a:first-of-type:hover {
           background-color: #96d642; }
-      .accountHeader .accountButtonsWrapper > div > a:last-of-type:hover {
+      .accountHeader .accountButtonsWrapper > div:last-of-type > a:last-of-type:hover {
         color: #7AAF36; }
   .accountHeader .accountProfileInfo {
     height: 51.25%;
@@ -1419,7 +1438,7 @@ HEADER
   .postHeader > div {
     width: 100%; }
   .postHeader .postHeaderSearchBlock {
-    height: 30%;
+    height: 100px;
     padding: 0 2.5%;
     color: #212121;
     display: -webkit-box;
@@ -1431,14 +1450,38 @@ HEADER
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-pack: flex-end;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: flex-end;
-    justify-content: flex-end;
+    -webkit-box-pack: space-between;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center; }
+    .postHeader .postHeaderSearchBlock .postHeaderTitle {
+      height: 100%;
+      width: 20%; }
+      .postHeader .postHeaderSearchBlock .postHeaderTitle > a {
+        height: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        .postHeader .postHeaderSearchBlock .postHeaderTitle > a > img {
+          max-height: 100%; }
     .postHeader .postHeaderSearchBlock .postHeaderSearch {
       height: 50%;
       background-color: rgba(255, 255, 255, 0.75);
@@ -1493,7 +1536,7 @@ HEADER
   .postHeader .postHeaderGamesBlock {
     width: 95%;
     margin: 0 auto;
-    height: 70%;
+    height: 225px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2023,17 +2066,284 @@ CONTENT
         transform: rotateZ(20deg); }
 
 /**************************
+LOGIN PAGE
+**************************/
+@media screen and (max-width: 850px) {
+  .loginHeader > div:first-of-type > div {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center; }
+    .loginHeader > div:first-of-type > div > object {
+      height: 75px;
+      width: 275px; }
+
+  .loginMain > div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .loginMain > div > div {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 100%; } }
+/**************************
+FEED PAGE
+**************************/
+@media screen and (max-width: 920px) {
+  .feedMain > div > section > div {
+    width: 100%; }
+    .feedMain > div > section > div > div:first-of-type > div:last-of-type {
+      width: 98%;
+      font-size: 2.75vw;
+      border-bottom: 2vw solid whitesmoke; } }
+@media screen and (max-width: 850px) {
+  .feedMain > div > section {
+    width: 100%; }
+    .feedMain > div > section > div {
+      width: 98%; }
+      .feedMain > div > section > div > div:first-of-type > div:first-of-type > a > div {
+        width: 98%; }
+      .feedMain > div > section > div > div:first-of-type > div:last-of-type {
+        width: 98%; } }
+@media screen and (max-width: 650px) {
+  .feedHeader {
+    height: 175px; }
+    .feedHeader > div {
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: space-around;
+      -webkit-justify-content: space-around;
+      -ms-flex-pack: space-around;
+      justify-content: space-around;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .feedHeader > div > div {
+        height: auto;
+        width: 33%;
+        height: 66.66%; }
+      .feedHeader > div > div:first-of-type {
+        width: 100%;
+        height: 33.33%; }
+        .feedHeader > div > div:first-of-type > a {
+          height: 100%;
+          width: 40%; }
+          .feedHeader > div > div:first-of-type > a > img {
+            height: 100%;
+            width: 100%; }
+      .feedHeader > div > div:nth-of-type(2) > a {
+        height: 100%;
+        width: 100%; }
+        .feedHeader > div > div:nth-of-type(2) > a > img {
+          display: inline-block;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          margin-right: 5px; }
+        .feedHeader > div > div:nth-of-type(2) > a > span {
+          margin-left: 5px; }
+      .feedHeader > div > div:nth-of-type(3) {
+        display: none; }
+
+  .feedAside > div:first-of-type {
+    font-size: 0.9rem; }
+    .feedAside > div:first-of-type > div {
+      width: 95%; }
+      .feedAside > div:first-of-type > div > div {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        .feedAside > div:first-of-type > div > div > div {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          -webkit-box-pack: space-between;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: space-between;
+          justify-content: space-between;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          width: 75%; }
+          .feedAside > div:first-of-type > div > div > div > div {
+            width: 50%;
+            text-align: center; }
+          .feedAside > div:first-of-type > div > div > div > label {
+            width: 50%; }
+        .feedAside > div:first-of-type > div > div > input[type=text] {
+          width: 75%; }
+          .feedAside > div:first-of-type > div > div > input[type=text]:first-of-type {
+            margin-bottom: 10px; }
+
+  .feedMain > div > section > div {
+    height: 300px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .feedMain > div > section > div > div:first-of-type {
+      order: 2;
+      width: 100%;
+      height: 75%; }
+      .feedMain > div > section > div > div:first-of-type > div:last-of-type {
+        font-size: 3.75vw; }
+    .feedMain > div > section > div > div:last-of-type {
+      width: 100%;
+      height: 25%;
+      order: 1;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .feedMain > div > section > div > div:last-of-type > div {
+        width: 33.33%; }
+      .feedMain > div > section > div > div:last-of-type > div:first-of-type {
+        position: static;
+        height: 100%; }
+      .feedMain > div > section > div > div:last-of-type > div:nth-of-type(2) > a > i {
+        font-size: 1.5rem; }
+      .feedMain > div > section > div > div:last-of-type > div:last-of-type {
+        position: static; } }
+@media screen and (max-width: 500px) {
+  .feedMain > div > section > div > div:first-of-type > div:last-of-type {
+    font-size: 4vw; } }
+@media screen and (max-width: 400px) {
+  .feedHeader {
+    height: 175px; }
+    .feedHeader > div {
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: space-around;
+      -webkit-justify-content: space-around;
+      -ms-flex-pack: space-around;
+      justify-content: space-around;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .feedHeader > div > div {
+        height: auto;
+        width: 33%;
+        height: 33.33%; }
+      .feedHeader > div > div:first-of-type {
+        width: 100%; }
+        .feedHeader > div > div:first-of-type > a {
+          height: 100%;
+          width: 60%; }
+      .feedHeader > div > div:nth-of-type(2) {
+        width: 100%; }
+      .feedHeader > div > div:nth-of-type(4),
+      .feedHeader > div > div:nth-of-type(5) {
+        width: 50%; }
+
+  .feedAside > div:first-of-type > div > div > div {
+    width: 95%; }
+  .feedAside > div:first-of-type > div > div > input[type=text] {
+    width: 95%; }
+
+  .feedMain > div > section > div > div:first-of-type > div:last-of-type {
+    font-size: 4.75vw; }
+  .feedMain > div > section > div > div:last-of-type > div:first-of-type {
+    width: 40%; }
+  .feedMain > div > section > div > div:last-of-type > div:nth-of-type(2) {
+    width: 20%; }
+  .feedMain > div > section > div > div:last-of-type > div:last-of-type {
+    width: 40%; } }
+/**************************
 GLOBALS
 **************************/
-.siteTitle {
-  top: -1%;
-  left: 1.5%;
-  position: absolute;
-  z-index: 1; }
-  .siteTitle img {
-    height: 75px;
-    width: 225px; }
-
 footer {
   background-color: #181818;
   color: rgba(255, 255, 255, 0.75);

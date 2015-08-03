@@ -6,6 +6,15 @@ HEADER
   position: relative;
   height: 500px;
 
+  > div:first-of-type {
+    height: 100px;
+
+    > div {
+      height: 100%;
+      width: 20%;
+    }
+  }
+
   .video {
    position: fixed;
    top: 50%; left: 50%;
@@ -16,7 +25,7 @@ HEADER
    transform: translate(-50%, -50%);
   }
 
-  .loginBlock {
+  > div:last-of-type {
     font-family: $sans;
     border: 5px solid $green;
     color: $wt;
@@ -31,7 +40,7 @@ HEADER
     bottom: -50px;
     @include flexbox(column, space-around, center);
 
-    &:hover .loginAbso {
+    &:hover > a {
       opacity: 0;
     }
 
@@ -46,9 +55,6 @@ HEADER
 
     > a {
       color: $wt2;
-    }
-
-    .loginAbso {
       opacity: 1;
       transition: all .25s ease;
       -webkit-transition: all .25s ease;
@@ -74,13 +80,15 @@ MAIN
   padding-top: 100px;
   padding-bottom: 100px;
 
-  .mainWrapper {
+  // mainWrapper
+  > div {
     width: 85%;
     max-width: 1200px;
     margin: 0 auto;
     @include flexbox(row, space-around, stretch);
 
-    .loginInfoBlock {
+    // loginInfoBlock
+    > div {
       @include flexbox(column, space-between, center);
       color: $wt;
       width: 32%;
@@ -131,19 +139,4 @@ MAIN
       }
     }
   }
-}
-
-.siteTitleLogin {
-
-  top: 2%;
-  left: 1.5%;
-  position: absolute;
-  z-index: 1;
-  height: 100px;
-
-  img {
-    height: 75px;
-    width: 225px;
-  }
-
 }
