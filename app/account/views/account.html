@@ -84,28 +84,42 @@
 </div>
 
 <div class="info accountPosts" ng-if='(navs[1].active)' ng-controller="FeedController">
-  <div class="accountPostBlock" ng-repeat="post in posts | orderBy: 'timestamp':true ">
+  <div class="accountPostBlock" ng-repeat="post in posts | orderBy: 'timestamp':true">
     <div>
-      <div class="feedPostUser">
+      <div class="accountPostUser">
+        <a href="#/account/{{ post.userData.id }}">
           <div>
             <img ng-src="{{ post.userData.photos[2].value }}">
             <h4>{{ post.userData.displayName }}</h4>
           </div>
+        </a>
       </div>
-      <div class="feedPostDescription">
+      <div class="accountPostDescription">
         {{ post.text }}
+        <div class="queryTimestamp">
+          <span am-time-ago="post.timestamp"></span>
+        </div>
       </div>
     </div>
     <div>
-      <div class="feedPostGame">
+      <div class="accountPostGame">
         <a target="_blank" href="http://www.steamcommunity.com/app/{{ post.appid }}">
           <img ng-src="{{ post.pictureLink }}" err-src="https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txt=Image+Unavailable&w=250&h=105&txttrack=0">
+          <div>
+            {{ post.name }}
+          </div>
         </a>
       </div>
-      <div class="feedPostSteam">
+      <div class="accountPostSteam">
+        <a href="#/account/{{ post.userData.id }}">
+          <div>
+            <img ng-src="{{ post.userData.photos[2].value }}">
+            <h4>{{ post.userData.displayName }}</h4>
+          </div>
+        </a>
         <i class="fa fa-times" ng-click="deletePost(post.timestamp, post.text, post.userData)"></i>
       </div>
-      <div class="feedPostTimestamp">
+      <div class="accountPostTimestamp">
         <span am-time-ago="post.timestamp"></span>
       </div>
     </div>
