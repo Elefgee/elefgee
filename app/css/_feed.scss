@@ -166,12 +166,15 @@ MAIN
           width: 33.33%;
           @include flexbox(row, center, center);
 
-          > label {
-            margin-left: 5px;
+          > div {
+            @include flexbox(row, center, center);
+            > input {
+              margin-right: 5px;
+            }
           }
 
-          > input {
-            margin-right: 5px;
+          > label {
+            margin-left: 5px;
           }
         }
 
@@ -299,6 +302,10 @@ MAIN
             font-size: 0.98rem;
             border-bottom: 0.98rem solid $wt2;
             word-wrap: break-word;
+
+            .queryTimestamp {
+              display: none;
+            }
           }
         }
 
@@ -334,7 +341,11 @@ MAIN
             height: 100%;
             @include flexbox(row, center, center);
 
-            > a {
+            > a:first-of-type {
+              display: none;
+            }
+
+            > a:last-of-type {
               > i {
                 font-size: 2.5rem;
                 color: $green;

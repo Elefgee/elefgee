@@ -216,8 +216,8 @@
 }
 
 .accountPostBlock {
-  height: 300px;
-  width: 80%;
+  height: 200px;
+  width: 920px;
   margin: 0 auto 25px;
   background-color: $wt2;
   @include flexbox(row, center, center);
@@ -238,36 +238,57 @@
 
     // post user block
     > div:first-of-type {
-      height: 20%;
+      height: 25%;
 
-      > div {
-        width: 75%;
-        margin: 0 auto;
-        border-bottom: 2px solid $lightgray;
-        @include flexbox(row, center, center);
+      > a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
         @include transition;
 
-        > img {
-          height: 40px;
-          width: 40px;
-          border-radius: 50%;
-          margin-right: 5px;
+        &:hover {
+          background-color: $green;
+
+          > div {
+            border-color: $green;
+            color: $wt2;
+          }
         }
 
-        > h4 {
-          margin-left: 5px;
+        > div {
+          width: 85%;
+          margin: 0 auto;
+          border-bottom: 2px solid $lightgray;
+          @include flexbox(row, center, center);
+          @include transition;
+
+          > img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 5px;
+          }
+
+          > h4 {
+            margin-left: 5px;
+          }
         }
       }
     }
 
     // post description block
     > div:last-of-type {
-      max-width: 100%;
-      height: 80%;
-      padding: 5px;
-      font-size: 1.1rem;
-      border-bottom: 1.1rem solid $wt2;
+      height: 75%;
+      width: 85%;
+      padding: 5px 0 0;
+      overflow: hidden;
+      font-size: 0.98rem;
+      border-bottom: 0.98rem solid $wt2;
       word-wrap: break-word;
+
+      .queryTimestamp {
+        display: none;
+      }
     }
   }
 
@@ -281,7 +302,7 @@
     > div:first-of-type {
       position: absolute;
       top: 0;
-      height: 20%;
+      height: 25%;
       overflow: hidden;
 
       a {
@@ -303,10 +324,14 @@
       height: 100%;
       @include flexbox(row, center, center);
 
-      > i {
+      > a {
+        display: none;
+      }
+
+      i {
         cursor: pointer;
-        font-size: 2.5rem;
         color: $red;
+        font-size: 1.5rem;
         @include transition;
 
         &:hover {
@@ -321,7 +346,7 @@
       position: absolute;
       bottom: 10px;
       @include flexbox(row, center, flex-end);
-      font-size: 0.7rem;
+      font-size: 0.575rem;
       color: gray;
     }
   }

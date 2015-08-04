@@ -81,15 +81,27 @@
           </div>
           <div class="feedPostDescription">
             {{ post.text }}
+            <div class="queryTimestamp">
+              <span am-time-ago="post.timestamp"></span>
+            </div>
           </div>
         </div>
         <div>
           <div class="feedPostGame">
             <a target="_blank" href="http://www.steamcommunity.com/app/{{ post.appid }}">
               <img ng-src="{{ post.pictureLink }}" err-src="https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txt=Image+Unavailable&w=250&h=105&txttrack=0">
+              <div>
+                {{ post.name }}
+              </div>
             </a>
           </div>
           <div class="feedPostSteam">
+            <a href="#/account/{{ post.userData.id }}">
+              <div>
+                <img ng-src="{{ post.userData.photos[2].value }}">
+                <h4>{{ post.userData.displayName }}</h4>
+              </div>
+            </a>
             <a target="_blank" href="http://www.steamcommunity.com/profiles/{{ post.userData.id }}">
               <i class="fa fa-steam-square"></i>
             </a>
@@ -114,15 +126,27 @@
           </div>
           <div class="feedPostDescription">
             {{ post.text }}
+            <div class="queryTimestamp">
+              <span am-time-ago="post.timestamp"></span>
+            </div>
           </div>
         </div>
         <div>
           <div class="feedPostGame">
             <a target="_blank" href="http://www.steamcommunity.com/app/{{ post.appid }}">
               <img ng-src="{{ post.pictureLink }}" err-src="https://placeholdit.imgix.net/~text?txtsize=36&bg=cccccc&txt=Image+Unavailable&w=250&h=105&txttrack=0">
+              <div>
+                {{ post.name }}
+              </div>
             </a>
           </div>
           <div class="feedPostSteam">
+            <a href="#/account/{{ post.userData.id }}">
+              <div>
+                <img ng-src="{{ post.userData.photos[2].value }}">
+                <h4>{{ post.userData.displayName }}</h4>
+              </div>
+            </a>
             <a target="_blank" href="http://www.steamcommunity.com/profiles/{{ post.userData.id }}">
               <i class="fa fa-steam-square"></i>
             </a>
