@@ -54,7 +54,9 @@ HEADER
 **************************/
 .loginHeader {
   position: relative;
-  height: 500px; }
+  height: 500px;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease; }
   .loginHeader > div:first-of-type {
     height: 100px; }
     .loginHeader > div:first-of-type > div {
@@ -62,13 +64,15 @@ HEADER
       width: 20%; }
   .loginHeader .video {
     position: fixed;
-    top: 50%;
+    top: 20%;
     left: 50%;
     min-width: 100%;
-    width: 1400px;
-    height: 1000px;
+    width: 1600px;
+    height: 1200px;
     z-index: -100;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease; }
   .loginHeader > div:last-of-type {
     font-family: "Roboto", sans-serif;
     border: 5px solid #7AAF36;
@@ -2241,13 +2245,19 @@ CONTENT
 LOGIN PAGE
 **************************/
 @media screen and (max-width: 850px) {
-  .loginHeader > div:first-of-type > div {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center; }
-    .loginHeader > div:first-of-type > div > object {
-      height: 75px;
-      width: 275px; }
+  .loginHeader {
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.3)), url("../media/steamWallpaper.jpg");
+    background-size: cover;
+    background-position: center; }
+    .loginHeader .video {
+      display: none; }
+    .loginHeader > div:first-of-type > div {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center; }
+      .loginHeader > div:first-of-type > div > object {
+        height: 75px;
+        width: 275px; }
 
   .loginMain > div {
     display: -webkit-box;
