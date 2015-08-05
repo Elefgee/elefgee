@@ -61,9 +61,7 @@
           }
         } else {
           postData.timestamp = new Date();
-          SteamService.addPost(postData);
-          $location.path('/feed');
-          $window.scrollTo(0, 0);
+          SteamService.addPost(postData)
         }
       }
 
