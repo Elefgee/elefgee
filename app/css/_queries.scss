@@ -4,6 +4,13 @@ LOGIN PAGE
 
 @media screen and (max-width: 850px) {
   .loginHeader {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
+    url("../media/steamWallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+    .video {
+      display: none;
+    };
     // loginHeaderLogoWrapper
     > div:first-of-type {
       // SVG block

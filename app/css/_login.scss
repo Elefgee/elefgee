@@ -5,6 +5,7 @@ HEADER
 .loginHeader {
   position: relative;
   height: 500px;
+  @include transition;
 
   > div:first-of-type {
     height: 100px;
@@ -16,13 +17,15 @@ HEADER
   }
 
   .video {
-   position: fixed;
-   top: 50%; left: 50%;
-   min-width: 100%;
-   width: 1400px;
-   height: 1000px;
-   z-index: -100;
-   transform: translate(-50%, -50%);
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    min-width: 100%;
+    width: 1600px;
+    height: 1200px;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+    @include transition;
   }
 
   > div:last-of-type {
