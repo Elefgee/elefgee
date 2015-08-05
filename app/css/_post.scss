@@ -23,7 +23,7 @@ HEADER
     color: $pt;
     @include flexbox(row, space-between, center);
 
-    .postHeaderTitle {
+    > div:first-of-type {
       height: 100%;
       width: 20%;
 
@@ -37,7 +37,7 @@ HEADER
       }
     }
 
-    .postHeaderSearch {
+    > div:last-of-type {
       height: 50%;
       background-color: $wt;
       padding: 5px;
@@ -156,7 +156,8 @@ MAIN
   background-image: url('../media/triangles.png');
   padding: 25px 0;
 
-  .postMainBlock {
+  // postMainBlock
+  > div:first-of-type {
     height: 500px;
     width: 80%;
     margin: 0 auto;
@@ -241,6 +242,10 @@ MAIN
         padding-top: 25px;
         @include flexbox(column, flex-start, center);
 
+        > label {
+          padding: 0 5px;
+        }
+
         textarea {
           resize: none;
           border: 2.5px solid $pt;
@@ -292,7 +297,7 @@ MAIN
     }
   }
 
-  .postMainSubmitBlock {
+  > div:last-of-type {
     width: 80%;
     margin: 0 auto;
 
@@ -303,6 +308,7 @@ MAIN
       border: 0;
       font-size: 2rem;
       color: $wt2;
+      font-family: $sans;
       @include transition;
 
       &:hover {
