@@ -784,6 +784,103 @@ FOOTER
   justify-content: center;
   align-items: center; }
 
+.fa-stack {
+  width: 1em; }
+
+.modal {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .modal .modalContent {
+    font-size: 2vw;
+    width: 40%;
+    height: 40%;
+    background-color: whitesmoke;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 15px; }
+    .modal .modalContent div {
+      margin: 10px; }
+    .modal .modalContent #cancelButton {
+      margin: 25px;
+      color: white;
+      width: 30%;
+      height: 40px;
+      background-color: #e30e0e;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      border-radius: 10px; }
+    .modal .modalContent #cancelButton:hover {
+      background-color: #fe0f0f;
+      cursor: pointer; }
+    .modal .modalContent #cancelButton:active {
+      background-color: #b00b0b;
+      cursor: pointer; }
+    .modal .modalContent .modalStars {
+      color: white; }
+    .modal .modalContent .fa-star-o {
+      color: #F2C705; }
+    .modal .modalContent .fa-stack {
+      float: right; }
+    .modal .modalContent .starHover {
+      color: #F2C705;
+      cursor: pointer; }
+    .modal .modalContent .fa-stack:hover,
+    .modal .modalContent .fa-stack:hover ~ .fa-stack {
+      color: #F2C705;
+      cursor: pointer; }
+
 .accountHeader {
   position: relative;
   height: 500px;
@@ -810,7 +907,7 @@ FOOTER
   .accountHeader #accountLevel {
     margin-top: 5px;
     margin-bottom: 0;
-    font-size: .6em;
+    font-size: .5em;
     color: #828282; }
   .accountHeader .accountButtonsWrapper {
     height: 17.5%;
@@ -912,9 +1009,9 @@ FOOTER
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -923,6 +1020,38 @@ FOOTER
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center; }
+    .accountHeader .accountProfileInfo .accountRating {
+      margin-left: 15px;
+      font-size: .8em;
+      color: #F2C705;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .accountHeader .accountProfileInfo .accountRating span {
+        margin-left: 5px;
+        font-size: .6em; }
+      .accountHeader .accountProfileInfo .accountRating i {
+        margin: 2px;
+        -webkit-transition: all .25s ease;
+        transition: all .25s ease; }
+      .accountHeader .accountProfileInfo .accountRating:hover {
+        cursor: pointer; }
+        .accountHeader .accountProfileInfo .accountRating:hover i {
+          color: #f5d548; }
     .accountHeader .accountProfileInfo a {
       display: -webkit-box;
       display: -webkit-flex;
@@ -2441,5 +2570,8 @@ footer {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
+
+.hidden {
+  display: none; }
 
 /*# sourceMappingURL=styles.css.map */

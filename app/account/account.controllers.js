@@ -44,10 +44,53 @@
             $scope.user = foundUser[0];
             $scope.games = foundUser[0].games;
             $scope.posts = foundUser[0].posts;
+            $scope.rating = foundUser[0].rating;
+            $scope.raters = foundUser[0].raters;
             $scope.gamesList = _.sortBy(foundUser[0].games.games, 'name');
             console.log($scope.user);
+            console.log($scope.raters);
+          }
+
+          /// Rating ///
+          var accountRating = $scope.rating;
+          var elementAdded = document.getElementById('rating')
+
+          for (var i = 0; i < accountRating; i++) {
+            var rating = document.createElement('i');
+            rating.className = 'fa fa-star';
+            console.log('adding star');
+            elementAdded.appendChild(rating);
+          }
+
+          $scope.openModal = function() {
+              if ($scope.me.displayName === $scope.user.displayName) {
+                alert("You can't rate yourself!");
+              } else if (_.contains($scope.raters, $scope.me.displayName)){
+                alert("You've already reviewed this user.")
+              } else {
+                $('.modal').removeClass('hidden');
+              }
+          }
+
+          $scope.addUserReview = function(num) {
+            if ($scope.me.displayName === $scope.user.displayName) {
+              alert("You can't rate yourself!");
+            } else if (_.contains($scope.raters, $scope.me.displayName)){
+              alert("You've already reviewed this user.")
+            } else {
+              var user = {}
+              user.userReview = $scope.me.displayName;
+              user.stars = num;
+              $('.modal').addClass('hidden');
+              SteamService.addReview($scope.user, user);
+            }
           }
         });
+      }
+
+
+      $scope.cancelButton = function() {
+        $('.modal').addClass('hidden');
       }
 
       $scope.accountNavClick = function(clicked) {
@@ -87,6 +130,22 @@
         });
       }
 
+      // var reviewAddedCallback = function() {
+      //   console.log('CALLIN BACK');
+      //   SteamService.getUserInfo().success(function(data){
+      //     var routeSteamId = $routeParams.steamId;
+      //     var foundUser = _.where(data, {steamId: routeSteamId});
+      //     console.log(foundUser[0].rating);
+      //     $scope.posts = foundUser[0].rating;
+      //   });
+      // }
+
       $scope.$on('post:deleted', postDeletedCallback);
+      // $scope.$on('review:added', reviewAddedCallback);
+
     })
+
+    ////////// MODAL SCRIPTS //////////
+
+
 })();

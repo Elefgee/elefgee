@@ -9,7 +9,9 @@ var userSchema = new mongoose.Schema({
   steamId: String,
   posts: Array,
   level: String,
-  games: Object
+  rating: String,
+  games: Object,
+  raters: Array
 });
 
 userSchema.pre('save', function(next) {

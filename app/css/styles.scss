@@ -139,3 +139,7 @@ footer {
   height: 100px;
   @include flexbox(row, center, center);
 }
+
+.hidden {
+  display: none;
+}
