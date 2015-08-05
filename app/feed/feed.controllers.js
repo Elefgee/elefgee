@@ -93,7 +93,8 @@
 
       $scope.$route = $route;
 
-      setInterval(function() {
+      if ($locaton.path === '/feed') {
+        setInterval(function() {
         //// ALL POSTS ////
         SteamService.getUserInfo().success(function(data){
         $scope.allPosts = [];
@@ -134,6 +135,7 @@
 
         })
       })}, 1000);
+    }
 
       SteamService.getMe().success(function (me) {
         $scope.me = me;
