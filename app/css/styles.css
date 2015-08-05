@@ -2307,6 +2307,52 @@ FEED PAGE
       font-size: 2.75vw;
       border-bottom: 2vw solid whitesmoke; } }
 @media screen and (max-width: 850px) {
+  .feedHeader {
+    height: 175px; }
+    .feedHeader > div {
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: space-around;
+      -webkit-justify-content: space-around;
+      -ms-flex-pack: space-around;
+      justify-content: space-around;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .feedHeader > div > div {
+        height: auto;
+        width: 33%;
+        height: 33.33%; }
+      .feedHeader > div > div:first-of-type {
+        width: 100%;
+        height: 33.33%; }
+        .feedHeader > div > div:first-of-type > a {
+          height: 100%;
+          width: 35%; }
+          .feedHeader > div > div:first-of-type > a > img {
+            height: 100%;
+            width: 100%; }
+      .feedHeader > div > div:nth-of-type(3) {
+        display: none; }
+      .feedHeader > div > div:nth-of-type(2) {
+        width: 100%; }
+      .feedHeader > div > div:nth-of-type(4) {
+        width: 50%; }
+        .feedHeader > div > div:nth-of-type(4) > a {
+          width: 80%;
+          height: 80%; }
+      .feedHeader > div > div:nth-of-type(5) {
+        width: 50%; }
+
   .feedMain > div > section {
     width: 100%; }
     .feedMain > div > section > div {
@@ -2348,19 +2394,12 @@ FEED PAGE
           .feedHeader > div > div:first-of-type > a > img {
             height: 100%;
             width: 100%; }
-      .feedHeader > div > div:nth-of-type(2) > a {
-        height: 100%;
-        width: 100%; }
-        .feedHeader > div > div:nth-of-type(2) > a > img {
-          display: inline-block;
-          width: 35px;
-          height: 35px;
-          border-radius: 50%;
-          margin-right: 5px; }
-        .feedHeader > div > div:nth-of-type(2) > a > span {
-          margin-left: 5px; }
-      .feedHeader > div > div:nth-of-type(3) {
-        display: none; }
+      .feedHeader > div > div:nth-of-type(2) {
+        width: 100%;
+        height: 33.33%; }
+      .feedHeader > div > div:nth-of-type(4),
+      .feedHeader > div > div:nth-of-type(5) {
+        height: 33.33%; }
 
   .feedAside > div:first-of-type {
     font-size: 0.9rem; }
@@ -2941,6 +2980,7 @@ ACCOUNT PAGE
       height: 15%;
       flex-wrap: wrap; }
       .accountHeader .accountButtonsWrapper > div:first-of-type {
+        margin-top: 25px;
         height: 50%;
         width: 100%; }
       .accountHeader .accountButtonsWrapper > div:last-of-type {

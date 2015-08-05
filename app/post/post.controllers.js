@@ -61,7 +61,7 @@
           }
         } else {
           postData.timestamp = new Date();
-          SteamService.addPost(postData)
+          SteamService.addPost(postData);
         }
       }
 
