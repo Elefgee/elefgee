@@ -69,6 +69,7 @@
                 alert("You've already reviewed this user.")
               } else {
                 $('.modal').removeClass('hidden');
+                $('.overflow').addClass('bodyOverflow');
               }
           }
 
@@ -91,6 +92,7 @@
 
       $scope.cancelButton = function() {
         $('.modal').addClass('hidden');
+        $('.overflow').removeClass('bodyOverflow');
       }
 
       $scope.accountNavClick = function(clicked) {
