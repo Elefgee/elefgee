@@ -15,6 +15,7 @@
       var addPost = function(post) {
         $http.put('/posts', post).success(function(data){
          console.log('I just posted this data!', data);
+         $rootScope.$broadcast('post:added');
         })
       }
 
