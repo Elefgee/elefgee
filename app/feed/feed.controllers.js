@@ -93,7 +93,7 @@
 
       $scope.$route = $route;
 
-      if ($locaton.path === '/feed') {
+      if ($location.path === '/feed') {
         setInterval(function() {
         //// ALL POSTS ////
         SteamService.getUserInfo().success(function(data){
