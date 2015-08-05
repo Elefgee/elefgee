@@ -667,6 +667,16 @@ ACCOUNT PAGE
 }
 
 @media screen and (max-width: 850px) {
+
+  .modal .modalContent {
+    font-size: 1rem;
+    width: 60%;
+    height: 40%;
+    #cancelButton {
+      font-size: .9rem;
+    }
+  }
+
   .accountHeader {
     .accountButtonsWrapper {
       > div:first-of-type {
@@ -824,6 +834,15 @@ ACCOUNT PAGE
 }
 
 @media screen and (max-width: 550px) {
+  .modal .modalContent {
+    font-size: 1rem;
+    width: 90%;
+    height: 40%;
+    #cancelButton {
+      font-size: .9em;
+    }
+  }
+
   .accountHeader {
     height: 1000px;
 
