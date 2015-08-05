@@ -15,6 +15,7 @@
       var addPost = function(post) {
         $http.put('/posts', post).success(function(data){
          console.log('I just posted this data!', data);
+         $rootScope.$broadcast('post:added');
         })
       }
 
@@ -26,10 +27,28 @@
         })
       }
 
+      // var addReviewUser = function(user, userReview) {
+      //   user.userReview = userReview;
+      //   $http.put('/addReview', user).then(function(data){
+      //     console.log('I just added a review!', data)
+      //     // $rootScope.$broadcast('review:added');
+      //   })
+      // }
+
+      var addReview = function(user, userObj) {
+        user.userObj = userObj;
+        $http.put('/addReview', user).then(function(data){
+          console.log('I just added a review!', data)
+          // $rootScope.$broadcast('review:added');
+        })
+      }
+
       return {
         getUserInfo: getUserInfo,
         addPost: addPost,
         deletePost: deletePost,
+        // addReviewUser: addReviewUser,
+        addReview: addReview,
         getMe: getMe
       };
 

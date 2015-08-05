@@ -50,7 +50,9 @@ module.exports = function(app, passport) {
               picture: req.user.photos[2].value,
               games: req.user.games,
               level: elefgeeLevel,
-              posts: []
+              posts: [],
+              rating: 3,
+              raters: ['user']
             });
 
             console.log('User created!');
@@ -76,10 +78,32 @@ module.exports = function(app, passport) {
 
     app.get('/me', function (req, res, next) {
       res.send(req.user);
-    })
+    });
+
+    app.put('/addReview', function(req, res, next) {
+
+      console.log('user req.body', req.body);
+
+        User.find({steamId: req.body.steamId}, function(err, user) {
+
+          user[0].raters.push(req.body.userObj.userReview);
+
+          var newRating = (Number(user[0].rating) + req.body.userObj.stars) / user[0].raters.length;
+          var updatedRating = Math.round(newRating);
+
+          user[0].rating = updatedRating;
+
+          user[0].save(function(err) {
+             if(err) throw err;
+             console.log('added review', user[0]);
+           })
+
+          res.send(user[0]);
+
+        })
+    });
 
     app.put('/deletePost', function(req, res, next){
-      console.log(req.body);
 
       User.find({steamId: req.body.userData.id}, function(err, user) {
 

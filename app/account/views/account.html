@@ -1,5 +1,34 @@
 <div ng-if="loggedIn(me.displayName)">
 
+<div class="modal hidden">
+  <div class="modalContent">
+    <div>How was your experience?</div>
+    <div class="modalStars">
+      <span class="star5 fa-stack fa-lg" ng-click="addUserReview(5)">
+        <i id="star1" class="fa fa-star fa-stack-1x"></i>
+        <i class="fa fa-star-o fa-stack-1x"></i>
+      </span>
+      <span class="star4 fa-stack fa-lg" ng-click="addUserReview(4)">
+        <i id="star2" class="fa fa-star fa-stack-1x"></i>
+        <i class="fa fa-star-o fa-stack-1x"></i>
+      </span>
+      <span class="star3 fa-stack fa-lg" ng-click="addUserReview(3)">
+        <i id="star3" class="fa fa-star fa-stack-1x"></i>
+        <i class="fa fa-star-o fa-stack-1x"></i>
+      </span>
+      <span class="star2 fa-stack fa-lg" ng-click="addUserReview(2)">
+        <i id="star4" class="fa fa-star fa-stack-1x"></i>
+        <i class="fa fa-star-o fa-stack-1x"></i>
+      </span>
+      <span class="star1 fa-stack fa-lg" ng-click="addUserReview(1)">
+        <i id="star5" class="fa fa-star fa-stack-1x"></i>
+        <i class="fa fa-star-o fa-stack-1x"></i>
+      </span>
+    </div>
+    <div id="cancelButton" ng-click="cancelButton()">Cancel</div>
+  </div>
+</div>
+
 <div class="accountHeader">
   <div class="accountButtonsWrapper">
     <div class="accountHeaderLogo">
@@ -18,8 +47,14 @@
       <a target="_blank" href="http://www.steamcommunity.com/profiles/{{ user.steamId }}">
         <img ng-src="{{ user.picture }}" alt="">
         <h2>{{ user.displayName }}</h2>
-        <p id="accountLevel">Level: {{user.level}}</p>
       </a>
+      <div class="accountRating">
+        <div id="rating" ng-click="openModal()">
+
+        </div>
+        <span>({{user.raters.length}})</span>
+      </div>
+      <p id="accountLevel">Level: {{user.level}}</p>
   </div>
   <div class="accountProfileStats">
     <div>
