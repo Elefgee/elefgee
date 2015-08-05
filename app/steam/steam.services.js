@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('elefgee')
-    .factory('SteamService', function ($http, _, $q, $cacheFactory, $rootScope) {
+    .factory('SteamService', function ($http, _, $q, $cacheFactory, $rootScope, $location, $window) {
 
       var getUserInfo = function() {
         return $http.get('/user');
@@ -16,6 +16,8 @@
         $http.put('/posts', post).success(function(data){
          console.log('I just posted this data!', data);
          $rootScope.$broadcast('post:added');
+         $location.path('/feed');
+         $window.scrollTo(0, 0);
         })
       }
 

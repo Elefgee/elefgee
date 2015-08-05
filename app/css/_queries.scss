@@ -61,6 +61,54 @@ FEED PAGE
 }
 
 @media screen and (max-width: 850px) {
+  .feedHeader {
+    height: 175px;
+    // feedHeaderBlock
+    > div {
+      width: 100%;
+      @include flexbox(row, space-around, center);
+      > div {
+        height: auto;
+        width: 33%;
+        height: 33.33%;
+      }
+
+      > div:first-of-type {
+        width: 100%;
+        height: 33.33%;
+
+        > a {
+          height: 100%;
+          width: 35%;
+
+          > img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+
+      > div:nth-of-type(3) {
+        display: none;
+      }
+
+      > div:nth-of-type(2) {
+        width: 100%;
+      }
+
+      > div:nth-of-type(4) {
+        width: 50%;
+        > a {
+          width: 80%;
+          height: 80%;
+        }
+      }
+      > div:nth-of-type(5) {
+        width: 50%;
+      }
+    }
+  }
+
   .feedMain {
     // feedContent
     > div {
@@ -115,24 +163,13 @@ FEED PAGE
       }
 
       > div:nth-of-type(2) {
-        > a {
-          height: 100%;
-          width: 100%;
-          > img {
-            display: inline-block;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            margin-right: 5px;
-          }
-          > span {
-            margin-left: 5px;
-          }
-        }
+        width: 100%;
+        height: 33.33%;
       }
 
-      > div:nth-of-type(3) {
-        display: none;
+      > div:nth-of-type(4),
+      > div:nth-of-type(5) {
+        height: 33.33%;
       }
     }
   }
@@ -824,6 +861,7 @@ ACCOUNT PAGE
       height: 15%;
       flex-wrap: wrap;
       > div:first-of-type {
+        margin-top: 25px;
         height: 50%;
         width: 100%;
       }
