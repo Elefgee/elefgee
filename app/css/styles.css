@@ -2520,7 +2520,8 @@ FEED PAGE
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+      -webkit-flex-wrap: wrap; }
       .feedMain > div > section > div > div:last-of-type > div {
         width: 30%; }
       .feedMain > div > section > div > div:last-of-type > div:first-of-type {
@@ -2908,7 +2909,8 @@ ACCOUNT PAGE
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+      -webkit-flex-wrap: wrap; }
       .accountPostBlock > div:last-of-type > div {
         width: 30%; }
       .accountPostBlock > div:last-of-type > div:first-of-type {
@@ -3002,7 +3004,8 @@ ACCOUNT PAGE
     height: 1000px; }
     .accountHeader .accountButtonsWrapper {
       height: 15%;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+      -webkit-flex-wrap: wrap; }
       .accountHeader .accountButtonsWrapper > div:first-of-type {
         margin-top: 25px;
         height: 50%;

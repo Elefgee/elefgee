@@ -264,6 +264,7 @@ FEED PAGE
             position: relative;
             @include flexbox(row, space-between, center);
             flex-wrap: wrap;
+            -webkit-flex-wrap: wrap;
 
             > div {
               width: 30%;
@@ -797,6 +798,7 @@ ACCOUNT PAGE
       position: relative;
       @include flexbox(row, space-between, center);
       flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
 
       > div {
         width: 30%;
@@ -890,6 +892,7 @@ ACCOUNT PAGE
     .accountButtonsWrapper {
       height: 15%;
       flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
       > div:first-of-type {
         margin-top: 25px;
         height: 50%;
