@@ -230,6 +230,7 @@ FEED PAGE
           // div containing user and description blocks
           > div:first-of-type {
             order: 2;
+            -webkit-order: 2;
             width: 100%;
             height: 75%;
             // post description block
@@ -259,9 +260,11 @@ FEED PAGE
             width: 100%;
             height: 25%;
             order: 1;
+            -webkit-order: 1;
             position: relative;
             @include flexbox(row, space-between, center);
             flex-wrap: wrap;
+            -webkit-flex-wrap: wrap;
 
             > div {
               width: 30%;
@@ -761,6 +764,7 @@ ACCOUNT PAGE
     // div containing user and description blocks
     > div:first-of-type {
       order: 2;
+      -webkit-order: 2;
       width: 100%;
       height: 75%;
       // post description block
@@ -790,9 +794,11 @@ ACCOUNT PAGE
       width: 100%;
       height: 25%;
       order: 1;
+      -webkit-order: 1;
       position: relative;
       @include flexbox(row, space-between, center);
       flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
 
       > div {
         width: 30%;
@@ -886,6 +892,7 @@ ACCOUNT PAGE
     .accountButtonsWrapper {
       height: 15%;
       flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
       > div:first-of-type {
         margin-top: 25px;
         height: 50%;
