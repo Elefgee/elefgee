@@ -2479,6 +2479,7 @@ FEED PAGE
     align-items: center; }
     .feedMain > div > section > div > div:first-of-type {
       order: 2;
+      -webkit-order: 2;
       width: 100%;
       height: 75%; }
       .feedMain > div > section > div > div:first-of-type > div:first-of-type {
@@ -2500,6 +2501,7 @@ FEED PAGE
       width: 100%;
       height: 25%;
       order: 1;
+      -webkit-order: 1;
       position: relative;
       display: -webkit-box;
       display: -webkit-flex;
@@ -2865,6 +2867,7 @@ ACCOUNT PAGE
     align-items: center; }
     .accountPostBlock > div:first-of-type {
       order: 2;
+      -webkit-order: 2;
       width: 100%;
       height: 75%; }
       .accountPostBlock > div:first-of-type > div:first-of-type {
@@ -2886,6 +2889,7 @@ ACCOUNT PAGE
       width: 100%;
       height: 25%;
       order: 1;
+      -webkit-order: 1;
       position: relative;
       display: -webkit-box;
       display: -webkit-flex;
