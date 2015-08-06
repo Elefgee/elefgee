@@ -298,7 +298,7 @@ FEED PAGE
               position: relative;
               width: 100%;
               height: 57.5%;
-              @include flexbox(row, center, flex-start);
+              @include flexbox(row, flex-start, flex-start);
 
               > a:first-of-type {
                 padding-top: 5px;
@@ -314,13 +314,10 @@ FEED PAGE
                   @include flexbox(row, center, center);
 
                   > img {
-                    display: inline-block;
                     width: 27.5px;
                     height: 27.5px;
                     border-radius: 50%;
-                    position: absolute;
-                    left: 2.5px;
-                    top: 2px;
+                    margin: 0 5px;
                   }
                 }
               }
@@ -832,10 +829,11 @@ ACCOUNT PAGE
         position: relative;
         width: 100%;
         height: 57.5%;
-        @include flexbox(row, center, flex-start);
+        @include flexbox(row, flex-start, flex-start);
 
         > a:first-of-type {
           padding-top: 5px;
+          margin-left: 5px;
           display: inline-block;
           width: auto;
           @include transition;
