@@ -134,7 +134,7 @@
           })
 
         })
-      })}, 1000);
+      })}, 2000);
     }
 
       SteamService.getMe().success(function (me) {
